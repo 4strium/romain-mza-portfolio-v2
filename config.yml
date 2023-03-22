@@ -8,14 +8,14 @@ params:
   socialMedia:
     - name: Github
       url: https://github.com/4strium
+    - name : LinkedIn
+      url: https://www.linkedin.com/in/romain-mellaza/
     - name: Twitter
       url: https://twitter.com/RomainMza
     - name : Instagram
       url: https://www.instagram.com/ads.bzh/
-    - name : LinkedIn
-      url: https://www.linkedin.com/in/romain-mellaza/
   blogroll:
-    - name: Apple
-      url: https://Apple.com/
-    - name: Google
-      url: https://Google.com/
+    - name: Collège CROAS AR PENNOC, Guilers(29)
+      url: https://www.college-croasarpennoc-guilers.ac-rennes.fr/
+    - name: Lycée VAUBAN, Brest(29)
+      url: https://www.lycee-vauban-brest.ac-rennes.fr/
