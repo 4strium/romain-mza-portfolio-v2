@@ -22,11 +22,14 @@ L'édition du site est assurée par [Romain MELLAZA](/about/), dont l'adresse ma
 
 ## ARTICLE 2 - HEBERGEMENT
 
-Le site est maintenu sur le service d'hébergement de projets [Github](https://github.com/), appartenant à la société [Microsoft Corporation](https://fr.wikipedia.org/wiki/Microsoft)
+Le site est maintenu sur le service d'hébergement de projets [Github](https://github.com/), appartenant à la société [Microsoft Corporation](https://fr.wikipedia.org/wiki/Microsoft).
+
 Le service [Netlify](https://www.netlify.com/) est utilisé pour le déploiement du site sur Internet.
 
 ## ARTICLE 3 - ACCES AU SITE
 
 L'accès au site est gratuit et sans condition de durée via le protocole HTTP, à l'URL [romainmellaza.fr](romainmellaza.fr).
 
-Le nom de domaine [romainmellaza.fr](romainmellaza.fr) a été acquis le 22 mars 2023 chez la société [Google Domains](https://domains.google/intl/fr_fr/), qui se réserve le droit de suspendre l'accès au nom de domaine [romainmellaza.fr](romainmellaza.fr). Il a été validé par l'[Internet Corporation for Assigned Names and Numbers](https://www.icann.org/fr) qui se réserve elle aussi le droit de suspendre l'accès au nom de domaine [romainmellaza.fr](romainmellaza.fr).
+Le nom de domaine [romainmellaza.fr](romainmellaza.fr) a été acquis le 22 mars 2023 chez la société [Google Domains](https://domains.google/intl/fr_fr/), qui se réserve le droit de suspendre l'accès au nom de domaine [romainmellaza.fr](romainmellaza.fr). 
+
+Il a été validé par l'organisation [Internet Corporation for Assigned Names and Numbers](https://www.icann.org/fr) qui se réserve elle aussi le droit de suspendre l'accès au nom de domaine [romainmellaza.fr](romainmellaza.fr).
