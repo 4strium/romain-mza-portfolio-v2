@@ -1,0 +1,86 @@
+{{ define "main" }}
+  {{ $featured := .Page.Params.featured }}
+  {{ $notPlainPage := ne .Page.Params.plain true }}
+  <main id="main" class="main">
+      <section>
+        <article class="article">
+          {{ if $notPlainPage }}
+          <div class="{{ if $featured }} featured-header {{ else }} article-header {{ end }}">
+            <div class="category component">
+              <div class="component-content">
+                <div class="category-eyebrow">
+                  <span class="category-eyebrow__category category_original">
+                    {{ if .Page.Params.tags }}
+                      {{ range first 1 .Page.Params.tags }}
+                        {{.}}
+                      {{ end }}
+                    {{ end }}
+                  </span>
+                  <span class="category-eyebrow__date">{{ .Page.Params.Date | time.Format ":date_long"}}</span>
+                </div>
+              </div>
+            </div>
+            <div class="pagetitle component">
+              <div class="component-content">
+                <h1 class="hero-headline">{{ .Title }}</h1>
+              </div>
+            </div>
+            <div class="component {{ if $featured }} featured-subhead {{ else }} article-subhead {{ end }}">
+              <div class="component-content">{{ .Page.Params.description }}</div>
+            </div>
+
+            <div class="tagssheet component">
+              <div class="component-content">
+                {{ range .Page.Params.tags}}
+                  <a href="/tags/{{. | urlize}}" class="tag">
+                    {{ . }}
+                  </a>
+                {{ end }}
+              </div>
+            </div>
+          </div>
+          {{ else }}
+          <div class="article-header">
+            <div class="pagetitle component">
+              <div class="component-content">
+                <h1 class="hero-headline">{{ .Title }}</h1>
+              </div>
+            </div>
+          </div>
+          {{ end }}
+          <div class="pagebody">
+            <!-- TODO: hugo render hooks do not support custom markdown so here replace element manually -->
+            {{ $content := .Content | replaceRE "<p>" "<p class=\"component-content component\">" }}
+            {{ $content = $content | replaceRE "<table>" "<div class='component-content component'><table>" }}
+            {{ $content = $content | replaceRE "</table>" "</table></div>" }}
+            {{ $content = $content | replaceRE "<pre>" "<div class='component-content pagebody component code'><pre>" }}
+            {{ $content = $content | replaceRE "</pre>" "</pre></div>" }}
+            {{ $content = $content | replaceRE "<ol>" "<div class=\"component-content component\"><ol>" }}
+            {{ $content = $content | replaceRE "</ol>" "</ol></div>" }}
+            {{ $content = $content | replaceRE "<ul>" "<ul class='component-content component'>" }}
+            {{ $content |  safeHTML}}
+          </div>
+          {{ if $notPlainPage }}
+          <div class="component">
+            <div class="component-content">
+              <div class="article-copyright">
+                <a class="content" href="https://creativecommons.org/licenses/by-nc-nd/3.0/fr/" target="_blank">
+                  Attribution - Pas d'Utilisation Commerciale - Pas de Modification 3.0 France (CC BY-NC-ND 3.0 FR)
+                </a>
+                <p class="content">Auteur : {{ .Page.Params.author }}</p>
+                <p class="content">Date de publication : {{ .Page.Params.Date | time.Format ":date_long" }}</p>
+              </div>
+            </div>
+          </div>
+          {{ end }}
+        </article>
+      </section>
+  </main>
+
+  <script>
+    var script = document.createElement("script");
+    script.src = "/js/initPost.js";
+    document.head.appendChild(script);
+  </script>
+{{ end }}
+

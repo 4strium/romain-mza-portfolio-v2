@@ -1,0 +1,21 @@
+baseURL: "https://romainmza.netlify.app/"
+languageCode: fr-fr
+title: Romain Mellaza
+theme: hugo-theme-itheme
+params:
+  defaultCover: 'img/code_cover.jpg'
+  email: romain.mellaza@orange.fr
+  socialMedia:
+    - name: Github
+      url: https://github.com/4strium
+    - name: Twitter
+      url: https://twitter.com/RomainMza
+    - name : Instagram
+      url: https://www.instagram.com/ads.bzh/
+    - name : LinkedIn
+      url: https://www.linkedin.com/in/romain-mellaza/
+  blogroll:
+    - name: Apple
+      url: https://Apple.com/
+    - name: Google
+      url: https://Google.com/
