@@ -19,7 +19,7 @@ C'est donc en parallèle de mes études que je conçois des programmes et des ou
 
 J'utilise principalement le langage Python dans mes projets qu'ils soit "hardware" (ESP32, ...) ou purement "software".
 
-Vous pouvez retrouver les différents codes sources et documents explicatifs à cette adresse : https://github.com/4strium ainsi que sur ce site dans l'ongle "[Articles](../posts)" !
+Vous pouvez retrouver les différents codes sources et documents explicatifs à cette adresse : https://github.com/4strium ainsi que sur ce site dans l'onglet "[Articles](../posts)" !
 
 Je nourris aussi une passion pour tout ce qui vole, et notamment leurs moyens de communications ([ADS-B](https://fr.wikipedia.org/wiki/Automatic_dependent_surveillance-broadcast), [UHF/VHF](https://www.icom-france.com/fr/catalogue/radio-vhf-ou-uhf.php)).
 
