@@ -9,7 +9,7 @@ theme: "dark"
 ![|inline](https://i.ibb.co/H2VPzNK/Photos-d-identit.png)
 
 Je m’appelle Romain MELLAZA, j’ai 17 ans et je suis actuellement lycéen en filière du [BAC général](https://www.education.gouv.fr/reussir-au-lycee/le-baccalaureat-general-10457), avec pour spécialités :
-- Maths (+ Maths expertes)
+- Mathématiques (+ Maths expertes)
 - Numérique et Sciences Informatiques 
 - Physique-Chimie (validée en 1ère)
 
@@ -23,6 +23,6 @@ Vous pouvez retrouver les différents codes sources et documents explicatifs à 
 
 Je nourris aussi une passion pour tout ce qui vole, et notamment leurs moyens de communications ([ADS-B](https://fr.wikipedia.org/wiki/Automatic_dependent_surveillance-broadcast), [UHF/VHF](https://www.icom-france.com/fr/catalogue/radio-vhf-ou-uhf.php)).
 
-Cela me permet donc de les identifier, et ainsi de les photographier afin d'alimenter une collection.
+Cela me permet donc de les identifier, et ainsi de les photographier afin d'alimenter une collection personnelle.
 
 En ce qui concerne le milieu de l'aéronautique, j'ai notamment obtenu mon [Brevet d'Initiation Aéronautique](https://fr.wikipedia.org/wiki/Brevet_d'initiation_a%C3%A9ronautique) en 2022 !
