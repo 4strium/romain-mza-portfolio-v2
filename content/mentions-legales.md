@@ -18,7 +18,7 @@ Ces dernières sont accessibles sur le site à la rubrique « [Mentions légales
 
 ## ARTICLE 1 - EDITION
 
-L'édition du site est assurée par [Romain MELLAZA](/about/), dont l'adresse mail est romain.mellaza@orange.fr.
+L'édition du site est assurée par [Romain MELLAZA](/about/), dont l'adresse mail est 02gpvd9vr@mozmail.com.
 
 ## ARTICLE 2 - HEBERGEMENT
 
