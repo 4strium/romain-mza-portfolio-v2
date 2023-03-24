@@ -134,4 +134,4 @@ C'est pour cela que choisir des spécialités qui vous intéresses vraiment à u
 [**Cliquer ici**](https://www.sembreizh.fr/fileadmin/contributions/Sembreizh/6.Documentation/Plaquette_Lycee_Kerichen_internats_2022_web.pdf)
 
 # Contacts
-Si vous avez la moindre question n'hésitez surtout pas à me contacter à cette adresse mail : [**romain.mellaza@orange.fr**](mailto:romain.mellaza@orange.fr), je pourrais vous répondre ou bien même vous aiguiller vers des élèves/professeurs plus à même de répondre à vos questionnements !
+Si vous avez la moindre question n'hésitez surtout pas à me contacter à cette adresse mail : [**02gpvd9vr@mozmail.com**](mailto:02gpvd9vr@mozmail.com), je pourrais vous répondre ou bien même vous aiguiller vers des élèves/professeurs plus à même de répondre à vos questionnements !
