@@ -54,6 +54,23 @@ C'est pour cela que choisir des spécialités qui vous intéresses vraiment a un
 ```🗨️ En théorie, non, je crois même que dans la promo. de terminale 2022 certains n'avaient pas maths, ça se fait, d'autant plus qu'il y a l'option "maths complémentaires" qui peut rajouter 2 h de maths à ceux qui ne font pas la spécialité. Mais la réalité c'est que cela ne suffit pas pour candidater à des études longues telles que les B.U.T, C.P.G.E et Prépa Intégrée. Dans 99,9% des cas, c'est écrit noir sur blanc qu'ils ne prennent que des spés maths (première ET terminale). De plus, si vous visez vraiment des écoles très sélectives, et de rythme de formation soutenu, alors l'option "maths expertes" est un passage obligé ! En fin de compte, il faut aimer les maths pour réellement aimer les sciences théoriques. De toute manière, même si vos notes peuvent être assez faibles tout au long de l'année, les sujets de bac sont généralement plus simples !```
 
 # La spécialité **Physique-Chimie**
+*(réponse par Kévin en spé Maths/Physique*)
+
+* Quels sont les grands thèmes abordés par le programme ? 🤔
+
+```🗨️ Le programme en Physique-Chimie est très très chargé. Il y a 14 chapitres à voir pour le bac et 6 chapitres pour le reste de l'année. De plus, il faut différencier la physique, de la chimie on n'étudie pas du tout la même chose. Les thèmes abordés en physique sont les mouvements et interactions, les ondes et les signaux ainsi que la transformation de la matière ! ```
+
+* La charge de travail est-elle vraiment importante dans cette spécialité ? 🤔
+
+```🗨️ Il faut travailler c'est sur mais avec un bon rythme de travail et des méthodes on y arrive sans problème. ```
+
+* A qui s'adresse cette spécialité ? 🤔
+
+```🗨️ Aux personnes souhaitant en savoir plus sur ce qui nous entoure. Et pour ceux qui ne savent pas trop quoi faire, faire cette spécialité est forcément bénéfique et vous ne serez jamais refusé d'une école pour avoir pris Physique-Chimie.```
+
+* Et quels débouchés ensuite ? 🤔
+
+```🗨️ Tous les débouchés sont possibles, c'est sûr que ça ferme beaucoup moins de porte que la NSI ou la SI mais l'enseignement sera plus générale.```
 
 # La spécialité **Sciences de l'Ingénieur**
 
