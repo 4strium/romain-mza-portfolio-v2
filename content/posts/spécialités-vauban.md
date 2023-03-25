@@ -63,7 +63,7 @@ C'est pour cela que choisir des spécialités qui vous intéresses vraiment a un
 
 ```🗨️ Il faut travailler c'est sûr mais avec un bon rythme de travail et des méthodes on y arrive sans problème. ```
 
-```🗨️ Il faut travailler 1h minimun par jour pour atteindre un niveau correct en Physique-Chimie. Apprendre ses cours régulièrement est primodial pour la réussite dans cette spécialité```
+```🗨️ Il faut travailler 1h minimun par jour pour atteindre un niveau correct en Physique-Chimie. Apprendre ses cours régulièrement est primodial pour la réussite dans cette spécialité.```
 
 * A qui s'adresse cette spécialité ? 🤔
 
