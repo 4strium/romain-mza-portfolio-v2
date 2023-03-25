@@ -57,13 +57,13 @@ C'est pour cela que choisir des spécialités qui vous intéresses vraiment a un
 *(Réponses par Kévin & Siem en spé Maths/Physique)*
 * Quels sont les grands thèmes abordés par le programme ? 🤔
 
-```🗨️ Le programme en Physique-Chimie est très très chargé. Il y a 14 chapitres à voir pour le bac et 6 chapitres pour le reste de l'année. De plus, il faut différencier la physique, de la chimie on n'étudie pas du tout la même chose. Les thèmes abordés en physique sont les mouvements et interactions, les ondes et les signaux ainsi que la transformation de la matière ! ```
+```🗨️ Le programme en Physique-Chimie est très très chargé. Il y a 14 chapitres à voir pour le bac et 6 chapitres pour le reste de l'année. De plus, il faut différencier la physique, de la chimie on n'étudie pas du tout la même chose. Les thèmes abordés en physique sont les mouvements et interactions, les ondes, les signaux ainsi que la transformation de la matière ! ```
 
 * La charge de travail est-elle vraiment importante dans cette spécialité ? 🤔
 
-```🗨️ Il faut travailler c'est sur mais avec un bon rythme de travail et des méthodes on y arrive sans problème. ```
+```🗨️ Il faut travailler c'est sûr mais avec un bon rythme de travail et des méthodes on y arrive sans problème. ```
 
-```🗨️ Il faut travailler 1h minimun par jour pour attendre un niveau correct en Physique-Chimie. Apprendre ses cours régulièrement est primodial pour la réussite dans cette Spécialité```
+```🗨️ Il faut travailler 1h minimun par jour pour atteindre un niveau correct en Physique-Chimie. Apprendre ses cours régulièrement est primodial pour la réussite dans cette spécialité```
 
 * A qui s'adresse cette spécialité ? 🤔
 
@@ -71,7 +71,7 @@ C'est pour cela que choisir des spécialités qui vous intéresses vraiment a un
 
 * Et quels débouchés ensuite ? 🤔
 
-```🗨️ Tous les débouchés sont possibles, c'est sûr que ça ferme beaucoup moins de porte que la NSI ou la SI mais l'enseignement sera plus générale.```
+```🗨️ Tous les débouchés sont possibles, c'est sûr que ça ferme beaucoup moins de portes que la NSI ou la SI mais l'enseignement sera plus général.```
 
 # La spécialité **Sciences de l'Ingénieur**
 *(Réponse par Pierre)*
