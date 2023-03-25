@@ -54,8 +54,7 @@ C'est pour cela que choisir des spécialités qui vous intéresses vraiment a un
 ```🗨️ En théorie, non, je crois même que dans la promo. de terminale 2022 certains n'avaient pas maths, ça se fait, d'autant plus qu'il y a l'option "maths complémentaires" qui peut rajouter 2 h de maths à ceux qui ne font pas la spécialité. Mais la réalité c'est que cela ne suffit pas pour candidater à des études longues telles que les B.U.T, C.P.G.E et Prépa Intégrée. Dans 99,9% des cas, c'est écrit noir sur blanc qu'ils ne prennent que des spés maths (première ET terminale). De plus, si vous visez vraiment des écoles très sélectives, et de rythme de formation soutenu, alors l'option "maths expertes" est un passage obligé ! En fin de compte, il faut aimer les maths pour réellement aimer les sciences théoriques. De toute manière, même si vos notes peuvent être assez faibles tout au long de l'année, les sujets de bac sont généralement plus simples !```
 
 # La spécialité **Physique-Chimie**
-*(réponse par Kévin en spé Maths/Physique*)
-
+*(réponse par Kévin & Siem en spé Maths/Physique)*
 * Quels sont les grands thèmes abordés par le programme ? 🤔
 
 ```🗨️ Le programme en Physique-Chimie est très très chargé. Il y a 14 chapitres à voir pour le bac et 6 chapitres pour le reste de l'année. De plus, il faut différencier la physique, de la chimie on n'étudie pas du tout la même chose. Les thèmes abordés en physique sont les mouvements et interactions, les ondes et les signaux ainsi que la transformation de la matière ! ```
@@ -63,6 +62,8 @@ C'est pour cela que choisir des spécialités qui vous intéresses vraiment a un
 * La charge de travail est-elle vraiment importante dans cette spécialité ? 🤔
 
 ```🗨️ Il faut travailler c'est sur mais avec un bon rythme de travail et des méthodes on y arrive sans problème. ```
+
+```🗨️ Il faut travailler 1h minimun par jour pour attendre un niveau correct en Physique-Chimie. Apprendre ses cours régulièrement est primodial pour la réussite dans cette Spécialité```
 
 * A qui s'adresse cette spécialité ? 🤔
 
@@ -73,6 +74,22 @@ C'est pour cela que choisir des spécialités qui vous intéresses vraiment a un
 ```🗨️ Tous les débouchés sont possibles, c'est sûr que ça ferme beaucoup moins de porte que la NSI ou la SI mais l'enseignement sera plus générale.```
 
 # La spécialité **Sciences de l'Ingénieur**
+*(Réponse par Pierre)*
+* Quels sont les grands thèmes abordés par le programme ? 🤔
+
+```🗨️ Tout ce qui tourne autour de l'ingénierie : résistance des matériaux, informatique, électricité, modélisation 3D avec Solidworks, Arduino, statistique graphique et analytique, dynamique des solides.```
+
+* La charge de travail est-elle vraiment importante dans cette spécialité ? 🤔
+
+```🗨️ Honnêtement non ça va on a jamais de devoirs à faire à la maison, il faut juste réviser pour les contrôles qui peuvent être dur si vous n'avez pas bien compris les notions importantes.```
+
+* A qui s'adresse cette spécialité ? 🤔
+
+```🗨️ Je dirais pour des personnes qui se verraient bien ingénieur ou concepteur de produits, de pièces, etc... En bref, des personnes qui aiment la mécanique et comprendre comment les choses fonctionnent.```
+
+* Et quels débouchés ensuite ? 🤔
+
+```🗨️ Énormément de débouchés surtout dans le domaine scientifique évidemment mais beaucoup d'écoles aiment ceux qui ont fait S.I. parce qu'ils ont de l'avance sur ceux qui ont fait Physique-Chimie par exemple, et comprennent mieux les choses.```
 
 # La spécialité **Numérique, Sciences Informatiques**
 * A qui s'adresse cette spécialité ? 🤔
