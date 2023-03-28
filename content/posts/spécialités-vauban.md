@@ -30,6 +30,9 @@ C'est pour cela que choisir des spécialités qui vous intéresses vraiment a un
 * Votre envie pour ce que vous entreprenez est bien souvent récompensée par de très bonnes notes et appréciations !
 
 # Le Lycée VAUBAN
+
+![](https://i.ibb.co/hD8fHvr/arton321-remix.png)
+
 *Nous allons donc maintenant nous intéresser aux ressentis des étudiants faisant partie prenante des différentes spécialités proposées au [Lycée VAUBAN de Brest](https://www.lycee-vauban-brest.ac-rennes.fr/), qui sont les suivantes :*
 
 * Mathématiques
@@ -39,6 +42,9 @@ C'est pour cela que choisir des spécialités qui vous intéresses vraiment a un
 * Sciences et vie de la Terre (partenariat avec le [lycée Lesven](https://www.lycee-jules-lesven.org/))
 
 # La spécialité **Mathématiques**
+
+![](https://images.unsplash.com/photo-1635372722656-389f87a941b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2062&q=80)
+
 * Quels sont les grands thèmes abordés par le programme ? 🤔
 
 ```🗨️ En première, vous allez apprendre de nouvelles notions telles que les suites, les probabilités/statistiques, ainsi que réellement comprendre à quel point les fonctions sont des opérations permettant la résolution de problèmes complexes (dérivation, ...). De plus vous pourrez utiliser le principe des vecteurs appris en seconde pour réaliser ce qu'on appelle des "calculs vectoriels".```
@@ -54,7 +60,10 @@ C'est pour cela que choisir des spécialités qui vous intéresses vraiment a un
 ```🗨️ En théorie, non, je crois même que dans la promo. de terminale 2022 certains n'avaient pas maths, ça se fait, d'autant plus qu'il y a l'option "maths complémentaires" qui peut rajouter 2 h de maths à ceux qui ne font pas la spécialité. Mais la réalité c'est que cela ne suffit pas pour candidater à des études longues telles que les B.U.T, C.P.G.E et Prépa Intégrée. Dans 99,9% des cas, c'est écrit noir sur blanc qu'ils ne prennent que des spés maths (première ET terminale). De plus, si vous visez vraiment des écoles très sélectives, et de rythme de formation soutenu, alors l'option "maths expertes" est un passage obligé ! En fin de compte, il faut aimer les maths pour réellement aimer les sciences théoriques. De toute manière, même si vos notes peuvent être assez faibles tout au long de l'année, les sujets de bac sont généralement plus simples !```
 
 # La spécialité **Physique-Chimie**
-*(Réponses par Kévin & Siem en spé Maths/Physique)*
+
+![© Zoltan Tasi](https://images.unsplash.com/photo-1527409335569-f0e5c91fa707?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80)
+
+*(Réponses par Kévin & Siem en spés Maths & Physique)*
 * Quels sont les grands thèmes abordés par le programme ? 🤔
 
 ```🗨️ Le programme en Physique-Chimie est très très chargé. Il y a 14 chapitres à voir pour le bac et 6 chapitres pour le reste de l'année. De plus, il faut différencier la physique, de la chimie on n'étudie pas du tout la même chose. Les thèmes abordés en physique sont les mouvements et interactions, les ondes, les signaux ainsi que la transformation de la matière ! ```
@@ -74,7 +83,10 @@ C'est pour cela que choisir des spécialités qui vous intéresses vraiment a un
 ```🗨️ Tous les débouchés sont possibles, c'est sûr que ça ferme beaucoup moins de portes que la NSI ou la SI mais l'enseignement sera plus général.```
 
 # La spécialité **Sciences de l'Ingénieur**
-*(Réponse par Pierre)*
+
+![© ThisisEngineering RAEng](https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80)
+
+*(Réponse par Pierre en spés Maths & SI)*
 * Quels sont les grands thèmes abordés par le programme ? 🤔
 
 ```🗨️ Tout ce qui tourne autour de l'ingénierie : résistance des matériaux, informatique, électricité, modélisation 3D avec Solidworks, Arduino, statistique graphique et analytique, dynamique des solides.```
@@ -92,6 +104,9 @@ C'est pour cela que choisir des spécialités qui vous intéresses vraiment a un
 ```🗨️ Énormément de débouchés surtout dans le domaine scientifique évidemment mais beaucoup d'écoles aiment ceux qui ont fait S.I. parce qu'ils ont de l'avance sur ceux qui ont fait Physique-Chimie par exemple, et comprennent mieux les choses.```
 
 # La spécialité **Numérique, Sciences Informatiques**
+
+![© Jeswin Thomas](https://images.unsplash.com/photo-1596496181871-9681eacf9764?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1772&q=80)
+
 * A qui s'adresse cette spécialité ? 🤔
 
 ```🗨️ Alors déjà je peux démentir un préjugé : NON LA SPÉ NSI CE N'EST PAS QUE POUR LES GEEKS. Je dirais même le contraire parce que si votre utilisation d'un pc se limite à jouer dessus alors vous serez aussi compétent qu'une personne n'ayant jamais touché de clavier de sa vie ! D'ailleurs, malheureusement, la spécialité NSI est une matière à fort effectif masculin, alors que l'informatique et le numérique sont des domaines tout aussi ouverts aux filles, pour l'anecdote le premier programme informatique a été inventé par une femme. Preuve qu'il suffit juste d'avoir un peu de logique et d'envie pour réussir. Il ne faut surtout pas voir peur de bouger les codes !```
