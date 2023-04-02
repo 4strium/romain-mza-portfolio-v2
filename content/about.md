@@ -17,7 +17,7 @@ J'ai fait le choix de ce cursus, car il répond parfaitement à ma passion pour 
 
 C'est donc en parallèle de mes études que je conçois des programmes et des outils qui permettent d'améliorer le quotidien des personnes qui m'entourent (Capteur Co2, Assistante vocale personnalisée, Logiciels, ...).
 
-J'utilise principalement le langage Python dans mes projets qu'ils soit "hardware" (ESP32, ...) ou purement "software".
+J'utilise principalement le langage Python dans mes projets qu'ils soient "hardware" (ESP32, ...) ou purement "software".
 
 Vous pouvez retrouver les différents codes sources et documents explicatifs à cette adresse : https://github.com/4strium ainsi que sur ce site dans l'onglet "[Articles](../posts)" !
 
