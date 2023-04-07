@@ -3,12 +3,12 @@ title: "Comprendre le principe de la recherche dichotomique"
 date: 2022-09-09T21:39:07+01:00
 draft: false
 author: Romain MELLAZA
-cover: 'https://i.ibb.co/pbqsT1S/pisit-heng-FQvad-Xm-A524-unsplash.jpg'
+cover: 'https://romainmellaza.fr/img/Dichotomie_images/dichotomie_cover.jpg'
 tags: ["Python", "algorithm", "Maths"]
 theme: "dark"
 ---
 
-![](https://i.ibb.co/pbqsT1S/pisit-heng-FQvad-Xm-A524-unsplash.jpg)
+![](https://romainmellaza.fr/img/Dichotomie_images/dichotomie_cover.jpg)
 
 # Introduction
 La [méthode dichotomique](https://fr.wikipedia.org/wiki/Recherche_dichotomique), est une méthode qui consiste simplement à couper en deux parties une base de données, on ne garde que la partie susceptible de contenir l’information recherchée. Ainsi, en réitérant plusieurs fois cette action, on est certain que la base finale contiendra l’information recherchée !
@@ -26,7 +26,7 @@ Pour rendre cela un peu plus évident, voici un **exemple simple** :
 * Et ainsi de suite jusqu’à obtenir l’élément recherché, petit à petit **la machine traite de moins en moins d’éléments !**
 
 # Représentation
-![Visualisation d une recherche dichotomique, où 4 est la valeur recherchée.|inline](https://i.ibb.co/02zxDnM/Binary-search-into-array.png)
+![Visualisation d une recherche dichotomique, où 4 est la valeur recherchée.|inline](https://romainmellaza.fr/img/Dichotomie_images/Binary-search-into-array.png)
 
 # Programmation & Algorithme
 ```python

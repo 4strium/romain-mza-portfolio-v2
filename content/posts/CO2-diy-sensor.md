@@ -10,7 +10,7 @@ theme: "dark"
 ![|wide](https://romainmellaza.fr/img/CO2_Sensor/banner_wide.png)
 
 # Introduction
-![Logo du projet|inline](img/CO2_Sensor/LOGO-v1-blue-rectangle.png)
+![Logo du projet|inline](https://romainmellaza.fr/img/CO2_Sensor/LOGO-v1-blue-rectangle.png)
 
 Le service « SKair », a pour but premier de répondre à un besoin essentiel de la population contemporaine :
 * Connaître le taux de CO2 auquel l’utilisateur est exposé.
@@ -18,7 +18,7 @@ Le service « SKair », a pour but premier de répondre à un besoin essentiel d
 Le dioxyde de carbone étant un indicateur important de la qualité de l’air !
 
 # Le CO2, un véritable poison
-![Symptomatologie et la réponse physiopathologique selon la teneur en CO2 dans l’air inspiré.|inline](img/CO2_Sensor/Taux-risques.png)
+![Symptomatologie et la réponse physiopathologique selon la teneur en CO2 dans l’air inspiré.|inline](https://romainmellaza.fr/img/CO2_Sensor/Taux-risques.png)
 
 # Différents taux de CO2 quotidiens.
 Dans le reste du document, nous utiliserons l’unité dite de « **ppm** », c’est-à-dire **partie par million**, c’est un terme beaucoup utilisé en sciences, et il s’agit en réalité de la fraction valant 10⁻⁶, c'est-à-dire un millionième.
@@ -48,7 +48,7 @@ Obtenir les mesures de manière simple et rapide pour l’utilisateur :
 [**ESP32 – WROOM**](https://www.espressif.com/en/products/modules/esp32)
 
 *Caractéristiques :*
-![|inline](img/CO2_Sensor/Specifications-ESP32.png)
+![|inline](https://romainmellaza.fr/img/CO2_Sensor/Specifications-ESP32.png)
 
 * Une panoplie de fonctionnalités.
 * Un coût très faible (~9€).
@@ -62,7 +62,7 @@ En réalité, nous utilisons ce mode de transmission **tous les jours** : *montr
 
 Étant donné qu’ici nous recherchons une méthode de transfert peu couteuse en énergie, et qui n’a pour but que de transmettre des entiers (mesures) le [Bluetooth Low Energy](https://fr.wikipedia.org/wiki/Bluetooth_%C3%A0_basse_consommation) nous convient parfaitement !
 
-![Comparatif entre une liaison Bluetooth classique et une liaison “BLE”|inline](img/CO2_Sensor/Documentation.jpg)
+![Comparatif entre une liaison Bluetooth classique et une liaison “BLE”|inline](https://romainmellaza.fr/img/CO2_Sensor/Documentation.jpg)
 
 # Le choix du langage de programmation
 * [**Python**](https://www.python.org/) *(Le langage parfait pour notre projet !)*
@@ -75,18 +75,18 @@ Le but de l’opération est de convertir le processeur de la carte (qui est ini
 En utilisant directement **l’invite de commande sous Windows**, il est possible d’effectuer cette action !
 
 L’outil détecte parfaitement la carte ESP32 que j’ai branchée en **port COM3.**
-![Capture d’écran de l’invite de commandes au moment de l’effacement mémoire.|inline](img/CO2_Sensor/Capture.png)
+![Capture d’écran de l’invite de commandes au moment de l’effacement mémoire.|inline](https://romainmellaza.fr/img/CO2_Sensor/Capture.png)
 1. **Flasher le micrologiciel « MicroPython » sur ESP32 avec esptool.py**
 
 Dans un premier temps, il est nécessaire de télécharger le code en .bin correspondant à votre carte de développement à l’adresse suivante : [*micropython.org/download/*](https://micropython.org/download/)
-![Site de téléchargement officiel|inline](img/CO2_Sensor/Documentation-micro.jpg)
+![Site de téléchargement officiel|inline](https://romainmellaza.fr/img/CO2_Sensor/Documentation-micro.jpg)
 
 Il ne reste plus qu’à implémenter le programme téléchargé sur la carte !
 
 Pour cela, il suffit juste d’ouvrir une nouvelle invite de commande dans le répertoire où se situe votre code source « **esp32-[…].bin** », le but de la manipulation ici étant de réécrire le nouveau micrologiciel sur la mémoire flash que l’on vient de libérer.
 
 On réalise donc la fonction « ```write_flash``` » dans **l’invite de commande Windows** pour écrire notre micrologiciel sur la carte :
-![Capture d’écran de l’invite de commandes au moment du flashage du nouveau firmware.|inline](img/CO2_Sensor/Capture2.png)
+![Capture d’écran de l’invite de commandes au moment du flashage du nouveau firmware.|inline](https://romainmellaza.fr/img/CO2_Sensor/Capture2.png)
 
 Et voilà ! C’est fini !
 
@@ -95,7 +95,7 @@ Et voilà ! C’est fini !
 # Les modules externes
 * Le capteur CO2 utilisé : [**SGP30**](https://www.kubii.fr/modules-capteurs/2874-capteur-qualite-de-l-air-sgp30-breakout-3272496300705.html)
 
-![SGP30|inline](img/CO2_Sensor/Documentation2.jpg)
+![SGP30|inline](https://romainmellaza.fr/img/CO2_Sensor/Documentation2.jpg)
 
 * L’indicateur sonore : [**Buzzer passif HW-508**](https://hallroad.org/ky-006-3pin-miniature-passive-buzzer-alarm-sensor-module-in-pakistan.html)
 
@@ -103,30 +103,30 @@ Et voilà ! C’est fini !
 
 * Les indicateurs visuels : [**Diodes Électroluminescentes (Bleu, vert, jaune, rouge)**](https://www.amazon.fr/Diodes-Electroluminescentes/b?ie=UTF8&node=10153728031)
 
-![Diodes Électroluminescentes|inline](img/CO2_Sensor/Documentation4.jpg)
+![Diodes Électroluminescentes|inline](https://romainmellaza.fr/img/CO2_Sensor/Documentation4.jpg)
 
 * Les résistances : [**4 × 100Ω**](https://composant-electronique.fr/resistance-100-ohms-1-4w-cfr1-4w-100r)
 
-![4 × 100Ω|inline](img/CO2_Sensor/Documentation5.jpg)
+![4 × 100Ω|inline](https://romainmellaza.fr/img/CO2_Sensor/Documentation5.jpg)
 
 * Convertisseur d’alimentation : [**Step-Up Réglable DCDC Commutation Boost Convertisseur Alimentation Module 2-24V à 5V-28V 2A**](https://fr.banggood.com/Geekcreit-DC-2V-24V-To-5V-28V-2A-Step-Up-Boost-Converter-Power-Supply-Module-Adjustable-Regulator-Board-p-1566600.html?cur_warehouse=CN)
 
-![Alimentation Module|inline](img/CO2_Sensor/Documentation6.jpg)
+![Alimentation Module|inline](https://romainmellaza.fr/img/CO2_Sensor/Documentation6.jpg)
 
 * Chargeur de batterie : [**Micro USB 5V 1A Contrôleur de Charge Lithium Li - ION Module Chargeur de Batterie USB 5V 1A**](https://www.amazon.fr/AZDelivery-TP4056-Micro-USB-Laderegler-Parent/dp/B07Z8D2WH2)
 
-![Chargeur de batterie|inline](img/CO2_Sensor/Documentation7.jpg)
+![Chargeur de batterie|inline](https://romainmellaza.fr/img/CO2_Sensor/Documentation7.jpg)
 
 # Branchements
-![](img/CO2_Sensor/Capture3.png)
-![](img/CO2_Sensor/Capture4.png)
-![](img/CO2_Sensor/Capture5.png)
+![](https://romainmellaza.fr/img/CO2_Sensor/Capture3.png)
+![](https://romainmellaza.fr/img/CO2_Sensor/Capture4.png)
+![](https://romainmellaza.fr/img/CO2_Sensor/Capture5.png)
 
 *Sans oublier les différents branchements pour l’acquisition d’énergie de chaque composant du circuit !*
 
 * Montage du circuit de charge avec batterie :
 
-![Si vous souhaitez rendre votre module autonome en énergie !|inline](img/CO2_Sensor/Documentation8.jpg)
+![Si vous souhaitez rendre votre module autonome en énergie !|inline](https://romainmellaza.fr/img/CO2_Sensor/Documentation8.jpg)
 
 # Débouchés possibles
 * **Fenêtre Connectée** → Ouvrir les fenêtres quand la concentration de CO2 est trop importante.
