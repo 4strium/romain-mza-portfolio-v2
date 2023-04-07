@@ -105,11 +105,11 @@ Router(config-router)#redistribute connected subnets
 **On précise après la commande network, l'adresse du réseau, le masque inversé et le mot clef area qui permet de définir éventuellement des zones OSPF différentes dans un ensemble de réseaux.** *On aura une seule zone dans ce schéma simplifié et on utilisera pour la définir une valeur de 0.* La dernière commande "```redistribute connected subnets```" permet d'indiquer que l'**on souhaite informer les routeurs voisins des réseaux directement connectés à ce routeur** (par défaut uniquement ce qui est appris via le protocole OSPF est retransmit).
 
 Nous visualisons déjà les toutes premières requêtes OSPF du Routeur 0 :
-![](https://romainmellaza.fr/static/img/protocol_ospf_img/config_ospf_simu1.jpg)
+![](https://romainmellaza.fr/img/protocol_ospf_img/config_ospf_simu1.jpg)
 
 **Les trois messages OSPF que nous pouvons voir ci-dessus sont émis par le Routeur 0 afin de découvrir si d'autres routeurs sont prêts à échanger avec lui des routes via OSPF.**
 
-![](https://romainmellaza.fr/static/img/protocol_ospf_img/config_ospf_simu2.jpg)
+![](https://romainmellaza.fr/img/protocol_ospf_img/config_ospf_simu2.jpg)
 
 *Comme aucun autre routeur n'est pour l'instant configuré, toutes ses demandes n'aboutissent pas. Pour commencer à avoir des échanges, allons configurer Routeur 2 !*
 
@@ -129,7 +129,7 @@ Router#
 %SYS-5-CONFIG_I: Configured from console by console
 ```
 
-![](https://romainmellaza.fr/static/img/protocol_ospf_img/config_ospf_simu3.png)
+![](https://romainmellaza.fr/img/protocol_ospf_img/config_ospf_simu3.png)
 
 **Le routeur 2 se met alors à vouloir communiquer lui aussi.**
 **Il envoie un message vers routeur 1 qui n'est pas pris en compte et un message vers routeur 0 qui est accepté !**
@@ -164,10 +164,10 @@ Nous pouvons maintenant réaliser de nouveau les tables de routage des routeurs 
 * Ethernet : Lien 10 Mbits/s = 10⁸/10⁷ = **10**
 
 A partir de Routeur 2 par exemple, **pour atteindre le réseau 10.0.0.4, notre paquet va transiter par un lien en Ethernet et un autre en Fibre, soit respectivement 10 et 1 ce qui nous donnes bien une métrique de 11 !**
-![](https://romainmellaza.fr/static/img/protocol_ospf_img/config_ospf_simu4.jpg)
+![|inline](https://romainmellaza.fr/img/protocol_ospf_img/config_ospf_simu4.jpg)
 
 On peut vérifier l’autre protocole de la table avec un paquet ayant pour destination ```192.168.0.0```
-![](https://romainmellaza.fr/static/img/protocol_ospf_img/config_ospf_simu5.jpg)
+![|inline](https://romainmellaza.fr/img/protocol_ospf_img/config_ospf_simu5.jpg)
 
 Ci-dessus, nous avons un paquet qui transite par un lien Ethernet puis FastEthernet, soit **10 + 1**, ce qui donne bien une **métrique de 11** comme spécifié dans la table.
 
@@ -189,29 +189,29 @@ Router#
 %SYS-5-CONFIG_I: Configured from console by console
 ```
 **La connexion entre Router 1 et les autres routeurs est optimale comme nous pouvons le voir dans le mode simulation :**
-![](https://romainmellaza.fr/static/img/protocol_ospf_img/config_ospf_simu6.png)
+![|inline](https://romainmellaza.fr/img/protocol_ospf_img/config_ospf_simu6.png)
 
-![](https://romainmellaza.fr/static/img/protocol_ospf_img/config_ospf_simu7.png)
+![|inline](https://romainmellaza.fr/img/protocol_ospf_img/config_ospf_simu7.png)
 
 **Normalement, le fait qu’une nouvelle route plus rapide soit disponible a dû modifier les tables de routages de Routeur 0 et Routeur 2.**
 
 Nous vérifions cela :
 
 *Routeur 0 :*
-![](https://romainmellaza.fr/static/img/protocol_ospf_img/config_ospf_simu8.jpg)
+![|inline](https://romainmellaza.fr/img/protocol_ospf_img/config_ospf_simu8.jpg)
 
 *Routeur 2 :*
-![](https://romainmellaza.fr/static/img/protocol_ospf_img/config_ospf_simu9.jpg)
+![|inline](https://romainmellaza.fr/img/protocol_ospf_img/config_ospf_simu9.jpg)
 
 **On constate que les routes ont bien été modifiées pour les protocoles OSPF, au profit des liaisons fibres, ce qui réduit les métriques !**
 
 On peut vérifier cela avec deux exemples concrets :
 
 **10.0.0.8 via 10.0.0.6 ➔ Fibre + Fibre = 2×Gigabit = 2×1 = Métrique de 2**
-![](https://romainmellaza.fr/static/img/protocol_ospf_img/config_ospf_simu10.jpg)
+![|inline](https://romainmellaza.fr/img/protocol_ospf_img/config_ospf_simu10.jpg)
 
 **192.168.1.0 via 10.0.0.6 ➔ Fibre + Fibre + FastEthernet = 2×Gigabit + 100 Megabits = 2×1+1 = Métrique de 3**
-![](https://romainmellaza.fr/static/img/protocol_ospf_img/config_ospf_simu11.jpg)
+![|inline](https://romainmellaza.fr/img/protocol_ospf_img/config_ospf_simu11.jpg)
 
 **Un message entre PC0 et PC1 passe maintenant par Routeur 1, comme on peut le démontrer en générant un ping de test par exemple :**
-![](https://romainmellaza.fr/static/img/protocol_ospf_img/config_ospf_simu12.jpg)
+![|inline](https://romainmellaza.fr/img/protocol_ospf_img/config_ospf_simu12.png)
