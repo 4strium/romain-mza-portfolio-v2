@@ -3,7 +3,7 @@ title: "Comprendre le principe de la recherche dichotomique"
 date: 2022-09-09T21:39:07+01:00
 draft: false
 author: Romain MELLAZA
-cover: 'static\img\CO2_Sensor\banner_wide.png'
+cover: 'https://i.ibb.co/pbqsT1S/pisit-heng-FQvad-Xm-A524-unsplash.jpg'
 tags: ["Python", "algorithm", "Maths"]
 theme: "dark"
 ---
