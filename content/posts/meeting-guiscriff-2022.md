@@ -3,7 +3,7 @@ title: "Meeting Aérien à l'aérodrome de Bretagne Atlantique"
 date: 2022-07-24T21:39:07+01:00
 draft: false
 author: Romain MELLAZA
-cover: 'img/aircraft_photos/dauphin-marine-img2.png'
+cover: 'https://romainmellaza.fr/img/aircraft_photos/dauphin-marine-img2.png'
 tags: ["Aviation", "aircraft", "Bretagne"]
 theme: "dark"
 ---

@@ -3,7 +3,7 @@ title: "Détecteur connecté de dioxyde de carbone, fait maison !"
 date: 2022-05-27T21:39:07+01:00
 draft: false
 author: Romain MELLAZA
-cover: 'img/CO2_Sensor/banner_wide.png'
+cover: 'https://romainmellaza.fr/img/CO2_Sensor/banner_wide.png'
 tags: ["Electronic", "ESP32", "MicroPython"]
 theme: "dark"
 ---
