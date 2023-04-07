@@ -7,7 +7,7 @@ cover: 'img/CO2_Sensor/banner_wide.png'
 tags: ["Electronic", "ESP32", "MicroPython"]
 theme: "dark"
 ---
-![|wide](img/CO2_Sensor/banner_wide.png)
+![|wide]('img/CO2_Sensor/banner_wide.png')
 
 # Introduction
 ![Logo du projet|inline](img/CO2_Sensor/LOGO-v1-blue-rectangle.png)
