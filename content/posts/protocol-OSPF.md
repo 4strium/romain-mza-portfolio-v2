@@ -3,7 +3,7 @@ title: "Le protocole de routage OSPF"
 date: 2023-01-12T21:39:07+01:00
 draft: false
 author: Romain MELLAZA
-cover: 'https://images.unsplash.com/photo-1520869562399-e772f042f422?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1746&q=80'
+cover: 'https://romainmellaza.fr/img/cover-images/reseaux_cables.png'
 tags: ["Réseaux", "Routage", "Dynamique"]
 theme: "dark"
 ---
@@ -32,7 +32,7 @@ En somme, OSPF est considéré comme **un protocole de routage plus efficace et 
 
 # Travail Pratique
 Nous débutons donc notre simulation avec ce réseau relativement simple :
-![](https://i.ibb.co/Nr4xy39/ospf-img1.jpg)
+![](https://romainmellaza.fr/img/protocol_ospf_img/ospf_img1.jpg)
 
 Comme vous pouvez le remarquer dans les noms des interfaces, les liaisons ne sont pas toutes à la même vitesse :
 * **10Mbits/s** (**Eth** : carte d'extension liaison **cuivre** *PT-ROUTER-NM-1CE*)
@@ -40,7 +40,7 @@ Comme vous pouvez le remarquer dans les noms des interfaces, les liaisons ne son
 * **1Gbits/s** (**Gig** : carte d'extension liaison **fibre** *PT-ROUTER-NM-1FGE*)
 
 On remplit donc les trois routeurs vierges, avec ces configurations :
-![|inline](https://i.ibb.co/mBTP67d/ospf-img2.png)
+![|inline](https://romainmellaza.fr/img/protocol_ospf_img/ospf_img2.png)
 
 Nous réalisons une configuration des différents routeurs fraîchement installés, avec un protocole de routage RIP !
 
