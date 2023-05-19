@@ -3,7 +3,7 @@ title: "Quelles spécialités choisir en filière générale du BAC ?"
 date: 2023-03-22T21:39:07+01:00
 draft: false
 author: Romain MELLAZA
-cover: 'https://i.ibb.co/fpMMCsk/javier-trueba-i-QPr1-Xk-F5-F0-unsplash.jpg'
+cover: 'https://romainmellaza.fr/img/cover-images/class_school.jpg'
 tags: ["Études", "Lycée"]
 theme: "dark"
 ---
@@ -31,7 +31,7 @@ C'est pour cela que choisir des spécialités qui vous intéresses vraiment a un
 
 # Le Lycée VAUBAN
 
-![](https://i.ibb.co/hD8fHvr/arton321-remix.png)
+![](https://romainmellaza.fr/img/studies/vauban_entree.png)
 
 *Nous allons donc maintenant nous intéresser aux ressentis des étudiants faisant partie prenante des différentes spécialités proposées au [Lycée VAUBAN de Brest](https://www.lycee-vauban-brest.ac-rennes.fr/), qui sont les suivantes :*
 
@@ -43,7 +43,7 @@ C'est pour cela que choisir des spécialités qui vous intéresses vraiment a un
 
 # La spécialité **Mathématiques**
 
-![](https://images.unsplash.com/photo-1635372722656-389f87a941b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2062&q=80)
+![](https://romainmellaza.fr/img/studies/maths.png)
 
 * Quels sont les grands thèmes abordés par le programme ? 🤔
 
@@ -61,7 +61,7 @@ C'est pour cela que choisir des spécialités qui vous intéresses vraiment a un
 
 # La spécialité **Physique-Chimie**
 
-![© Zoltan Tasi](https://images.unsplash.com/photo-1527409335569-f0e5c91fa707?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80)
+![© Zoltan Tasi](https://romainmellaza.fr/img/studies/physics.png)
 
 *(Réponses par Kévin & Siem en spés Maths & Physique)*
 * Quels sont les grands thèmes abordés par le programme ? 🤔
@@ -84,7 +84,7 @@ C'est pour cela que choisir des spécialités qui vous intéresses vraiment a un
 
 # La spécialité **Sciences de l'Ingénieur**
 
-![© ThisisEngineering RAEng](https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80)
+![© ThisisEngineering RAEng](https://romainmellaza.fr/img/studies/sc_engineering.png)
 
 *(Réponse par Pierre en spés Maths & SI)*
 * Quels sont les grands thèmes abordés par le programme ? 🤔
@@ -105,7 +105,7 @@ C'est pour cela que choisir des spécialités qui vous intéresses vraiment a un
 
 # La spécialité **Numérique, Sciences Informatiques**
 
-![© Jeswin Thomas](https://images.unsplash.com/photo-1596496181871-9681eacf9764?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1772&q=80)
+![© Jeswin Thomas](https://romainmellaza.fr/img/studies/IT_girl.png)
 
 * A qui s'adresse cette spécialité ? 🤔
 
