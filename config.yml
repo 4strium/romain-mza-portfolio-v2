@@ -3,7 +3,7 @@ languageCode: fr-fr
 title: Romain Mellaza
 theme: hugo-theme-itheme
 params:
-  defaultCover: 'img/code_cover.jpg'
+  defaultCover: 'img/cover-images/code_cover.jpg'
   email: 02gpvd9vr@mozmail.com
   socialMedia:
     - name: Github

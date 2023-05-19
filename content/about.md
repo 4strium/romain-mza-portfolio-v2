@@ -6,7 +6,7 @@ author: Romain MELLAZA
 tags: ["Curriculum vitæ"]
 theme: "dark"
 ---
-![|inline](https://i.ibb.co/H2VPzNK/Photos-d-identit.png)
+![|inline](https://romainmellaza.fr/img/about_me/rmellaza.png)
 
 Je m’appelle Romain MELLAZA, j’ai 17 ans et je suis actuellement lycéen en filière du [BAC général](https://www.education.gouv.fr/reussir-au-lycee/le-baccalaureat-general-10457), avec pour spécialités :
 - Mathématiques (+ Maths expertes)

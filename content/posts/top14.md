@@ -3,12 +3,12 @@ title: "Une Intelligence Artificielle coach de rugby ?!"
 date: 2022-10-09T21:39:07+01:00
 draft: false
 author: Romain MELLAZA
-cover: 'https://i.ibb.co/LP31hM8/rugby-cover.jpg'
+cover: 'https://romainmellaza.fr/img/cover-images/rugby_cover.jpg'
 tags: ["Python", "machine learning", "algorithm"]
 theme: "dark"
 ---
 
-![Image représentant une mêlée de rugby|wide](https://i.ibb.co/LP31hM8/rugby-cover.jpg)
+![Image représentant une mêlée de rugby|wide](https://romainmellaza.fr/img/cover-images/rugby_cover.jpg)
 
 
 # Introduction
