@@ -26,7 +26,7 @@ Pour rendre cela un peu plus évident, voici un **exemple simple** :
 * Et ainsi de suite jusqu’à obtenir l’élément recherché, petit à petit **la machine traite de moins en moins d’éléments !**
 
 # Représentation
-![Visualisation d une recherche dichotomique, où 4 est la valeur recherchée.|inline](https://romainmellaza.fr/img/Dichotomie_images/Binary-search-into-array.png)
+![Visualisation d’une recherche dichotomique, où 4 est la valeur recherchée.|inline](https://romainmellaza.fr/img/Dichotomie_images/Binary-search-into-array.png)
 
 # Programmation & Algorithme
 ```python

@@ -8,7 +8,7 @@ tags: ["Nouvelles technologies", "Espace", "Futur"]
 theme: "dark"
 ---
 
-![Image d'illustration d'un rover martien|wide](https://romainmellaza.fr/img/IT_space/rover-mars.jpg)
+![Image d’illustration d’un rover martien|wide](https://romainmellaza.fr/img/IT_space/rover-mars.jpg)
 
 # Comment peut-on concevoir des logiciels embarqués pour les engins spatiaux qui soient suffisamment fiables pour fonctionner de manière autonome ?
 ![Réplique de Spoutnik 1|inline](https://romainmellaza.fr/img/IT_space/Sputnik_asm.jpg)
@@ -19,15 +19,15 @@ C’est en **1957**, durant la Guerre Froide, qu’est envoyé le **premier sate
 
 Le système d’exploitation d’un engin spatial est tout à fait différent des systèmes d’exploitation conventionnels que nous utilisons, vous et moi. Je rappelle dans un premier temps ce qu’est qu’un système d’exploitation (*Operating System en Anglais*), via ce schéma qui est donc spécifique à un satellite par exemple :
 
-![Schéma théorique du fonctionnement logiciel d'un satellite|inline](https://romainmellaza.fr/img/IT_space/schema_1.png)
+![Schéma théorique du fonctionnement logiciel d’un satellite|inline](https://romainmellaza.fr/img/IT_space/schema_1.png)
 
 Les systèmes d’exploitation utilisés dans les engins spatiaux sont ce que l’on appelle des RTOS c’est-à-dire [**Real Time Operating System**](https://fr.wikipedia.org/wiki/Syst%C3%A8me_d%27exploitation_temps_r%C3%A9el), qui sont donc bien différents des systèmes GPOS ([**General Purpose Operating System**](https://fr.wikipedia.org/wiki/Syst%C3%A8me_d%27exploitation)) que nous utilisons quotidiennement. En effet, les RTOS sont basés essentiellement sur ce que l’on appelle des limites critiques de temps, en somme les différents processus doivent être effectués dans un temps très court sous peine d’être stoppé en cas de dépassement de limite. De plus les tâches sont ordonnées de telle sorte que **le délai du changement entre deux tâches est réduit de l’ordre de 70 % par rapport à un système d’exploitation conventionnel.**
 
-Il s’agit du même système opérationnel que l’on peut retrouver sur des systèmes embarqués que ce soit dans le milieu médical, automobile ou aéronautique. En d’autres termes, **tous les milieux où chaque action doit avoir un résultat de manière rapide et sans affranchissement possible.** *On imagine mal une commande électronique de frein qui réagit 10 secondes après que l’utilisateur ait appuyé sur la pédale.*
+Il s’agit du même système opérationnel que l’on peut retrouver sur des systèmes embarqués que ce soit dans le milieu médical, automobile ou aéronautique. En d’autres termes, **tous les milieux où chaque action doit avoir un résultat de manière précise, claire et sans affranchissement possible.** *On imagine mal une commande électronique de frein qui réagit 10 secondes après que l’utilisateur ait appuyé sur la pédale.*
 
 De plus, ce laps de temps alloué à chaque tâche est **déterminé en amont**, à la milliseconde près, il n’y a donc aucune surprise lors du vol spatial, car les logiciels utilisés dans les missions doivent être composés de **tâches entièrement prévisibles et complètes dans un délai précis. On interdit donc toute allocation dynamique de mémoire, étant donné que l’occupation de chaque case mémoire est déterminée à l’avance.**
 
-Enfin, bien souvent la **redondance** est de mise, avec un traitement interne qui est assuré par trois processeurs indépendant, le système choisi ensuite l’exécution la plus rapide de cette tâche. **C’est donc un équilibre fragile entre la quantité d’énergie disponible et la quantité totale d’énergie dépensée pour assurer la fiabilité extrême de l’engin !**
+Enfin, bien souvent la **redondance** est de mise, avec un traitement interne qui est assuré par trois processeurs indépendant, le système choisi ensuite l’exécution la plus satisfaisante de cette tâche. **C’est donc un équilibre fragile entre la quantité d’énergie disponible et la quantité totale d’énergie dépensée pour assurer la fiabilité extrême de l’engin !**
 
 Pour ce qui est des satellites naviguant en orbite terrestre, certains d’entre eux (comme les satellites « [*Starlink*](https://fr.wikipedia.org/wiki/Starlink) » de la société « [*SpaceX*](https://fr.wikipedia.org/wiki/SpaceX) » par exemple) ont une conception différente, en effet ces derniers naviguent en orbite eux-mêmes, mais **l’effort colossal de calcul informatique ce fait en majeure partie sur Terre.** Cela permet un avantage considérable : si un quelconque problème advient au niveau du programme, ce dernier peut être modifié directement sur Terre. Et ce genre de situation est plus probable que l’on ne le pense, car les radiations solaires sont capables d’inverser les bits, c’est-à-dire qu’un 0 peut se transformer tout seul en 1, et inversement ! En effet, **une simple particule chargée de haute énergie traversant un matériau semi-conducteur est susceptible d’injecter des centaines d’électrons dans la bande de conduction, accroissant le bruit électronique et provoquant un pic de signal capable de fausser les calculs dans un circuit numérique.**
 
