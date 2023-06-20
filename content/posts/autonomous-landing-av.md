@@ -23,7 +23,6 @@ Tout au long de cet exposé nous prendrons l’exemple d’un [**Airbus A350**](
 Donc imaginons que nous mesurons une pression de **177 millibars/hectopascals** via la sonde positionnée au niveau de la cabine, nous cherchons donc à déterminer l’altitude de notre aéronef en pied grâce à cette constatation.
 
 On utilise la formule suivante : 
-
 **Altitude (en [ft.](https://fr.wikipedia.org/wiki/Pied_(unit%C3%A9)))** :
 ![Formule permettant de convertir une pression statique mesurée en une altitude|inline](https://romainmellaza.fr/img/autonomous-landing/static-pressure-equation.png)
 
