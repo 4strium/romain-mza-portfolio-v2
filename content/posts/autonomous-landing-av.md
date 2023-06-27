@@ -50,4 +50,4 @@ En utilisant une relation trigonométrique, on calcule la distance recherchée v
 
 **Enfin, en combinant ces deux axes, on obtient une trajectoire parfaite d’atterrissage !**
 
-En conclusion, nous avons vu comment optimiser l’atterrissage d’un aéronef lorsqu'il se trouve encore en altitude de croisière jusqu’aux derniers mètres le séparant de la piste. Cela ne fait guère de doutes que ces méthodes sont et seront des applications pour **garantir la sûreté et la simplicité des atterrissage dans le futur.**
+En conclusion, nous avons vu comment optimiser l’atterrissage d’un aéronef lorsqu'il se trouve encore en altitude de croisière jusqu’aux derniers mètres le séparant de la piste. Cela ne fait guère de doutes que ces méthodes sont et seront des applications pour **garantir la sûreté et la simplicité des atterrissages dans le futur.**
