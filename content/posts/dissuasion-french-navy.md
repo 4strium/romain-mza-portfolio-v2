@@ -18,7 +18,7 @@ Notre pays attache donc une grande importance à la dissuasion militaire en mer.
 La dissuasion militaire en mer repose sur la possession d'une [**force de dissuasion nucléaire**](https://en.wikipedia.org/wiki/Deterrence_theory). En effet la Marine Nationale dispose de [**sous-marins nucléaires lanceurs d'engins (SNLE)**](https://www.defense.gouv.fr/marine/nos-equipements/marins-nucleaires-lanceurs-dengins-snle) équipés de missiles balistiques, constituant la composante sous-marine de sa dissuasion. Ces sous-marins, armés de missiles nucléaires stratégiques, patrouillent en mer de manière permanente, garantissant une présence discrète mais toujours dissuasive.
 ![© Naval Group](https://romainmellaza.fr/img/dissuasion-marine-nationale/SNA.jpg)
 
-En complément de ces bâtiments de très grande taille, nous avons **les SNA qui sont des sous-marins largement plus petits, mais tout aussi décourageants pour les ennemis.**
+En complément de ces bâtiments de très grande taille, nous avons [**les Sous-marins Nucléaires d'Attaque (SNA) qui sont des sous-marins largement plus petits, mais tout aussi décourageants pour les ennemis.**](https://www.defense.gouv.fr/marine/marins/marins-nucleaires-dattaque-sna)
 
 La dissuasion en mer permet à la France de se protéger contre toute menace d'agression extérieure en faisant peser sur les éventuels adversaires la certitude d'une riposte nucléaire. Cela décourage toute tentative de s'en prendre aux intérêts français, en mer ou sur le territoire national.
 
