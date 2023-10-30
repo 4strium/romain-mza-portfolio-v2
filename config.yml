@@ -17,5 +17,7 @@ params:
   blogroll:
     - name: Collège Croas ar Pennoc, Guilers (29)
       url: https://www.college-croasarpennoc-guilers.ac-rennes.fr/
-    - name: Lycée Vauban, Brest (29)
+    - name: BAC Général, Lycée Vauban, Brest (29)
       url: https://www.lycee-vauban-brest.ac-rennes.fr/
+    - name: CPGE MP2I, Lycée Alain-René Lesage, Vannes (56)
+      url: https://lycee-lesage.fr/
