@@ -8,7 +8,7 @@ tags: ["Algorithm", "Python", "Data"]
 theme: "dark"
 ---
 
-![Photographie d’un disque dur ouvert|wide](https://romainmellaza.fr/img/cover-images/hdd_cover.jpg)
+![Photographie d’un disque dur ouvert|inline](https://romainmellaza.fr/img/cover-images/hdd_cover.jpg)
 
 # Introduction
 Le codage de Huffman, proposé par [**David Huffman**](https://fr.wikipedia.org/wiki/David_Albert_Huffman) (1925 – 1999) en 1952, est une **méthode de compression de données sans perte** utilisée pour les textes, les images (fichiers JPEG) ou les sons (fichiers MP3). Dans les textes longs, les lettres n’apparaissent pas avec la même fréquence. Ces fréquences varient suivant la langue utilisée. Le codage de Huffman consiste à **attribuer un mot binaire de longueur variable aux différents symboles du document à compresser.** Les symboles les plus fréquents sont codés avec des mots courts, tandis que les symboles les plus rares sont encodés avec des mots plus longs (rappelant ainsi le principe de l’alphabet Morse). Le code construit a la particularité de ne posséder **aucun mot ayant pour préfixe un autre mot.**

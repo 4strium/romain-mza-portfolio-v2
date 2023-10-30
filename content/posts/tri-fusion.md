@@ -4,7 +4,7 @@ date: 2023-07-10T21:39:07+01:00
 draft: false
 author: Romain MELLAZA
 cover: 'https://romainmellaza.fr/img/tri_fusion/cover_img_lava.jpg'
-tags: ["Python", "OCaml", "algorithm"]
+tags: ["Algorithm", "Python", "OCaml"]
 theme: "dark"
 ---
 
@@ -36,7 +36,7 @@ A titre de comparaison, voici un tableau reprenant les différents temps d’ex�
 | **20 000** | *7.526 s* | *0.326 s* |
 | **40 000** | *28.682 s* | *0.541 s* |
 
-![](https://romainmellaza.fr/img/tri_fusion/complexity.jpg)
+![|inline](https://romainmellaza.fr/img/tri_fusion/complexity.jpg)
 
 *Si l’on se réfère au graphique de la notation **Big-O** on constate que la complexité temporelle du tri fusion se classe dans la section « Mauvais » qui représente le minimum possible pour un algorithme de tri !*
 
