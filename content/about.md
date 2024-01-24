@@ -1,23 +1,19 @@
 ---
 title: "Romain MELLAZA"
-date: 2005-08-01T21:39:07+01:00
+date: 2000-01-01T21:39:07+01:00
 draft: false
 author: Romain MELLAZA
 tags: ["Curriculum vitæ"]
 theme: "dark"
 ---
-![|inline](https://romainmellaza.fr/img/about_me/rmellaza.png)
 
-Je m’appelle Romain MELLAZA, j’ai 17 ans et je suis actuellement lycéen en filière du [BAC général](https://www.education.gouv.fr/reussir-au-lycee/le-baccalaureat-general-10457), avec pour spécialités :
-- Mathématiques (+ Maths expertes)
-- Numérique et Sciences Informatiques 
-- Physique-Chimie (validée en 1ère)
+Je m’appelle Romain MELLAZA, j’ai 18 ans et je suis actuellement étudiant en [Classe Préparatoire aux Grandes écoles Maths, Physique, Ingénierie & Informatique](https://prepas.org/?article=42)
 
 J'ai fait le choix de ce cursus, car il répond parfaitement à ma passion pour l'informatique et les sciences en général !
 
 C'est donc en parallèle de mes études que je conçois des programmes et des outils qui permettent d'améliorer le quotidien des personnes qui m'entourent (Capteur Co2, Assistante vocale personnalisée, Logiciels, ...).
 
-J'utilise principalement le langage Python dans mes projets qu'ils soient "hardware" (ESP32, ...) ou purement "software".
+J'utilise principalement les langages Python, C et OCaml dans mes projets qu'ils soient "hardware" (ESP32, Robotique, ...) ou purement "software".
 
 Vous pouvez retrouver les différents codes sources et documents explicatifs à cette adresse : https://github.com/4strium ainsi que sur ce site dans l'onglet "[Articles](../posts)" !
 

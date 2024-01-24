@@ -19,6 +19,6 @@
         <h3 class="item__headline">
             {{ .context.Title }}
         </h3>
-            <p class="item__date">{{ .context.Date | time.Format ":date_long"  }}</p>
+            <p class="item__date">{{ partial "date.html" (dict "Date" .context.Date) }}</p>
     </div>
 </a>

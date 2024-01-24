@@ -7,7 +7,7 @@
 
         <!-- add day manually to parse as date-->
         {{ $month := printf "%s%s" .Key "-01"}}
-            <h2 class="result__title">{{ $month | time.Format "January 2006" }}</h2>
+            <h2 class="result__title">{{ partial "date_without_day.html" (dict "Date" $month) }}</h2>
             {{ range .Pages }}
 
             {{ partial "archiveItem.html" (dict "context" .) }}
@@ -20,6 +20,5 @@
 </div>
 
 {{ partial "pagination.html" . }}
-
 
 {{ end }}

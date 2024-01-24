@@ -1,0 +1,7 @@
+{{ $date := .Date | time }}
+{{ $month := $date.Format "01" }}
+{{ $year := $date.Format "2006" }}
+
+{{ $frenchMonths := slice "Janvier" "Février" "Mars" "Avril" "Mai" "Juin" "Juillet" "Août" "Septembre" "Octobre" "Novembre" "Décembre" }}
+
+{{ index $frenchMonths (sub (int (strings.TrimPrefix "0" $month)) 1) }} {{ $year }}

@@ -16,7 +16,7 @@
                       {{ end }}
                     {{ end }}
                   </span>
-                  <span class="category-eyebrow__date">{{ .Page.Params.Date | time.Format ":date_long"}}</span>
+                  <span class="category-eyebrow__date">{{ partial "date.html" . }}</span>
                 </div>
               </div>
             </div>
@@ -66,7 +66,7 @@
                   Attribution - Pas d'Utilisation Commerciale - Pas de Modification 3.0 France (CC BY-NC-ND 3.0 FR)
                 </a>
                 <p class="content">Auteur : {{ .Page.Params.author }}</p>
-                <p class="content">Date de publication : {{ .Page.Params.Date | time.Format ":date_long" }}</p>
+                <p class="content">Date de publication : {{ partial "date.html" . }}</p>
               </div>
             </div>
           </div>

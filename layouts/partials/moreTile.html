@@ -29,7 +29,7 @@
         </div>
         <div class="tile__headline">{{ .context.Title }}</div>
       </div>
-      <div class="tile__timestamp icon-hide icon icon-before icon-clock">{{ .context.Date | time.Format ":date_long" }}</div>
+      <div class="tile__timestamp icon-hide icon icon-before icon-clock">{{ partial "date.html" (dict "Date" .context.Date) }}</div>
     </div>
   </a>
 </li>
