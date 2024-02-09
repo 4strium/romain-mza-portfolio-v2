@@ -4,10 +4,6 @@
     margin-right: auto;
 }
 
-table thead, table tbody {
-    text-align: center;
-}
-
 .highlight pre {
     max-width: 800px; /* Changez cette valeur en fonction de vos préférences */
     margin-left: auto;
@@ -18,8 +14,9 @@ table thead, table tbody {
 
 .component-content.component table {
     width: 800px; /* Le tableau prendra toute la largeur disponible */
-    display: block; /* Fait en sorte que le tableau s'affiche comme un bloc */
+    display: flex; /* Fait en sorte que le tableau s'affiche comme un bloc */
     overflow-x: auto; /* Ajoute une barre de défilement si le tableau est trop large pour l'écran */
+    justify-content: center;
 }
 
 code.has-jax {font: inherit;
