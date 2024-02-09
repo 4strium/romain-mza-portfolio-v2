@@ -5929,7 +5929,7 @@ html.no-touch.no-reduced-motion .tile.tile-list[data-focus-method=key] .media--v
 }
 
 .image.body-copy-wide.image-fullbleed .image-description {
-  width: 653px;
+  width: 800px;
   margin-left: auto;
   margin-right: auto
 }
@@ -7188,7 +7188,9 @@ html.no-touch.no-reduced-motion .tile.tile-list[data-focus-method=key] .media--v
   border-spacing: 0;
   border-collapse: collapse;
   margin-top: 1rem;
-  margin-bottom: 1rem
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .page-article table tr th,
