@@ -12,19 +12,8 @@
     padding: 8px; /* Augmente le padding à l'intérieur du cadre */
 }
 
-.component-content.component table {
-    width: 800px; /* Le tableau prendra toute la largeur disponible */
-    display: block; /* Fait en sorte que le tableau s'affiche comme un bloc */
-    overflow-x: auto; /* Ajoute une barre de défilement si le tableau est trop large pour l'écran */
-}
-
-.component-content.component table thead {
-    display: flex;
-    justify-content: center;
-}
-
-.component-content.component table tbody {
-    justify-content: center;
+.component-content.component table tbody td {
+    text-align: center;
 }
 
 code.has-jax {font: inherit;
