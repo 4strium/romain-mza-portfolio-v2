@@ -23,7 +23,7 @@
     justify-content: center;
 }
 
-.component-content.component table tbody {
+.component-content.component table tr {
     display: flex;
     justify-content: center;
 }
