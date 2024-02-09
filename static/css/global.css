@@ -5623,7 +5623,7 @@ html.no-touch.no-reduced-motion .tile.tile-list[data-focus-method=key] .media--v
 .component-content {
   margin-left: auto;
   margin-right: auto;
-  width: 653px
+  width: 800px;
 }
 
 @media only screen and (max-width: 1068px) {
