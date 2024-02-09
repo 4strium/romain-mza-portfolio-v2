@@ -16,7 +16,8 @@
     width: 800px; /* Le tableau prendra toute la largeur disponible */
     display: block; /* Fait en sorte que le tableau s'affiche comme un bloc */
     overflow-x: auto; /* Ajoute une barre de défilement si le tableau est trop large pour l'écran */
-
+    margin-left: auto; /* Centre le tableau horizontalement */
+    margin-right: auto; /* Centre le tableau horizontalement */
 }
 
 code.has-jax {font: inherit;
