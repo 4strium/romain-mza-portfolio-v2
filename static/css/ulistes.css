@@ -19,6 +19,12 @@
 }
 
 .component-content.component table thead {
+    display: flex;
+    justify-content: center;
+}
+
+.component-content.component table tbody {
+    display: flex;
     justify-content: center;
 }
 
