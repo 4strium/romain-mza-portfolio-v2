@@ -108,7 +108,6 @@ Nous visualisons déjà les toutes premières requêtes OSPF du Routeur 0 :
 ![](https://romainmellaza.fr/img/protocol_ospf_img/config_ospf_simu1.jpg)
 
 **Les trois messages OSPF que nous pouvons voir ci-dessus sont émis par le Routeur 0 afin de découvrir si d'autres routeurs sont prêts à échanger avec lui des routes via OSPF.**
-
 ![](https://romainmellaza.fr/img/protocol_ospf_img/config_ospf_simu2.jpg)
 
 *Comme aucun autre routeur n'est pour l'instant configuré, toutes ses demandes n'aboutissent pas. Pour commencer à avoir des échanges, allons configurer Routeur 2 !*

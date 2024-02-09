@@ -4,6 +4,16 @@
     margin-right: auto;
 }
 
+thead {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+tbody {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .highlight pre {
     max-width: 800px; /* Changez cette valeur en fonction de vos préférences */
     margin-left: auto;
@@ -16,8 +26,6 @@
     width: 800px; /* Le tableau prendra toute la largeur disponible */
     display: block; /* Fait en sorte que le tableau s'affiche comme un bloc */
     overflow-x: auto; /* Ajoute une barre de défilement si le tableau est trop large pour l'écran */
-    margin-left: auto; /* Centre le tableau horizontalement */
-    margin-right: auto; /* Centre le tableau horizontalement */
 }
 
 code.has-jax {font: inherit;
