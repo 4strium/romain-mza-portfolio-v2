@@ -14,7 +14,7 @@
 
 .component-content.component table {
     width: 800px; /* Le tableau prendra toute la largeur disponible */
-    display: flex; /* Fait en sorte que le tableau s'affiche comme un bloc */
+    display: block; /* Fait en sorte que le tableau s'affiche comme un bloc */
     overflow-x: auto; /* Ajoute une barre de défilement si le tableau est trop large pour l'écran */
     justify-content: center;
 }
