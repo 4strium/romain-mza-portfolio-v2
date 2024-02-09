@@ -12,10 +12,6 @@
     padding: 8px; /* Augmente le padding à l'intérieur du cadre */
 }
 
-.component-content.component table tbody td {
-    text-align: center;
-}
-
 code.has-jax {font: inherit;
     font-size: 100%;
     background: inherit;
