@@ -19,6 +19,9 @@ code.has-jax {font: inherit;
   color: #515151;
 }
 
+ul {
+  margin-top: -10px !important;
+}
 
 pre code{
   max-width: 800px;
