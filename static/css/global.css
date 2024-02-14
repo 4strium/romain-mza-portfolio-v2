@@ -7186,8 +7186,8 @@ html.no-touch.no-reduced-motion .tile.tile-list[data-focus-method=key] .media--v
   overflow: auto;
   border-spacing: 0;
   border-collapse: collapse;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
   margin-left: auto;
   margin-right: auto;
 }

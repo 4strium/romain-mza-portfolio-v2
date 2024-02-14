@@ -30,10 +30,8 @@ On choisit dans un premier temps de représenter un patient par un couple d'enti
 
 De plus, on choisit de représenter une salle d'attente par une simple liste de couples patients.
 ```ocaml
-
 type patient = (int * int)
 type room = patient list
-
 ```
 
 Maintenant que ces deux types sont définis, nous pouvons à présent définir l'interface en [version fonctionnelle](https://fr.wikipedia.org/wiki/Programmation_fonctionnelle) :
