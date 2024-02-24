@@ -91,7 +91,7 @@ let call_patient room_inp =
 
 On constate que chercher le patient dans la salle d'attente requiert un nombre important d'opérations, en effet, le patient prioritaire peut très bien se situer au fond de la salle d'attente (conceptuellement), ce qui fait donc perdre un temps précieux !
 
-Pour contrer ce soucis, on décide de trier la salle d'attente afin que le patient prioritaire se situe en tête de la salle d'attente, puis le second juste après, etc... jusqu'au patient le moins prioritaire. On rappelle que les patients avec des blessures de même gravité sont triée de telle sorte que le patient arrivé avant est traité d'abord pour éviter les séquelles.
+Pour contrer ce soucis, on décide de trier la salle d'attente afin que le patient prioritaire se situe en tête de la salle d'attente, puis le second juste après, etc... jusqu'au patient le moins prioritaire. On rappelle que les patients avec des blessures de même gravité sont triés de telle sorte que le patient arrivé avant est traité d'abord pour éviter les séquelles.
 
 ## 2ème version du type abstrait
 
