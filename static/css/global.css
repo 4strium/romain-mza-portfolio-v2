@@ -5638,13 +5638,6 @@ html.no-touch.no-reduced-motion .tile.tile-list[data-focus-method=key] .media--v
   }
 }
 
-@media only screen and (max-width: 540px) {
-  .page-article table {
-    width: 100%;
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-}
 
 .image-big .component-content {
   width: 980px
@@ -7200,6 +7193,14 @@ html.no-touch.no-reduced-motion .tile.tile-list[data-focus-method=key] .media--v
   margin-bottom: 0rem;
   width: 120%;
   margin-left: -10%;
+}
+
+@media only screen and (max-width: 540px) {
+  .page-article table {
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
 }
 
 .page-article table tr th,
