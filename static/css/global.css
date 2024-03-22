@@ -7184,6 +7184,7 @@ html.no-touch.no-reduced-motion .tile.tile-list[data-focus-method=key] .media--v
 
 .page-article table {
   overflow: auto;
+  overflow-x: scroll;
   border-spacing: 0;
   border-collapse: collapse;
   margin-top: 0rem;
