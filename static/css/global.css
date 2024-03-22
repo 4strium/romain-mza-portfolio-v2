@@ -5626,7 +5626,7 @@ html.no-touch.no-reduced-motion .tile.tile-list[data-focus-method=key] .media--v
   width: 800px;
 }
 
-@media only screen and (max-width: 1068px) {
+@media only screen and (max-width: 900px) {
   .component-content {
     width: 576px
   }
