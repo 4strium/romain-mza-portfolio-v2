@@ -13,9 +13,9 @@ theme: "light"
 ![|inline](https://romainmellaza.fr/img/pix-cleaner/logo_article_pix.png)
 
 # Problématique 
-Pix est le service public français en ligne pour évaluer, développer, et certifier ses compétences numériques. 
+[*Pix*](https://pix.fr/) est le service public français en ligne pour évaluer, développer, et certifier ses compétences numériques. 
 
-Lors de vos sessions d'apprentissages ou même d'évaluation vous constaterez que vous téléchargez un grand nombre de fichiers aux formats divers et variés, avec des dates de crétaion. Il peut alors être fastidieux de supprimer un à un chaque fichier générés. 
+Lors de vos sessions d'apprentissages ou même d'évaluation vous constaterez que vous téléchargez un grand nombre de fichiers aux formats divers et variés, avec des dates de création distinctes. Il peut alors être fastidieux de supprimer un à un chaque fichier générés. 
 
 # Solution
 Voilà pourquoi j'ai décidé de créer (au départ pour moi-même) un logiciel portable permettant de supprimer les fichiers indésirables en **un seul clic** et ce **dans n'importe quel dossier de votre ordinateur.**
