@@ -13,6 +13,11 @@ body {
     background-color: #ffffff;
 }
 
+img{
+    width: 60%;
+    height: 60%;
+}
+
 section.notFound {
     display: flex;
     justify-content: center;
@@ -22,7 +27,7 @@ section.notFound {
 }
 
 section.notFound h1 {
-    color: red;
+    color: #00a2ff;
     font-size: 100px;
 }
 
@@ -44,7 +49,7 @@ div.text a {
 }
 
 div.text a:hover {
-    color: red;
+    color: #00a2ff;
     text-decoration: underline; 
 }
 
@@ -64,7 +69,7 @@ div.text a:hover {
         font-size: 25px;
     }
     div.text a:active {
-    color: red;
+    color: #00a2ff;
     text-decoration: underline; 
   }
 }
