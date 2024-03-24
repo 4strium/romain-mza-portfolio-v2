@@ -5,7 +5,7 @@ draft: false
 author: Romain MELLAZA
 cover: 'https://romainmellaza.fr/img/cover-images/hdd_cover.jpg'
 tags: ["Algorithm", "Python", "Data"]
-theme: "dark"
+theme: "light"
 ---
 
 ![Photographie d’un disque dur ouvert|inline](https://romainmellaza.fr/img/cover-images/hdd_cover.jpg)
@@ -22,3 +22,8 @@ On recherche tout d'abord le **nombre d'occurrences de chaque caractère.** Dans
 L'arbre est créé de la manière suivante : on associe chaque fois les deux noeuds de plus faibles poids, pour donner un nouveau noeud dont le poids équivaut à la somme des poids de ses fils. On réitère ce processus jusqu'à n'en avoir plus qu'un seul noeud : la racine. **On associe ensuite par exemple le code 0 à chaque embranchement partant vers la gauche et le code 1 vers la droite.**
 
 Pour obtenir le code binaire de chaque caractère, on remonte l'arbre à partir de la racine jusqu'aux feuilles en rajoutant à chaque fois au code un 0 ou un 1 selon la branche suivie. La phrase « this is an example of a huffman tree » se code alors sur **135 bits au lieu de 288 bits** (si le codage initial des caractères tient sur 8 bits).
+
+# Logiciel 
+J'ai conçu un logiciel simple et portable qui met en pratique ces notions pour compresser/décompresser des fichiers TXT conséquents.
+
+Il est téléchargeable en [**cliquant ici !**](https://github.com/4strium/Huffman-Software/releases/download/v1.0.0/Utilitaire.Huffman.exe)
