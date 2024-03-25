@@ -15,7 +15,7 @@ body {
 
 img{
     width: 60%;
-    height: 60%;
+    height: auto;
 }
 
 section.notFound {
