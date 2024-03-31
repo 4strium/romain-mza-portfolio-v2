@@ -4,7 +4,7 @@ date: 2023-02-18T21:39:07+01:00
 draft: false
 author: Romain MELLAZA
 cover: 'https://romainmellaza.fr/img/pix-cleaner/pix-logo1-png-17972.png'
-tags: ["PIX", "Python", "Data"]
+tags: ["PIX", "Python", "Software"]
 theme: "light"
 ---
 
