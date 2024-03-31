@@ -3,14 +3,14 @@ title: "Bypasser les restrictions d'IP en téléchargement"
 date: 2022-10-08T21:39:07+01:00
 draft: false
 author: Romain MELLAZA
-cover: 'https://romainmellaza.fr/img/bypass-IP/cover_switch.png'
+cover: 'https://romainmellaza.fr/img/bypass-IP/cover_switch.jpg'
 tags: ["Réseaux", "Python", "Software"]
 theme: "light"
 ---
 
 *⚠️ Cet article n'incite en aucun cas à des téléchargements de contenus illégaux, il met seulement en avant un outil parfaitement légal permettant par technique de connexion/déconnexion de changer d'adresse IP dynamique, dans le but de contourner les temps d'attente sur certains sites. ⚠️*
 
-S'il vous est déjà arriver de télécharger quelconque fichier sur des sites de (téléchargement direct)[https://fr.wikipedia.org/wiki/T%C3%A9l%C3%A9chargement_direct] (*1fichier, DDownload, Rapidgator, etc...*) vous avez sans aucun doute été ennuyé par les temps d'attente entre deux téléchargements ! Par exemple sur la plateforme [*1fichier*](https://1fichier.com/) le temps d'attente est de plus d'une heure :
+S'il vous est déjà arriver de télécharger quelconque fichier sur des sites de [téléchargement direct](https://fr.wikipedia.org/wiki/T%C3%A9l%C3%A9chargement_direct) (*1fichier, DDownload, Rapidgator, etc...*) vous avez sans aucun doute été ennuyé par les temps d'attente entre deux téléchargements ! Par exemple sur la plateforme [*1fichier*](https://1fichier.com/) le temps d'attente est de plus d'une heure :
 
 ![|inline](https://romainmellaza.fr/img/bypass-IP/wait.png)
 
