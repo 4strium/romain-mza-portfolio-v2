@@ -1,6 +1,6 @@
 ---
 title: "Le tri fusion en multi-threading"
-date: 2024-04-14T21:39:07+01:00
+date: 2024-04-14T18:39:07+01:00
 draft: false
 author: Romain MELLAZA
 cover: 'https://romainmellaza.fr/img/multi-threading/cover_microcircuit.jpg'
@@ -36,7 +36,7 @@ struct ThreadArgs {
     int size;
 };
 ```
-On définit une structure qui permettra un empaquetage pour chaque thread du sous-tableau qu'il doit traiter ainsi que la taille de celui-ci.
+On définit une structure qui permettra un empaquetage pour chaque thread, du sous-tableau qu'il doit traiter ainsi que la taille de celui-ci.
 
 ### Fonction de fusion 
 ```c
@@ -187,3 +187,13 @@ int main(int argc, char *argv[]) {
 }
 ```
 La fonction `main` génère un tableau de nombres aléatoires, le copie, puis effectue un tri fusion parallèle sur le tableau copié en utilisant plusieurs threads, ensuite elle réalise le tri fusion classique sur le tableau intial. Elle mesure également le temps d'exécution du tri fusion parallèle et du tri fusion séquentiel.
+
+# Mesures
+
+Après avoir compilé notre code, on peut effectuer quelques test dont voici les résultats pour différentes valeurs :
+| **Nombre de valeurs / Valeur max. possible** | 100 / 50 |  1000 / 500 | 100000 / 500000 |  1000000000 / 50000000000 |
+| :--------------------------: | :----------------: | :-----------------: | :----------------: | :-----------------: |
+| **Tri fusion multi-threadé**      |```0.000256 sec```|```0.000490 sec```| ```0.000622 sec```|```65.112378 sec```|
+| **Tri fusion séquentiel**   | ```0.000044 sec```| ```0.000456 sec```| ```0.014993 sec```| ```196.443202 sec```|
+
+On constate que sur des tableaux contenant peu de données le tri fusion séquentiel  est plus rapide, cela s'explique notamment par le fait que les étapes supplémentaires inhérentes au séquencage en plusieurs threads, puis le regroupement de ces derniers induisent des calculs supplémentaires pour le processeur. Cependant ces étapes étant pratiquement constantes, elles restent complètement négligeables lorsque l'on traite des tableaux de tailles bien plus grandes, où l'on peut constater la puissance du parallélisme !
