@@ -190,7 +190,7 @@ La fonction `main` génère un tableau de nombres aléatoires, le copie, puis ef
 
 # Bac à sable
 Tous les tests suivants seront effectués sur ce système (*sous Ubuntu 22.04.4 LTS*) :
-```
+```bash
 Architecture :                              x86_64
   Mode(s) opératoire(s) des processeurs :   32-bit, 64-bit
   Address sizes:                            39 bits physical, 48 bits virtual
@@ -221,4 +221,6 @@ On constate que sur des tableaux contenant peu de données le tri fusion séquen
 
 # Mesures de puissance
 
-![Graphique montrant les différences entre un tri fusion séquentiel et parallèle|wide](https://romainmellaza.fr/img/multi-threading/graph.png)
+![Graphique montrant les différences entre un tri fusion séquentiel et parallèle|big](https://romainmellaza.fr/img/multi-threading/graph.png)
+
+On constate que le tri fusion séquentiel bien que plus long, ne demande pas à l'appareil une puissance supérieure à 30 watts, tandis que le tri fusion parallèle utilise l'ensemble des ressources de l'ordinateur en demandant une puissance électrique autour des 50 watts en pic, surtout dûe au refroidissement du système.
