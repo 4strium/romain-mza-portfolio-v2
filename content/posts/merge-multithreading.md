@@ -36,7 +36,9 @@ struct ThreadArgs {
     int size;
 };
 ```
-On définit une structure qui permettra un empaquetage pour chaque thread, du sous-tableau qu'il doit traiter ainsi que la taille de celui-ci.
+On définit une structure qui permettra un empaquetage pour chaque thread, avec pour attributs :
+ * Le sous-tableau qu'il doit traiter.
+ * La taille de ce dernier.
 
 ### Fonction de fusion 
 ```c
