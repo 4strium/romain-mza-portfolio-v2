@@ -188,7 +188,28 @@ int main(int argc, char *argv[]) {
 ```
 La fonction `main` génère un tableau de nombres aléatoires, le copie, puis effectue un tri fusion parallèle sur le tableau copié en utilisant plusieurs threads, ensuite elle réalise le tri fusion classique sur le tableau intial. Elle mesure également le temps d'exécution du tri fusion parallèle et du tri fusion séquentiel.
 
-# Mesures
+# Bac à sable
+Tous les tests suivants seront effectués sur ce système (*sous Ubuntu 22.04.4 LTS*) :
+```
+Architecture :                              x86_64
+  Mode(s) opératoire(s) des processeurs :   32-bit, 64-bit
+  Address sizes:                            39 bits physical, 48 bits virtual
+  Boutisme :                                Little Endian
+Processeur(s) :                             12
+  Liste de processeur(s) en ligne :         0-11
+Identifiant constructeur :                  GenuineIntel
+  Nom de modèle :                           12th Gen Intel(R) Core(TM) i7-1255U
+    Famille de processeur :                 6
+    Modèle :                                154
+    Thread(s) par cœur :                    2
+    Cœur(s) par socket :                    10
+    Socket(s) :                             1
+    Révision :                              4
+    Vitesse maximale du processeur en MHz : 4700,0000
+    Vitesse minimale du processeur en MHz : 400,0000
+```
+
+# Mesures temporelles
 
 Après avoir compilé notre code, on peut effectuer quelques test dont voici les résultats pour différentes valeurs :
 | **Nombre de valeurs / Valeur max. possible** | 100 / 50 |  1000 / 500 | 100000 / 500000 |  1000000000 / 50000000000 |
@@ -196,4 +217,8 @@ Après avoir compilé notre code, on peut effectuer quelques test dont voici les
 | **Tri fusion multi-threadé**      |```0.000256 sec```|```0.000490 sec```| ```0.000622 sec```|```65.112378 sec```|
 | **Tri fusion séquentiel**   | ```0.000044 sec```| ```0.000456 sec```| ```0.014993 sec```| ```196.443202 sec```|
 
-On constate que sur des tableaux contenant peu de données le tri fusion séquentiel  est plus rapide, cela s'explique notamment par le fait que les étapes supplémentaires inhérentes au séquencage en plusieurs threads, puis le regroupement de ces derniers induisent des calculs supplémentaires pour le processeur. Cependant ces étapes étant pratiquement constantes, elles restent complètement négligeables lorsque l'on traite des tableaux de tailles bien plus grandes, où l'on peut constater la puissance du parallélisme !
+On constate que sur des tableaux contenant peu de données le tri fusion séquentiel  est plus rapide, cela s'explique notamment par le fait que les étapes supplémentaires inhérentes au séquençage en plusieurs threads, puis le regroupement de ces derniers induisent des calculs supplémentaires pour le processeur. Cependant ces étapes étant pratiquement constantes, elles restent complètement négligeables lorsque l'on traite des tableaux de tailles bien plus grandes, où l'on peut constater la puissance du parallélisme !
+
+# Mesures de puissance
+
+![Graphique montrant les différences entre un tri fusion séquentiel et parallèle|wide](https://romainmellaza.fr/img/multi-threading/graph.png)
