@@ -5634,7 +5634,8 @@ html.no-touch.no-reduced-motion .tile.tile-list[data-focus-method=key] .media--v
 
 @media only screen and (max-width: 734px) {
   .component-content {
-    width: 87.5%
+    width: 87.5%;
+    overflow: scroll;
   }
 }
 
