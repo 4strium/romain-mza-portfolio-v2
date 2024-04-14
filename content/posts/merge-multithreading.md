@@ -9,12 +9,12 @@ theme: "light"
 ---
 
 # Problématique
-Dans le cadre d'un projet personnel, j'ai souhaité comparer les performances énergétiques de systèmes informatiques. Une des premières idées qui m'est venu à l'esprit est de mettre en concurrence le même algorithme (en [C](https://fr.wikipedia.org/wiki/C_(langage))) de tri fusion (détaillé [ici](https://romainmellaza.fr/posts/tri-fusion/)) exécuté de manière séquentielle et *classique* avec une exécution en [**multi-threading**](https://learn.microsoft.com/fr-fr/dotnet/standard/threading/threads-and-threading) soit utilisant le pricinipe de [parallélisme](https://fr.wikipedia.org/wiki/Parall%C3%A9lisme_(informatique)).
+Dans le cadre d'un projet personnel, j'ai souhaité comparer les performances énergétiques de systèmes informatiques. Une des premières idées qui m'est venu à l'esprit est de mettre en concurrence le même algorithme (en [C](https://fr.wikipedia.org/wiki/C_(langage))) de tri fusion (détaillé [ici](https://romainmellaza.fr/posts/tri-fusion/)) exécuté de manière séquentielle et *classique* avec une exécution en [**multi-threading**](https://learn.microsoft.com/fr-fr/dotnet/standard/threading/threads-and-threading) soit utilisant le principe de [parallélisme](https://fr.wikipedia.org/wiki/Parall%C3%A9lisme_(informatique)).
 
 *Je ne détaillerai pas ici mon algorithme de mesure de puissance électrique, car ce dernier fera l'objet d'un futur article.*
 
 # Algorithme
-Nous allons donc passer en revue de manière succinte les différentes fonctions et procédures permettant cette implémentation.
+Nous allons donc passer en revue de manière succincte les différentes fonctions et procédures permettant cette implémentation.
 
 ### Directives de préprocesseur
 ```c
