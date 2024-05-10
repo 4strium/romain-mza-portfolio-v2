@@ -4,7 +4,7 @@ date: 2024-05-10T18:39:07+01:00
 draft: false
 author: Romain MELLAZA
 cover: 'https://romainmellaza.fr/img/esp32-merge-sort/cover-esp32.jpg'
-tags: ["ESP32", "Electronic", "SoC"]
+tags: ["Electronic", "Algorithm", "SoC"]
 theme: "light"
 ---
 
