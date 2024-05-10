@@ -1,5 +1,5 @@
 ---
-title: "Distribuer le tri fusion sur des "System on a Chip""
+title: "Distribuer le tri fusion sur des systèmes sur puce"
 date: 2024-05-10T18:39:07+01:00
 draft: false
 author: Romain MELLAZA
@@ -37,6 +37,7 @@ Côté esclave on doit initialiser la liaison ainsi que définir une fonction à
 On se retrouve donc avec les fonctions suivantes :
 
 `receiveEvent` (+ `add2tab`) :
+
 ```cpp
 void add2tab(byte x) {
   Serial.print("Received byte: ");
@@ -86,6 +87,7 @@ void receiveEvent(int Numbytes){
 ```
 
 `send_int_tab` :
+
 ```cpp
 void send_int_tab(){
 
@@ -98,6 +100,7 @@ void send_int_tab(){
 ```
 
 `Setup` :
+
 ```cpp
 #include <Arduino.h>
 
@@ -134,6 +137,7 @@ void loop() {}
 ```
 
 Côté maître, on doit pouvoir générer un tableau d'entiers aléatoires :
+
 ```c
 int* gen_tableau_aleatoires(int n, int rand_coeff) {
   int *arr_gen = malloc(sizeof(int) * n);
@@ -145,6 +149,7 @@ int* gen_tableau_aleatoires(int n, int rand_coeff) {
 ```
 
 De même, on doit pouvoir fusionner les deux parties à la fin des deux exécutions locales :
+
 ```c
 void fusionner_tableaux(int tab_inp_1[], int size_1, int tab_inp_2[], int size_2, int tab3_exp[]) {
   int i = 0, j = 0, k = 0;
@@ -179,6 +184,7 @@ void fusionner_tableaux(int tab_inp_1[], int size_1, int tab_inp_2[], int size_2
 ```
 
 `Setup du master` :
+
 ```cpp
 void setup() {
   Serial.begin(9600);
