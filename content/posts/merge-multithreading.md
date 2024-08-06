@@ -4,7 +4,7 @@ date: 2024-04-14T18:39:07+01:00
 draft: false
 author: Romain MELLAZA
 cover: 'https://romainmellaza.fr/img/multi-threading/cover_microcircuit.jpg'
-tags: ["Algorithm", "C", "Electronic"]
+tags: ["Algorithm", "esp32", "Electronic"]
 theme: "light"
 ---
 
