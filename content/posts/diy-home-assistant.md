@@ -33,13 +33,12 @@ Today I decided to show you in the smallest details how I managed to design **Cr
 ![|inline](https://m.media-amazon.com/images/I/614vPNmpmuL._AC_UF894,1000_QL80_.jpg)
 
 * LED's of the color you want. *(the best is that it matches the color of your case)*
-![|inline](https://www.amazon.fr/s?k=push+button&__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&ref=nb_sb_noss)
+![|inline](https://m.media-amazon.com/images/I/61G3+cfJHwL._SL1000_.jpg)
 
 * A [push button](https://www.amazon.fr/s?k=push+button&__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&ref=nb_sb_noss). 
 
 # A small server
 Unfortunately, although the esp32 is a true marvel due to the extent of its capabilities, certain actions are either not possible, or possible but within a period of time which makes use uncomfortable and not smooth.
-
 
 This is the case for voice recognition for example, which is therefore central to our project, which is why it is necessary to first record the audio file before transmitting it to a more powerful device so that the latter achieves recognition. But be careful by "more powerful" I don't mean a server with 32GB of ram and a premium CPU, no it's quite the opposite! You can either rent the smallest server configuration from a host, or use a Raspberry Pi at home.
 ![|inline](https://m.media-amazon.com/images/I/61K2IaK2b9L._AC_UF1000,1000_QL80_.jpg)
@@ -57,6 +56,5 @@ You can print the four parts of the project, here are the 3d files, feel free to
 * [The head of the robot with its two antennas.](https://github.com/4strium/Cristal-Home-Assistant/blob/main/models/Head%20cristal.3mf)
 * [The body that will carry all the electronics.](https://github.com/4strium/Cristal-Home-Assistant/blob/main/models/body.3mf) 
 * [The hood to make the link between the head and the body.](https://github.com/4strium/Cristal-Home-Assistant/blob/main/models/capuchon.3mf)
-
 
 # Sub-articles
