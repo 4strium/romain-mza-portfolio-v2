@@ -261,9 +261,9 @@ Now every time you run the server-side script, do this in order:
 * Run `./server-side`
 * Hit `Ctrl+A` then `D`
 
-# Manage sending/reception from esp32
+# Manage sending/reception from esp32 for voice recognition
 
-The following C++ file sends and receives the recognized character string:
+The following C++ file send audio file and receive the recognized character string:
 
 * `wavserv.h` :
 ```h
@@ -365,7 +365,7 @@ String recowav(){
 
 # Enable the Google Assistant SDK
 
-We will now see together how it is possible to integrate your homemade voice assistant with your Google home application to be able to control all of your connected devices exactly as if you were talking to an official Google voice assistant! I made this choice so as not to get lost in the use of lots of different APIs but you can do it if you wish, here Google does not process anything, it is simply a matter of sending a text command to your Google Assistant using your account.
+We will now see together how it is possible to integrate your homemade voice assistant with your Google home application to be able to control all of your connected devices exactly as if you were talking to an official Google voice assistant! I made this choice so as not to get lost in the use of lots of different APIs but you can do it if you wish, here Google does not process audio directly, it is simply a matter of sending a text command to your Google Assistant using your account.
 
 Setting up the Google Assistant SDK is quite complex, follow [this official guide](https://developers.google.com/assistant/sdk/guides/service/python/embed/config-dev-project-and-account).
 
@@ -385,6 +385,8 @@ If you have problems with google-oauthlib-tool, particularly the `--headless` pa
 * Paste in terminal 
 
 # Connect Google Assistant with ESP32
+
+We are going to create an intermediate server which accepts HTTP requests and which executes bash commands, it will take as arguments the secret identifiers specific to our device for security reasons!
 
 * Initialize a new Node.js project
 
@@ -527,3 +529,56 @@ send "$phrase\r"
 expect eof
 ```
 
+As you have probably noticed, it is necessary to define an API key on your server and which you will reuse on your ESP32. Define const API_KEY with a secure and long character string, you can for example generate this secret key with:
+
+```bash
+node -e "console.log(require('crypto').randomBytes(50).toString('hex'))"
+```
+
+All you have to do is let the intermediate server listen to port 3000 using the same steps as for the voice recognition script, i.e. create a second session with screen (with a different name of course), and detach from it after running the server with the command `node server.js`.
+
+# Manage sending/reception from esp32 for google assistant
+
+The following C++ file send command for google assistant as well as the secret identifiers of the device.
+
+```h
+#ifndef GASDK_H_
+#define GASDK_H_
+
+#include <WiFi.h>
+#include <HTTPClient.h>
+
+void exec_com_assistant(String apiKey, String deviceId, String modelId, String phrase);
+#endif
+```
+
+```cpp
+#include <WiFi.h>
+#include <HTTPClient.h>
+
+const char* serverUrl = "http://<your-server-ip>:3000/execute";
+const char* apiKey;
+
+void exec_com_assistant(String apiKey, String deviceId, String modelId, String phrase) {
+
+  HTTPClient http;
+
+  // Commence la requête POST
+  http.begin(serverUrl);
+  http.addHeader("Content-Type", "application/json");
+  http.addHeader("x-api-key", apiKey.c_str());
+
+  // Corps de la requête JSON avec paramètres
+  String jsonPayload = "{\"deviceId\": \"" + deviceId + "\", \"deviceModelId\": \"" + modelId + "\", \"phrase\": \"" + phrase + "\"}";
+
+  // Envoie la requête
+  int httpResponseCode = http.POST(jsonPayload);
+
+  if (httpResponseCode > 0) {
+    String response = http.getString();
+    Serial.println("Réponse du serveur : " + response);
+  }
+  
+  http.end();
+}
+```

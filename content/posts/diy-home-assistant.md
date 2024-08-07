@@ -47,6 +47,8 @@ In my case for example, I rent a server thanks to DigitalOcean, I selected the l
 
 ![Screenshot of data measured on the server I used for this project](https://romainmellaza.fr/img/cristal-home-assistant/digital-ocean.png)
 
+**If you would like to see in more detail how to set up your Linux server for the wizard, [click here]().**
+
 # 3D models for those who want/can print them...
 You can print the four parts of the project, here are the 3d files, feel free to modify them as you wish! *(namely I printed it with my Ender-3 V3 SE)*
 
@@ -57,4 +59,44 @@ You can print the four parts of the project, here are the 3d files, feel free to
 * [The body that will carry all the electronics.](https://github.com/4strium/Cristal-Home-Assistant/blob/main/models/body.3mf) 
 * [The hood to make the link between the head and the body.](https://github.com/4strium/Cristal-Home-Assistant/blob/main/models/capuchon.3mf)
 
-# Sub-articles
+# Wiring 
+
+Make the connections follow this:
+
+### Micro SD Card Module :
+* 3.3 V
+* MISO : GPIO 19
+* CLK : GPIO 18
+* MOSI : GPIO 23
+* CS : GPIO 5
+* GND
+
+### Ultrasonic sensor :
+* VCC : 5V
+* Trig : GPIO 15
+* Echo : GPIO 2
+* GND
+
+### OLED Display :
+* VDD : 5V
+* GND
+* SCK : GPIO 22
+* SDA : GPIO 27
+
+### Blue LED'S :
+* GPIO 12
+* GND 
+
+### Push Button :
+* 3.3 V
+* GPIO 4
+* GND
+
+### Microphone MAX9814 :
+* VDD : 3.3 V
+* OUT : GPIO 35 (ADC1_CHANNEL_7)
+* GND
+
+# Functionalities :
+
+If you want to see how to display live weather on screen via I2C, [click here]().
