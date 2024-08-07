@@ -208,3 +208,219 @@ Compile with this command:
 ```bash
 g++ -std=c++11 -o server-side main.cpp
 ```
+
+Before launching the script, make sure that your Python virtual environment is indeed activated, it will not work otherwise!
+
+```bash
+./server-side
+```
+
+If all goes well you should see this:
+
+```bash
+./server-side
+
+Serveur en écoute sur le port 8080
+En attente de connexion...
+```
+
+But if you see this, don't worry:
+
+```bash
+./server-side 
+
+Échec de la liaison
+```
+
+This means that another process is using port 8080 while our script wants to use it to communicate with esp32, you can check who is using this port:
+
+```bash
+sudo lsof -i:8080
+
+COMMAND     PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+server-si 34293 root    3u  IPv4 278644      0t0  TCP *:http-alt (LISTEN)
+```
+
+To kill it subsequently by identifying it by its PID:
+```bash
+sudo kill -9 34293
+```
+
+And it should now work! However, one last configuration is necessary, in fact we are going to run two scripts in parallel on our Linux machine, it is therefore preferable to limit these two processes to two separate sessions (which is also necessary if you use SSH like me).
+
+To do this, install [screen](https://doc.ubuntu-fr.org/screen) which is a terminal multiplexer:
+```bash
+sudo apt install screen
+```
+
+Now every time you run the server-side script, do this in order:
+
+* Create a new session : `screen -S <name-of-your-session>`
+* Or connect to a pre-existing session that you created : `screen -r <name-of-your-session>`
+* Activate your virtual environment
+* Run `./server-side`
+* Hit `Ctrl+A` then `D`
+
+# Enable the Google Assistant SDK
+
+We will now see together how it is possible to integrate your homemade voice assistant with your Google home application to be able to control all of your connected devices exactly as if you were talking to an official Google voice assistant! I made this choice so as not to get lost in the use of lots of different APIs but you can do it if you wish, here Google does not process anything, it is simply a matter of sending a text command to your Google Assistant using your account.
+
+Setting up the Google Assistant SDK is quite complex, follow [this official guide](https://developers.google.com/assistant/sdk/guides/service/python/embed/config-dev-project-and-account).
+
+If you have problems with google-oauthlib-tool, particularly the `--headless` parameter, do this:
+
+* execute `screen -S auth`
+* execute `source env/bin/activate`
+* execute `google-oauthlib-tool --scope https://www.googleapis.com/auth/assistant-sdk-prototype --save --client-secrets </path/to/client_secret_client-id.json>` (modify the command to match your secret file)
+
+* Complete authentication on any device using chrome
+* At this state, you should see a failed to load website page
+* Open chrome dev tools(F12)
+* Go to network
+* Reload the webpage
+* On the entry that popped up, click copy as cURL
+* On your Linux machine, press `Ctrl+a` and afterward `D` to close the screen
+* Paste in terminal 
+
+# Connect Google Assistant with ESP32
+
+* Initialize a new Node.js project
+
+Use npm to initialize a new project. This will create a package.json file where information about your project and its dependencies will be stored.
+
+```bash
+npm init -y
+```
+
+* Install Express
+
+Express is a minimalist framework for Node.js that makes it easy to create web servers. Install Express as a dependency in your project.
+
+```bash
+npm install express
+```
+
+* Create the Server
+
+Create a `server.js` file in your project directory. This file will contain the server code.
+
+```bash
+touch server.js
+```
+
+Open `server.js` in a text editor and add the following code:
+```js
+const express = require('express');
+const { exec } = require('child_process');
+const app = express();
+
+// Clé API pour sécuriser les requêtes
+const API_KEY = 'VOTRE_CLE_API_GENERATED';  // Remplacez par la clé API générée
+
+app.use(express.json());
+
+// Middleware pour vérifier la clé API
+app.use((req, res, next) => {
+  const apiKey = req.header('x-api-key');
+  if (apiKey !== API_KEY) {
+    return res.status(403).send('Accès refusé');
+  }
+  next();
+});
+
+app.post('/execute', (req, res) => {
+  const deviceId = req.body.deviceId;
+  const deviceModelId = req.body.deviceModelId;
+  const phrase = req.body.phrase; // Nouvelle phrase à envoyer
+
+  // Vérification des paramètres
+  if (!deviceId || !deviceModelId || !phrase) {
+    return res.status(400).send('Paramètres manquants : deviceId, deviceModelId ou phrase');
+  }
+
+  // Construire la commande avec les paramètres
+  const command = `./run_assistant.sh ${deviceId} ${deviceModelId} "${phrase}"`;
+
+  exec(command, { shell: '/bin/bash' }, (error, stdout, stderr) => {
+    if (error) {
+      return res.status(500).send(`Erreur d'exécution : ${error.message}`);
+    }
+    if (stderr) {
+      return res.status(500).send(`Erreur de commande : ${stderr}`);
+    }
+    res.send(stdout);
+  });
+});
+
+const PORT = 3000;  // Choisissez le port que vous souhaitez utiliser
+app.listen(PORT, () => {
+  console.log(`Serveur en écoute sur le port ${PORT}`);
+});
+```
+
+* Create the `run_assistant.sh` script that executes the necessary Bash commands. Place this file in the same directory as server.js.
+
+```bash
+#!/bin/bash
+
+# Récupérer les paramètres
+DEVICE_ID=$1
+DEVICE_MODEL_ID=$2
+PHRASE=$3
+
+# Activer l'environnement virtuel
+source ~/prog/cristal-env/bin/activate
+echo "Environnement activé."
+
+# Obtenir la date et l'heure actuelle
+CURRENT_DATETIME=$(date '+%d-%m-%Y %H:%M:%S')
+
+# Construire la commande complète
+COMMAND="python -m googlesamples.assistant.grpc.textinput --device-id $DEVICE_ID --device-model-id $DEVICE_MODEL_ID"
+
+# Écrire la commande et la phrase dans le fichier de log avec l'horodatage
+echo "[$CURRENT_DATETIME] Command: $COMMAND, Phrase: \"$PHRASE\"" >> command_log.txt
+
+# Exécuter le script expect
+expect ./send_command.exp "$DEVICE_ID" "$DEVICE_MODEL_ID" "$PHRASE"
+```
+
+The line echo `[$CURRENT_DATETIME] Command: $COMMAND, Phrase: \"$PHRASE\"" >> command_log.txt` writes the full command and phrase to the `command_log.txt` file, appending the timestamp at the beginning.
+
+* Make sure the script is executable:
+```bash
+chmod +x run_assistant.sh
+```
+
+* Install expect (if necessary):
+
+On Ubuntu, you can install expect with the following command:
+
+```bash
+sudo apt-get install expect
+```
+
+* Create an Expect Script:
+
+We will create an expect script that sends the phrase after detecting the prompt :
+
+```exp
+#!/usr/bin/expect
+
+# Récupérer les arguments
+set device_id [lindex $argv 0]
+set device_model_id [lindex $argv 1]
+set phrase [lindex $argv 2]
+
+# Lancer la commande Python
+spawn python -m googlesamples.assistant.grpc.textinput --device-id $device_id --device-model-id $device_model_id
+
+# Attendre l'invite
+expect ": "
+
+# Envoyer la phrase et appuyer sur Entrée
+send "$phrase\r"
+
+# Attendre que le processus se termine
+expect eof
+```
