@@ -229,6 +229,7 @@ class Meteo_aff {
   mutable const char* location;
 
   void print_4user(){
+    u8g2.begin();
     u8g2.clearBuffer();
     u8g2.setFont(u8g2_font_helvB18_te);
     u8g2.setFontDirection(2);
