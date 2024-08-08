@@ -3,10 +3,12 @@ title: "[Cristal] How to display live weather on a I2C screen ?"
 date: 2024-08-06T18:39:07+01:00
 draft: true
 author: Romain MELLAZA
-cover: ''
+cover: 'https://romainmellaza.fr/img/cristal-home-assistant/pres4.png'
 tags: ["Electronic", "C++", "esp32"]
 theme: "light"
 ---
+
+![](https://romainmellaza.fr/img/cristal-home-assistant/pres4.png)
 
 # Introduction 
 Together we will see how to display live weather based on GPS coordinates on an I2C screen. To obtain the information, we will use the [open-meteo API system](https://open-meteo.com/).

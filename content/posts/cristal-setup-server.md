@@ -1,9 +1,9 @@
 ---
-title: "[Cristal Assistant] Setting up the server"
+title: "[Cristal] Setting up a voice recognition/Google assistant server"
 date: 2024-08-06T18:39:07+01:00
 draft: true
 author: Romain MELLAZA
-cover: ''
+cover: 'https://romainmellaza.fr/img/cover-images/code_cover_2.jpg'
 tags: ["Server", "Linux", "esp32"]
 theme: "light"
 ---

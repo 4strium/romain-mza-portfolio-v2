@@ -1,6 +1,6 @@
 ---
 title: "[Cristal] How to record sound on a microSD card with an ESP32 and a MAX9814 microphone ?"
-date: 2024-08-06T18:39:07+01:00
+date: 2024-08-04T18:39:07+01:00
 draft: true
 author: Romain MELLAZA
 cover: 'https://cdn-shop.adafruit.com/970x728/1713-03.jpg'
@@ -134,7 +134,105 @@ void CreateWavHeader(byte* header, int waveDataSize){
 
 As you can see, we are using a sample rate of 44100Hz, but you can change this depending on your usage, just don't forget to change the header values ​​accordingly.
 
-Now it's time to code the actual audio recording program, we'll call it `rec-sound` :
+It is also necessary to properly configure the I2S protocol to perform the recording, so we will have the `I2S` file containing this very important configuration definition. Similarly, we will have the only two functions `I2S_Read()` and `I2S_Write()` useful to our main program.
+
+* `I2S.h` :
+```h
+#include <Arduino.h>
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "driver/i2s.h"
+#include "esp_system.h"
+#define SAMPLE_RATE (44100)
+#define PIN_I2S_BCLK 26
+#define PIN_I2S_LRC 22
+#define PIN_I2S_DIN 34
+#define PIN_I2S_DOUT 25
+
+// This I2S specification : 
+//  -   LRC high is channel 2 (right).
+//  -   LRC signal transitions once each word.
+//  -   DATA is valid on the CLOCK rising edge.
+//  -   Data bits are MSB first.
+//  -   DATA bits are left-aligned with respect to LRC edge.
+//  -   DATA bits are right-shifted by one with respect to LRC edges.
+//        It's valid for ADMP441 (microphone) and MAX98357A (speaker). 
+//        It's not valid for SPH0645LM4H(microphone) and WM8960(microphon/speaker).
+//
+//  -   44100Hz
+//  -   stereo
+
+/// @parameter MODE : I2S_MODE_RX or I2S_MODE_TX
+/// @parameter BPS : I2S_BITS_PER_SAMPLE_16BIT or I2S_BITS_PER_SAMPLE_32BIT
+void I2S_Init(i2s_mode_t MODE, i2s_bits_per_sample_t BPS);
+
+/// I2S_Read() for I2S_MODE_RX
+/// @parameter data: pointer to buffer
+/// @parameter numData: buffer size
+/// @return Number of bytes read
+int I2S_Read(char* data, int numData);
+
+/// I2S_Write() for I2S_MODE_TX
+/// @param data: pointer to buffer
+/// @param numData: buffer size
+void I2S_Write(char* data, int numData);
+```
+
+* `I2S.cpp` :
+```cpp
+#include "I2S.h"
+
+void I2S_Init(i2s_mode_t MODE, i2s_bits_per_sample_t BPS) {
+    i2s_config_t i2s_config = {
+        .mode = (i2s_mode_t)(I2S_MODE_MASTER | I2S_MODE_RX | I2S_MODE_TX | I2S_MODE_DAC_BUILT_IN | I2S_MODE_ADC_BUILT_IN),
+        .sample_rate = SAMPLE_RATE,
+        .bits_per_sample = BPS,
+        .channel_format = I2S_CHANNEL_FMT_RIGHT_LEFT,
+        .communication_format = (i2s_comm_format_t)(I2S_COMM_FORMAT_STAND_I2S),
+        .intr_alloc_flags = 0,
+        .dma_buf_count = 16,
+        .dma_buf_len = 60
+    };
+
+    if (MODE == I2S_MODE_RX || MODE == I2S_MODE_TX) {
+        Serial.println("using I2S_MODE");
+        i2s_pin_config_t pin_config;
+        pin_config.bck_io_num = PIN_I2S_BCLK;
+        pin_config.ws_io_num = PIN_I2S_LRC;
+        
+        if (MODE == I2S_MODE_RX) {
+            pin_config.data_out_num = I2S_PIN_NO_CHANGE;
+            pin_config.data_in_num = PIN_I2S_DIN;
+        } else if (MODE == I2S_MODE_TX) {
+            pin_config.data_out_num = PIN_I2S_DOUT;
+            pin_config.data_in_num = I2S_PIN_NO_CHANGE;
+        }
+
+        i2s_driver_install(I2S_NUM_0, &i2s_config, 0, NULL);
+        i2s_set_pin(I2S_NUM_0, &pin_config);
+        i2s_set_clk(I2S_NUM_0, SAMPLE_RATE, BPS, I2S_CHANNEL_STEREO);
+    } else if (MODE == I2S_MODE_DAC_BUILT_IN || MODE == I2S_MODE_ADC_BUILT_IN) {
+        Serial.println("Initialisation du protocole I2S...");
+        i2s_driver_install(I2S_NUM_0, &i2s_config, 0, NULL);
+        i2s_set_adc_mode(ADC_UNIT_1, ADC1_CHANNEL_7);  //GPIO35
+    }
+}
+
+int I2S_Read(char *data, int numData) {
+    size_t bytes_read = 0;
+    i2s_read(I2S_NUM_0, (void *)data, numData, &bytes_read, portMAX_DELAY);
+    return bytes_read;
+}
+
+void I2S_Write(char *data, int numData) {
+    size_t bytes_written = 0;
+    i2s_write(I2S_NUM_0, (const void *)data, numData, &bytes_written, portMAX_DELAY);
+}
+```
+
+You will notice two separate definitions, one for an I2S protocol using an external ADC, and one using an internal ADC (`I2S_MODE_ADC_BUILT_IN`) which is our case! *You can however use the first configuration if you are using a SoC that does not have an internal ADC.*
+
+Now it's time to code the actual main audio recording program, we'll call it `rec-sound` :
 
 * `rec-sound.h` :
 ```h

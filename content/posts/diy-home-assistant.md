@@ -101,4 +101,8 @@ Make the connections follow this:
 
 # Functionalities :
 
-If you want to see how to display live weather on screen via I2C, [click here]().
+* If you want to see how to display live weather on screen via I2C, [click here]().
+
+* If you want to see how to record sound on microSD card via MAX9814 microphone, [click here]().
+
+* If you want to see how to display live date and time based on GPS coordinates (to get timezone) on an I2C screen, [click here]().
