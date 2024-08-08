@@ -22,7 +22,7 @@ Today I decided to show you in the smallest details how I managed to design **Cr
 * An [OLED screen (128x64) using the SH1106 chip](https://www.az-delivery.de/en/products/1-3zoll-i2c-oled-display), it will be the main means of feedback with the user.
 ![|inline](https://www.electronicwings.com/storage/PlatformSection/TopicContent/452/description/MicroSD.jpg)
 
-* A [MicroSD Card Module](https://www.amazon.fr/esp32-sd/s?k=esp32+sd) as well as a microSD card with the smallest capacity you have, in fact it will be useful to us only to temporarily store the audio file recorded by the microphone as well as the secret identifiers specific to your assistant, so it only takes a few kilobytes , but if you have personal upgrades requiring storage then judge the card's capacity accordingly. **⚠️ IMPORTANT NOTE : the card must be formatted in FAT32 format**
+* A [MicroSD Card Module](https://www.amazon.fr/esp32-sd/s?k=esp32+sd) as well as a microSD card with the smallest capacity you have, in fact it will be useful to us only to temporarily store the audio file recorded by the microphone as well as the secret identifiers specific to your assistant, so it only takes a few kilobytes , but if you have personal upgrades requiring storage then judge the card's capacity accordingly. **⚠️ IMPORTANT NOTE : the card must be formatted in [FAT32 format](https://support.microsoft.com/fr-fr/topic/comment-convertir-un-lecteur-en-fat32-%C3%A0-l-aide-du-convertisseur-de-lecteur-5f751b9d-60a2-01bc-4079-2f536b876cc3)**
 
 ![©Osoyoo|inline](https://osoyoo.com/wp-content/uploads/2018/09/hc-sr04.png)
 
