@@ -3,7 +3,7 @@ title: "How to make a custom home voice personal assistant based on an esp32"
 date: 2024-08-06T18:39:07+01:00
 draft: true
 author: Romain MELLAZA
-cover: ''
+cover: 'https://romainmellaza.fr/img/cristal-home-assistant/pres1.jpg'
 tags: ["Electronic", "C++", "esp32"]
 theme: "light"
 ---
@@ -12,6 +12,8 @@ theme: "light"
 This personal project is based on a simple observation: nowadays there are a significant number of voice assistants coupled with numerous tools promising hyper connectivity and boosted productivity. We therefore end up getting lost in all these opaque layers processing our personal data as well as in subscriptions that are often prohibitively expensive compared to the simplicity of the tasks that we want our electronic companion to carry out.
 
 Today I decided to show you in the smallest details how I managed to design **Cristal** a voice assistant which can respond to all your wishes as long as you are ready to fiddle a minimum between the hardware and the software.
+
+![Cristal Home Assistant|inline](https://romainmellaza.fr/img/cristal-home-assistant/pres2.jpg)
 
 # The necessary equipment
 ![|inline](https://www.gotronic.fr/ori-module-nodemcu-esp32-28407.jpg)

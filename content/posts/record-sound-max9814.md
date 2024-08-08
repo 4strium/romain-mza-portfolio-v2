@@ -3,7 +3,7 @@ title: "[Cristal] How to record sound on a microSD card with an ESP32 and a MAX9
 date: 2024-08-06T18:39:07+01:00
 draft: true
 author: Romain MELLAZA
-cover: ''
+cover: 'https://cdn-shop.adafruit.com/970x728/1713-03.jpg'
 tags: ["Electronic", "C++", "esp32"]
 theme: "light"
 ---
@@ -11,7 +11,7 @@ theme: "light"
 # Introduction
 Making sound recordings is undoubtedly an integral part of most electronic projects, which is why today I'm going to show you how to do this task in the simplest and most efficient way.
 
-I advise you to get an ESP32, a [push button](https://www.amazon.fr/s?k=push+button&__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&ref=nb_sb_noss), a [MicroSD Card Module](https://www.amazon.fr/esp32-sd/s?k=esp32+sd) as well as a microSD card with the smallest capacity you have, in fact it will be useful to us only to store the audio file recorded (**⚠️ IMPORTANT NOTE : the card must be formatted in [FAT32 format](https://support.microsoft.com/fr-fr/topic/comment-convertir-un-lecteur-en-fat32-%C3%A0-l-aide-du-convertisseur-de-lecteur-5f751b9d-60a2-01bc-4079-2f536b876cc3)**), and a [MAX9814](https://www.az-delivery.de/fr/products/max9814-mikrofon) amplified electret microphone.
+I advise you to get an ESP32, a [MicroSD Card Module](https://www.amazon.fr/esp32-sd/s?k=esp32+sd) as well as a microSD card with the smallest capacity you have, in fact it will be useful to us only to store the audio file recorded (**⚠️ IMPORTANT NOTE : the card must be formatted in [FAT32 format](https://support.microsoft.com/fr-fr/topic/comment-convertir-un-lecteur-en-fat32-%C3%A0-l-aide-du-convertisseur-de-lecteur-5f751b9d-60a2-01bc-4079-2f536b876cc3)**), and a [MAX9814](https://www.az-delivery.de/fr/products/max9814-mikrofon) amplified electret microphone.
 
 The ESP32 microcontroller has built-in analog-to-digital converters (ADCs) with a resolution of 12 bits, which allows for 4096 discrete levels of input. There are two ADCs on the ESP32, named ADC1 and ADC2. Each ADC has multiple channels:
 
@@ -33,11 +33,6 @@ Make the connections follow this:
 * CLK : GPIO 18
 * MOSI : GPIO 23
 * CS : GPIO 5
-* GND
-
-### Push Button :
-* 3.3 V
-* GPIO 4
 * GND
 ![|inline](https://www.az-delivery.de/cdn/shop/products/max9814-mikrofon-964239.jpg?v=1679402420&width=1200)
 
@@ -215,3 +210,5 @@ void record_mic() {
 ```
 
 As you can see, we need the standard [FS](https://github.com/espressif/arduino-esp32/tree/master/libraries/FS/src) and [SD](https://www.arduino.cc/reference/en/libraries/sd/) libraries. You can also modify some constants according to your use such as the recording duration or the name of the recorded file, do not forget the "/" at the beginning of the file name as well as the ".wav" extension.
+
+Now you just need to call the `record_mic()` function in your main code when you want to record a sound clip with the microphone, it can be activated with a button for example. Later if you want to transmit the recorded wav audio file to Linux server for any processing, do not hesitate to follow the tutorial [I wrote here]().
