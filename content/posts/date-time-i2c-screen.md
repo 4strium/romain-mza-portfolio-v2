@@ -8,6 +8,8 @@ tags: ["Electronic", "C++", "esp32"]
 theme: "light"
 ---
 
+![](https://romainmellaza.fr/img/cristal-home-assistant/pres3.jpg)
+
 # Introduction 
 Together we will see how to display live date and time based on GPS coordinates (to get timezone) on an I2C screen. To obtain the information, we will use the [Time Zone Datatbase](https://timezonedb.com/). You will have to create an account on their site to obtain your personal API key.
 

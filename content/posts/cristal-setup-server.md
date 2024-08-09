@@ -9,7 +9,7 @@ theme: "light"
 ---
 
 # Introduction
-This article is part of all the steps necessary to create a personalized voice assistant, the explanations of which you can find here: [click](). Of course if you just want to see how to create an Ubuntu server allowing voice recognition via TCP/IP as well as the integration of the Google Assistant SDK then you are in the right place!
+This article is part of all the steps necessary to create a personalized voice assistant, the explanations of which you can find here: [click](https://romainmellaza.fr/posts/diy-home-assistant/). Of course if you just want to see how to create an Ubuntu server allowing voice recognition via TCP/IP as well as the integration of the Google Assistant SDK then you are in the right place!
 
 # Transmission wav audio file between esp32 and linux server for recognition
 As I said in the introductory article, you can use any machine here as long as it runs Linux. The first step is to integrate a Python script to perform speech recognition, so you will need to have Python installed on your Linux machine. In addition, it is necessary to install the "[speech_recognition](https://pypi.org/project/SpeechRecognition/)" module, for this you need to create a Python virtual environment at the root of your project :

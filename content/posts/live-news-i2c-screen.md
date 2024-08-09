@@ -117,7 +117,7 @@ String* get_five_top_news(void) {
 }
 ```
 
-If you are wondering what the personal library "get_secret_values" is then head [here]().
+If you are wondering what the personal library "get_secret_values" is then head [here](https://romainmellaza.fr/posts/secure-credentials-esp32/).
 
 # Display on screen
 

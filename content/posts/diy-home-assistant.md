@@ -103,13 +103,15 @@ Make the connections follow this:
 
 # Functionalities :
 
-* If you want to see how to display live weather on screen via I2C, [click here]().
+* If you want to see how to display live weather on screen via I2C, [click here](https://romainmellaza.fr/posts/live-weather-i2c-screen/).
 
-* If you want to see how to display live date and time based on GPS coordinates (to get timezone) on an I2C screen, [click here]().
+* If you want to see how to display live date and time based on GPS coordinates (to get timezone) on an I2C screen, [click here](https://romainmellaza.fr/posts/date-time-i2c-screen/).
 
-* If you want to see how to record sound on microSD card via MAX9814 microphone, [click here]().
+* If you want to see how to display daily news on screen via I2C, [click here](https://romainmellaza.fr/posts/live-news-i2c-screen/).
 
-* If you want to see how to keep your [API](https://en.wikipedia.org/wiki/API) identifiers secret for this ultra-connected project, [click here]().
+* If you want to see how to record sound on microSD card via MAX9814 microphone, [click here](https://romainmellaza.fr/posts/record-sound-max9814/).
+
+* If you want to see how to keep your [API](https://en.wikipedia.org/wiki/API) identifiers secret for this ultra-connected project, [click here](https://romainmellaza.fr/posts/secure-credentials-esp32/).
 
 # Draw eyes expressions on an OLED screen
 

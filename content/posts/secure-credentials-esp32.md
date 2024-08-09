@@ -9,7 +9,7 @@ theme: "light"
 ---
 
 # Introduction
-If you have followed the [various previous tutorials concerning the development of the personal assistant on an esp32](), you will agree that the security and confidentiality of the different requests between the SoC and the server is **CRUCIAL**. Indeed, we do not want a person outside the system to be able to interfere with our actions by recovering our API key or even worse by having access to our Google Home account.
+If you have followed the [various previous tutorials concerning the development of the personal assistant on an esp32](https://romainmellaza.fr/posts/diy-home-assistant/), you will agree that the security and confidentiality of the different requests between the SoC and the server is **CRUCIAL**. Indeed, we do not want a person outside the system to be able to interfere with our actions by recovering our API key or even worse by having access to our Google Home account.
 
 This is why you should never define a secret key raw in your code, and even less so when it is published publicly in an online repository. The solution that I am proposing to you today for esp32/arduino is to store this confidential data in a text file (which you name `secret_file.txt`) on a micro SD card connected to your SoC, you must therefore have physical contact with the device to recover this precious data.
 
