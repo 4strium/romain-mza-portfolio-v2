@@ -1,7 +1,7 @@
 ---
 title: "[Cristal] How to display date/time on a I2C screen ?"
-date: 2024-08-05T18:39:07+01:00
-draft: true
+date: 2024-06-25T18:39:07+01:00
+draft: false
 author: Romain MELLAZA
 cover: 'https://romainmellaza.fr/img/cristal-home-assistant/pres3.jpg'
 tags: ["Electronic", "C++", "esp32"]

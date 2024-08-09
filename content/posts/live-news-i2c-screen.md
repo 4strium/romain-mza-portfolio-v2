@@ -1,9 +1,9 @@
 ---
 title: "[Cristal] How to display daily news on a I2C screen ?"
-date: 2024-08-06T18:39:07+01:00
-draft: true
+date: 2024-06-30T18:39:07+01:00
+draft: false
 author: Romain MELLAZA
-cover: 'https://romainmellaza.fr/img/cristal-home-assistant/pres4.png'
+cover: 'https://romainmellaza.fr/img/cristal-home-assistant/pres5.jpg'
 tags: ["Electronic", "C++", "esp32"]
 theme: "light"
 ---

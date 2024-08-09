@@ -1,7 +1,7 @@
 ---
 title: "[Cristal] How to record sound on a microSD card with an ESP32 and a MAX9814 microphone ?"
-date: 2024-08-04T18:39:07+01:00
-draft: true
+date: 2024-07-29T18:39:07+01:00
+draft: false
 author: Romain MELLAZA
 cover: 'https://cdn-shop.adafruit.com/970x728/1713-03.jpg'
 tags: ["Electronic", "C++", "esp32"]

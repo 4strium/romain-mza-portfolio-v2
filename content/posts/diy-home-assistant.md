@@ -1,12 +1,14 @@
 ---
 title: "How to make a custom home voice personal assistant based on an esp32"
 date: 2024-08-06T18:39:07+01:00
-draft: true
+draft: false
 author: Romain MELLAZA
 cover: 'https://romainmellaza.fr/img/cristal-home-assistant/pres1.jpg'
 tags: ["Electronic", "C++", "esp32"]
 theme: "light"
 ---
+
+![](https://romainmellaza.fr/img/cristal-home-assistant/pres1.jpg)
 
 # Introduction 
 This personal project is based on a simple observation: nowadays there are a significant number of voice assistants coupled with numerous tools promising hyper connectivity and boosted productivity. We therefore end up getting lost in all these opaque layers processing our personal data as well as in subscriptions that are often prohibitively expensive compared to the simplicity of the tasks that we want our electronic companion to carry out.
@@ -519,6 +521,123 @@ class Timer {
 };
 ```
 
+# Display a “Hello” message on an OLED screen with an animated smiley!
+
+```cpp
+// smiley 32x32px
+const unsigned char epd_bitmap_smiley [] PROGMEM = {
+	0x00, 0xf8, 0x1f, 0x00, 0x00, 0xfe, 0x7f, 0x00, 0x80, 0x3f, 0xfc, 0x01, 0xc0, 0x03, 0xc0, 0x03, 
+	0xe0, 0x00, 0x00, 0x07, 0x70, 0x00, 0x00, 0x0e, 0x38, 0x00, 0x00, 0x1c, 0x1c, 0xe0, 0x07, 0x38, 
+	0x0c, 0xf8, 0x1f, 0x30, 0x0e, 0xfe, 0x7f, 0x70, 0x06, 0x0f, 0xf0, 0x60, 0x87, 0x07, 0xe0, 0xe1, 
+	0x87, 0x03, 0xc0, 0xe1, 0x07, 0x00, 0x00, 0xe0, 0x03, 0x00, 0x00, 0xc0, 0x03, 0x00, 0x00, 0xc0, 
+	0x03, 0x00, 0x00, 0xc0, 0x03, 0x00, 0x00, 0xc0, 0x07, 0x0c, 0x10, 0xc0, 0x07, 0x1e, 0x78, 0xe0, 
+	0x07, 0x3e, 0x7c, 0xe0, 0x06, 0x1e, 0x78, 0x60, 0x0e, 0x0c, 0x30, 0x70, 0x0c, 0x00, 0x00, 0x30, 
+	0x1c, 0x00, 0x00, 0x38, 0x38, 0x00, 0x00, 0x1c, 0x70, 0x00, 0x00, 0x0e, 0xe0, 0x00, 0x00, 0x07, 
+	0xc0, 0x03, 0xc0, 0x03, 0x80, 0x1f, 0xf8, 0x01, 0x00, 0xfe, 0x7f, 0x00, 0x00, 0xf8, 0x1f, 0x00
+};
+
+// 'sourire', 32x32px
+const unsigned char epd_bitmap_sourire [] PROGMEM = {
+	0x00, 0xf8, 0x1f, 0x00, 0x00, 0xfe, 0x7f, 0x00, 0x80, 0x1f, 0xf8, 0x01, 0xc0, 0x03, 0xc0, 0x03, 
+	0xe0, 0x00, 0x00, 0x07, 0x70, 0xf0, 0x0f, 0x0e, 0x38, 0xfc, 0x3f, 0x1c, 0x1c, 0x1e, 0x78, 0x38, 
+	0x0c, 0x07, 0xe0, 0x30, 0x8e, 0x03, 0xc0, 0x71, 0xc6, 0x01, 0x80, 0x63, 0xc7, 0x00, 0x00, 0xe3, 
+	0xe7, 0x00, 0x00, 0xe7, 0x63, 0x00, 0x00, 0xc6, 0x63, 0x00, 0x00, 0xc6, 0xe3, 0xff, 0xff, 0xc7, 
+	0xe3, 0xff, 0xff, 0xc7, 0x03, 0x00, 0x00, 0xc0, 0x03, 0x00, 0x00, 0xc0, 0x07, 0x00, 0x00, 0xe0, 
+	0x67, 0x18, 0x18, 0xe6, 0xe6, 0x1f, 0xf8, 0x67, 0xce, 0x0f, 0xf0, 0x73, 0x0c, 0x00, 0x00, 0x30, 
+	0x1c, 0x00, 0x00, 0x38, 0x38, 0x00, 0x00, 0x1c, 0x70, 0x00, 0x00, 0x0e, 0xe0, 0x00, 0x00, 0x07, 
+	0xc0, 0x03, 0xc0, 0x03, 0x80, 0x1f, 0xf8, 0x01, 0x00, 0xfe, 0x7f, 0x00, 0x00, 0xf8, 0x1f, 0x00
+};
+
+void bonjour_func(){
+  for (int i=0;i<25;i++){
+    u8g2.clearBuffer();
+    u8g2.setFont(u8g2_font_helvB18_te);
+    u8g2.setFontDirection(2);
+    u8g2.enableUTF8Print();
+
+    u8g2.setFont(u8g2_font_lubB14_tr);
+    u8g2.drawUTF8(110,45,"Bonjour !");
+
+    u8g2.setBitmapMode(1);
+    
+    if (i % 2 == 0){
+      u8g2.drawXBM(50, 2, 32, 32, epd_bitmap_smiley);
+    }
+    else {
+      u8g2.drawXBM(50, 2, 32, 32, epd_bitmap_sourire);
+    }
+    u8g2.sendBuffer();
+    delay(300);
+  }
+}
+```
+
+# Measuring a distance with an HC-SR04 ultrasonic sensor
+
+```cpp
+float get_distance_ultrasonic(){
+  // Clears the trigPin
+  digitalWrite(TRIG_PIN, LOW);
+  delayMicroseconds(2);
+  // Sets the trigPin on HIGH state for 10 micro seconds
+  digitalWrite(TRIG_PIN, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(TRIG_PIN, LOW);
+  
+  // Reads the echoPin, returns the sound wave travel time in microseconds
+  duration = pulseIn(ECHO_PIN, HIGH);
+  
+  // Calculate the distance
+  float distanceCm = duration * SOUND_SPEED/2;
+  return distanceCm;
+}
+```
+
+# Perform Pulse Width Modulation on the LEDs
+
+[Pulse Width Modulation](https://en.wikipedia.org/wiki/Pulse-width_modulation) is a technique used to control the brightness of an LED by adjusting the duty cycle of a square wave signal.
+
+```cpp
+#include <Arduino.h>
+#include <stdio.h>
+#include <pwm.h>
+
+#define BLUE_LED 12
+
+void vari_blue(void *pvParameters){
+    pinMode(BLUE_LED, OUTPUT);
+    for(int pwm_loop = 0; pwm_loop < 2; pwm_loop++){
+        for (int fadeValue =15; fadeValue <= 255; fadeValue ++){
+            analogWrite(BLUE_LED, fadeValue);
+            vTaskDelay(1 / portTICK_PERIOD_MS);
+        }
+
+        // Variation du max au min par décrément
+        for (int fadeValue =255; fadeValue >= 15; fadeValue --){
+            analogWrite(BLUE_LED, fadeValue);
+            vTaskDelay(1 / portTICK_PERIOD_MS);
+        }
+    }
+    analogWrite(BLUE_LED, 255);
+}
+
+void fade_in_blue(void *pvParameters){
+    pinMode(BLUE_LED, OUTPUT);
+    for (int fadeValue =0; fadeValue <= 255; fadeValue ++){
+        analogWrite(BLUE_LED, fadeValue);
+        vTaskDelay(5 / portTICK_PERIOD_MS);
+    }
+}
+
+void fade_out_blue(void *pvParameters){
+    pinMode(BLUE_LED, OUTPUT);
+    for (int fadeValue =255; fadeValue >= 0; fadeValue --){
+        analogWrite(BLUE_LED, fadeValue);
+        vTaskDelay(2 / portTICK_PERIOD_MS);
+    }
+}
+```
+
 # Setup & Loop
 
 In Arduino programming, the `setup()` and `loop()` functions are fundamental to every sketch (a program written for Arduino). They define the basic structure and flow of your Arduino code. The `setup()` function is used to initialize variables, pin modes, start using libraries, and set up any other required state or configurations for your Arduino program. It is executed only once when the Arduino board is powered on or reset. The `loop()` function is where the main logic of the Arduino program is executed. It runs continuously in a loop after the setup() function has completed.
@@ -526,6 +645,49 @@ In Arduino programming, the `setup()` and `loop()` functions are fundamental to 
 So that you have a clear idea, here is what the setup function of the program looks like inside the “Cristal” wizard :
 
 ```cpp
+#include <Arduino.h>
+#include <U8g2lib.h>
+#include <stdio.h>
+#include <Wire.h>
+#include <pwm.h>
+#include <open-meteo.h>
+#include <WiFi.h>
+#include <wavserv.h>
+#include <rec-sound.h>
+#include <date-heure.h> 
+#include <gasdk.h>
+#include <open-news-api.h>
+#include <get_secret_values.h>
+
+#define I2C_SDA 27
+#define I2C_SCL 22
+#define BLUE_LED 12
+#define BTN_PIN 4
+#define TRIG_PIN 15
+#define ECHO_PIN 2
+#define SOUND_SPEED 0.034
+#define MAX_TITLES 5
+#define DISPLAY_TIME 6000  // Temps d'affichage de chaque titre en millisecondes
+
+U8G2_SH1106_128X64_NONAME_F_HW_I2C u8g2(U8G2_R2, /* reset=*/ U8X8_PIN_NONE);
+
+// Variables :
+char input_refl;
+char input;
+
+long duration;
+float distanceCm;
+
+int count_inactivity = 0;
+bool actived = false;
+int passive_counter = 0;
+
+String API_key;
+String Device_Id;
+String Model_Id;
+
+String* titles_news = nullptr;
+
 Eyes e1;
 
 void setup(void) {
@@ -562,5 +724,155 @@ void setup(void) {
 
   Serial.println("Connecté au réseau WiFi !");
 
+}
+```
+
+And here is the loop() function of course I display it for information purposes only, you can do what you want on your side. But this is what it might look like as a user menu. If there are things you don't see implemented, look at the subsections in the Features section above.
+
+```cpp
+void loop(void) {
+
+  count_inactivity++;
+  float dist = get_distance_ultrasonic();
+  
+  if (dist < 15.0)
+  {
+    count_inactivity--;
+
+    e1.det_eyes_in();
+    actived = true;
+
+    while (digitalRead(BTN_PIN) == LOW) {
+      float dist = get_distance_ultrasonic();
+
+      if ((dist > 15.0)&&(passive_counter >= 20)){
+        passive_counter = 0;
+        break;
+      }
+      else if (dist > 15.0){passive_counter++;}
+      delay(300);
+    }
+
+    if (digitalRead(BTN_PIN) == HIGH)
+    {
+      if (e1.step == 1)
+      {
+        xTaskCreate([](void *parameter)
+        {
+          e1.clign_out();
+          vTaskDelete(NULL); 
+        }, "task1", 2048, NULL, 5, NULL);
+        xTaskCreate([](void *parameter)
+        {
+          vari_blue(parameter);
+          vTaskDelete(NULL); 
+        }, "task2", 2048, NULL, 5, NULL);
+      }
+      delay(500);
+      record_mic();
+      delay(500);
+      String word = recowav();
+      Serial.println(word);
+      if (word == String("météo"))
+        {
+          Meteo_aff m1;
+          m1.temp =  get_temp();
+          m1.dn_cond = get_day_night();
+          m1.wmo_code = get_WMO();
+          m1.setLocation("Guilers");
+          m1.print_4user();
+          delay(10000);
+        }
+      else if (word == String("minuteur"))
+        {
+          Timer(600);
+        }
+      else if (word == String("bonjour"))
+        {
+          bonjour_func();
+        }
+      else if ((word == String("date"))||(word == String("heure")||(word == String("jour"))))
+        {
+          print_datetime();
+        }
+      else if (word == String("allume bureau"))
+        {
+          String input_phrase = String("Turn on Bureau Romain");
+          exec_com_assistant(API_key,Device_Id,Model_Id,input_phrase);
+        }
+      else if (word == String("éteins bureau"))
+        {
+          String input_phrase = String("Turn off Bureau Romain");
+          exec_com_assistant(API_key,Device_Id,Model_Id,input_phrase);
+        }
+      else if (word == String("ouvre le volet"))
+        {
+          String input_phrase = String("set velux romain at 100%");
+          exec_com_assistant(API_key,Device_Id,Model_Id,input_phrase);
+        }
+      else if (word == String("entrouvre le volet"))
+        {
+          String input_phrase = String("set velux romain at 50%");
+          exec_com_assistant(API_key,Device_Id,Model_Id,input_phrase);
+        }
+      else if (word == String("ferme le volet"))
+        {
+          String input_phrase = String("set velux romain at 0%");
+          exec_com_assistant(API_key,Device_Id,Model_Id,input_phrase);
+        }
+      else if (word == String("TF1"))
+        {
+          String input_phrase = String("tf1");
+          exec_com_assistant(API_key,Device_Id,Model_Id,input_phrase);
+        }
+      else if (word == String("France 2"))
+        {
+          String input_phrase = String("france 2");
+          exec_com_assistant(API_key,Device_Id,Model_Id,input_phrase);
+        }
+      else if (word == String("M6"))
+        {
+          String input_phrase = String("m6");
+          exec_com_assistant(API_key,Device_Id,Model_Id,input_phrase);
+        }
+      else if (word == String("France 3"))
+        {
+          String input_phrase = String("france 3");
+          exec_com_assistant(API_key,Device_Id,Model_Id,input_phrase);
+        }
+      else if (word == String("info")||word == String("infos"))
+        {
+          display_titles();
+        }
+    }
+
+    if (e1.step == 2)
+    {
+      delay(1000);
+      xTaskCreate([](void *parameter)
+      {
+        e1.clign_in();
+        vTaskDelete(NULL); 
+      }, "task1", 2048, NULL, 5, NULL);
+      xTaskCreate([](void *parameter)
+      {
+        fade_out_blue(parameter);
+        vTaskDelete(NULL); 
+      }, "task2", 2048, NULL, 5, NULL);
+    }
+
+    delay(2000);
+
+  }
+
+  if (count_inactivity >= 20){
+    if (actived){
+      e1.det_eyes_out();
+      actived = false;
+    }
+    count_inactivity = 0;
+  }
+
+  delay(300);
 }
 ```

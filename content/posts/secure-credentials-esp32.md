@@ -1,9 +1,9 @@
 ---
 title: "[Cristal] Secure credentials in your IOT projects"
-date: 2024-08-06T18:39:07+01:00
-draft: true
+date: 2024-08-02T18:39:07+01:00
+draft: false
 author: Romain MELLAZA
-cover: 'https://romainmellaza.fr/img/cover-images/reseaux_cables.png'
+cover: 'https://romainmellaza.fr/img/cover-images/hacking.jpg'
 tags: ["Electronic", "C++", "esp32"]
 theme: "light"
 ---

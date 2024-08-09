@@ -1,7 +1,7 @@
 ---
 title: "[Cristal] Setting up a voice recognition/Google assistant server"
-date: 2024-08-06T18:39:07+01:00
-draft: true
+date: 2024-07-11T18:39:07+01:00
+draft: false
 author: Romain MELLAZA
 cover: 'https://romainmellaza.fr/img/cover-images/code_cover_2.jpg'
 tags: ["Server", "Linux", "esp32"]
@@ -582,3 +582,10 @@ void exec_com_assistant(String apiKey, String deviceId, String modelId, String p
   http.end();
 }
 ```
+
+# Conclusion
+
+After having correctly configured the server and in particular the two virtual terminals via screen, you will have to obtain the following configuration permanently:
+
+* session cristalWAV -> listen `port 8080`
+* session cristal GOOGLE -> listen `port 3000`
