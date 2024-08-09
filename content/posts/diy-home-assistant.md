@@ -878,3 +878,7 @@ void loop(void) {
   delay(300);
 }
 ```
+
+# Conclusion 
+
+To better understand the project, do not hesitate to explore the [GitHub repository](https://github.com/4strium/Cristal-Home-Assistant).
