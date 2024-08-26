@@ -1,6 +1,6 @@
 ---
 title: "Réaliser son propre circuit imprimé de hub USB"
-date: 2024-08-26T15:39:07+01:00
+date: 2024-08-26T14:39:07+01:00
 draft: false
 author: Romain MELLAZA
 cover: 'https://github.com/4strium/PCB-USB-hub/raw/main/pcb_view.png?raw=true'
@@ -27,7 +27,7 @@ La conception de circuit imprimé (PCB) est un domaine tout aussi fascinant qu'e
 | **USB-A Male**   | ```USB-A``` | ```C98125``` |
 
 # Schéma 
-Vous pouvez réaliser les branchements de cette manière :
+Vous pouvez réaliser les branchements et le positionnement des composants de cette manière :
 
 ![](https://github.com/4strium/PCB-USB-hub/raw/main/sheet_view.png?raw=true)
 
@@ -36,3 +36,7 @@ Vous pouvez réaliser les branchements de cette manière :
 Vous pouvez agencer le circuit imprimé de cette manière :
 
 ![](https://github.com/4strium/PCB-USB-hub/raw/main/pcb_view.png?raw=true)
+
+# Fichiers
+
+Les différents fichiers sont disponibles au téléchargement à cette adresse : [https://github.com/4strium/PCB-USB-hub](https://github.com/4strium/PCB-USB-hub)
