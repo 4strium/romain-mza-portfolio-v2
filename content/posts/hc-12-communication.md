@@ -3,13 +3,13 @@ title: "Créer une liaison stable, sécurisée et distante sur 433MHz"
 date: 2024-12-27T18:39:07+01:00
 draft: false
 author: Romain MELLAZA
-cover: 'https://romainmellaza.fr/img/hc-12/intro.png'
+cover: 'https://romainmellaza.fr/img/hc-12/hc-12_cover.jpg'
 tags: ["esp32", "Electronic", "Réseaux"]
 theme: "dark"
 ---
 
 # Introduction
-![|inline](https://romainmellaza.fr/img/hc-12/hc-12_cover.jpg)
+![|inline](https://romainmellaza.fr/img/hc-12/intro.png)
 
 Il y a fort à parier que lors de la réalisation de vos différents projets électroniques il y ait eu à un moment ou un autre la nécessité de mettre en action une liaison permettant le transfert de données sur de longues distances. Aujourd'hui nous allons voir ensemble comment réaliser ceci de manière simple, efficace et abordable. Nous allons travailler sur la fréquence 433MHz en raison de son rapport intéressant grande portée/faible consommation d'énergie. De plus cette bande de fréquence est utilisée et reconnue dans des domaines tels que la domotique ou les systèmes d'alarmes, en effet la communication entre les différents modules ou télécommandes passe en majorité par cette fréquence. **Il est alors primordial de vous prévenir que d'utiliser cette fréquence dans des environnements très saturés en systèmes électroniques - c'est à dire des maisons disposant d'un nombre important d'objets connectés - générera à coup sur des interférences non négligeables.** Mais pas d'inquiétude nous allons voir comment éviter que votre projet personnel paralyse votre habitat.
 
