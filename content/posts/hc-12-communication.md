@@ -3,13 +3,13 @@ title: "Créer une liaison stable, sécurisée et distante sur 433MHz"
 date: 2024-12-27T18:39:07+01:00
 draft: false
 author: Romain MELLAZA
-cover: 'https://romainmellaza.fr/img/cover-images/code_cover_2.jpg'
+cover: 'https://romainmellaza.fr/img/hc-12/intro.png'
 tags: ["esp32", "Electronic", "Réseaux"]
 theme: "dark"
 ---
 
 # Introduction
-![|inline](https://romainmellaza.fr/img/hc-12/intro.png)
+![|inline](https://romainmellaza.fr/img/hc-12/hc-12_cover.jpg)
 
 Il y a fort à parier que lors de la réalisation de vos différents projets électroniques il y ait eu à un moment ou un autre la nécessité de mettre en action une liaison permettant le transfert de données sur de longues distances. Aujourd'hui nous allons voir ensemble comment réaliser ceci de manière simple, efficace et abordable. Nous allons travailler sur la fréquence 433MHz en raison de son rapport intéressant grande portée/faible consommation d'énergie. De plus cette bande de fréquence est utilisée et reconnue dans des domaines tels que la domotique ou les systèmes d'alarmes, en effet la communication entre les différents modules ou télécommandes passe en majorité par cette fréquence. **Il est alors primordial de vous prévenir que d'utiliser cette fréquence dans des environnements très saturés en systèmes électroniques - c'est à dire des maisons disposant d'un nombre important d'objets connectés - générera à coup sur des interférences non négligeables.** Mais pas d'inquiétude nous allons voir comment éviter que votre projet personnel paralyse votre habitat.
 
@@ -22,7 +22,7 @@ Ici pour mon travail les modules 1 et 2 seront des ESP32 mais vous pouvez bien e
 
 # Le module
 A moins que vous disposez d'un MCU capable d'émettre et recevoir sur du 433MHz de manière native, il est nécessaire de vous procurer deux modules permettant une émission/réception sur cette bande de fréquence. Un module bien connu permet ce tour de force, je vous présente le module **HC-12** :
-![](https://romainmellaza.fr/img/hc-12/hc12.png)
+![|inline](https://romainmellaza.fr/img/hc-12/hc12.png)
 
 Passons maintenant en revue quelques caractéristiques importantes. Tout d'abord si vous utilisez tout comme moi un ESP32 il est nécessaire d'alimenter le module en 3.3V et non en 5V, en effet l'ESP32 fonctionne en logique 3.3V, par conséquent la tension en sortie des convertisseurs numérique-analogique sera au maximum de 3.3V et non 5V. En pratique si vous alimentez en 5V le module alors que les broches de réception/émission transmettent un signal de 3.3V maximum il y aura donc un problème de compatibilité des niveaux logiques. A noter que les cartes RaspberryPi et l'Arduino Due fonctionnent aussi en logique 3.3V alors que l'Arduino UNO par exemple fonctionne lui en logique 5V.
 
@@ -187,7 +187,7 @@ Voilà donc l'utilité de mon système d'encapsulation ! 😄
 
 # Optimisation de la liaison
 J'ai aussi mis en place un calcul du packet loss, il est assez basique : à chaque cycle de ma boucle ```loop```, un de mes deux ESP32 demande à l'autre de répondre, s'il répond alors je rajoute un 1 à une file, cependant s'il ne répond pas j'enfile un 0, dans les deux cas je défile puis je calcule le pourcentage de 0 dans la file, ce pourcentage représente la quantité de paquets perdus. On peut résumer ce test au diagramme suivant :
-![](https://romainmellaza.fr/img/hc-12/packet_loss.png)
+![|inline](https://romainmellaza.fr/img/hc-12/packet_loss.png)
 
 Enfin grâce à ce système j'ai pu mener ma propre batterie de test afin de savoir quel était le temps d'attente optimal entre la question émise par **ESP1** et la réponse de **ESP2** reçue par **ESP1**. J'ai aussi vérifié que cette réponse était complète et bien interprétée.
 
