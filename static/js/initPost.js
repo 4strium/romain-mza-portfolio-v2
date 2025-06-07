@@ -111,8 +111,6 @@ function syntaxHighlight() {
   }
 
   script.onload = function () {
-    // console.log("hljs.js loaded");
-    // 忽略未转义的HTML警告，自己的md文档默认可信
     hljs.configure({
       ignoreUnescapedHTML: true
     });
