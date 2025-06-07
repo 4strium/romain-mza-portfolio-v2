@@ -3,14 +3,14 @@ title: "Nettoyer votre système d'exploitation suite à une session PIX"
 date: 2023-02-18T21:39:07+01:00
 draft: false
 author: Romain MELLAZA
-cover: 'https://romainmellaza.fr/img/pix-cleaner/pix-logo1-png-17972.png'
+cover: 'https://mellaza.tech/img/pix-cleaner/pix-logo1-png-17972.png'
 tags: ["PIX", "Python", "Software"]
 theme: "light"
 ---
 
 *Ce logiciel n'est en aucun cas affilié au service public PIX, ni à aucune organisation, il est à but non lucratif.*
 
-![|inline](https://romainmellaza.fr/img/pix-cleaner/logo_article_pix.png)
+![|inline](https://mellaza.tech/img/pix-cleaner/logo_article_pix.png)
 
 # Problématique 
 [*Pix*](https://pix.fr/) est le service public français en ligne pour évaluer, développer, et certifier ses compétences numériques. 

@@ -3,19 +3,19 @@ title: "How to make a custom home voice personal assistant based on an esp32"
 date: 2024-08-06T18:39:07+01:00
 draft: false
 author: Romain MELLAZA
-cover: 'https://romainmellaza.fr/img/cristal-home-assistant/pres1.jpg'
+cover: 'https://mellaza.tech/img/cristal-home-assistant/pres1.jpg'
 tags: ["Electronic", "C++", "esp32"]
 theme: "light"
 ---
 
-![](https://romainmellaza.fr/img/cristal-home-assistant/pres1.jpg)
+![](https://mellaza.tech/img/cristal-home-assistant/pres1.jpg)
 
 # Introduction 
 This personal project is based on a simple observation: nowadays there are a significant number of voice assistants coupled with numerous tools promising hyper connectivity and boosted productivity. We therefore end up getting lost in all these opaque layers processing our personal data as well as in subscriptions that are often prohibitively expensive compared to the simplicity of the tasks that we want our electronic companion to carry out.
 
 Today I decided to show you in the smallest details how I managed to design **Cristal** a voice assistant which can respond to all your wishes as long as you are ready to fiddle a minimum between the hardware and the software.
 
-![Cristal Home Assistant|inline](https://romainmellaza.fr/img/cristal-home-assistant/pres2.jpg)
+![Cristal Home Assistant|inline](https://mellaza.tech/img/cristal-home-assistant/pres2.jpg)
 
 # The necessary equipment
 ![|inline](https://www.gotronic.fr/ori-module-nodemcu-esp32-28407.jpg)
@@ -49,14 +49,14 @@ This is the case for voice recognition for example, which is therefore central t
 
 In my case for example, I rent a server thanks to DigitalOcean, I selected the lowest possible configuration with only 1GB of Ram and an inefficient Intel processor. But it is more than sufficient as you can see in the graphs below, in terms of the memory or processor usage percentages with actions initiated by my custom assistant.
 
-![Screenshot of data measured on the server I used for this project](https://romainmellaza.fr/img/cristal-home-assistant/digital-ocean.png)
+![Screenshot of data measured on the server I used for this project](https://mellaza.tech/img/cristal-home-assistant/digital-ocean.png)
 
-**If you would like to see in more detail how to set up your Linux server for the voice assistant, [click here](https://romainmellaza.fr/posts/cristal-setup-server/).**
+**If you would like to see in more detail how to set up your Linux server for the voice assistant, [click here](https://mellaza.tech/posts/cristal-setup-server/).**
 
 # 3D models for those who want/can print them...
 You can print the four parts of the project, here are the 3d files, feel free to modify them as you wish! *(namely I printed it with my Ender-3 V3 SE)*
 
-![|inline](https://romainmellaza.fr/img/cristal-home-assistant/printing-1.jpg)
+![|inline](https://mellaza.tech/img/cristal-home-assistant/printing-1.jpg)
 
 * [The button to activate voice recording.](https://github.com/4strium/Cristal-Home-Assistant/blob/main/models/Bouton-Cristal-AI.3mf)
 * [The head of the robot with its two antennas.](https://github.com/4strium/Cristal-Home-Assistant/blob/main/models/Head%20cristal.3mf)
@@ -103,15 +103,15 @@ Make the connections follow this:
 
 # Functionalities :
 
-* If you want to see how to display live weather on screen via I2C, [click here](https://romainmellaza.fr/posts/live-weather-i2c-screen/).
+* If you want to see how to display live weather on screen via I2C, [click here](https://mellaza.tech/posts/live-weather-i2c-screen/).
 
-* If you want to see how to display live date and time based on GPS coordinates (to get timezone) on an I2C screen, [click here](https://romainmellaza.fr/posts/date-time-i2c-screen/).
+* If you want to see how to display live date and time based on GPS coordinates (to get timezone) on an I2C screen, [click here](https://mellaza.tech/posts/date-time-i2c-screen/).
 
-* If you want to see how to display daily news on screen via I2C, [click here](https://romainmellaza.fr/posts/live-news-i2c-screen/).
+* If you want to see how to display daily news on screen via I2C, [click here](https://mellaza.tech/posts/live-news-i2c-screen/).
 
-* If you want to see how to record sound on microSD card via MAX9814 microphone, [click here](https://romainmellaza.fr/posts/record-sound-max9814/).
+* If you want to see how to record sound on microSD card via MAX9814 microphone, [click here](https://mellaza.tech/posts/record-sound-max9814/).
 
-* If you want to see how to keep your [API](https://en.wikipedia.org/wiki/API) identifiers secret for this ultra-connected project, [click here](https://romainmellaza.fr/posts/secure-credentials-esp32/).
+* If you want to see how to keep your [API](https://en.wikipedia.org/wiki/API) identifiers secret for this ultra-connected project, [click here](https://mellaza.tech/posts/secure-credentials-esp32/).
 
 # Draw eyes expressions on an OLED screen
 

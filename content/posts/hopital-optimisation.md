@@ -3,7 +3,7 @@ title: "Optimiser un hôpital, grâce aux types abstraits"
 date: 2024-01-08T21:39:07+01:00
 draft: false
 author: Romain MELLAZA
-cover: 'https://romainmellaza.fr/img/hospital_type/cover.jpg'
+cover: 'https://mellaza.tech/img/hospital_type/cover.jpg'
 tags: ["Structures de données", "Types abstraits", "OCaml"]
 theme: "light"
 ---

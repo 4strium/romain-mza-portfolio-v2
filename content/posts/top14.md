@@ -3,12 +3,12 @@ title: "Une Intelligence Artificielle coach de rugby ?!"
 date: 2022-10-09T21:39:07+01:00
 draft: false
 author: Romain MELLAZA
-cover: 'https://romainmellaza.fr/img/cover-images/rugby_cover.jpg'
+cover: 'https://mellaza.tech/img/cover-images/rugby_cover.jpg'
 tags: ["Python", "machine learning", "algorithm"]
 theme: "dark"
 ---
 
-![Image représentant une mêlée de rugby|wide](https://romainmellaza.fr/img/cover-images/rugby_cover.jpg)
+![Image représentant une mêlée de rugby|wide](https://mellaza.tech/img/cover-images/rugby_cover.jpg)
 
 
 # Introduction
@@ -151,7 +151,7 @@ data_for_search = representation(data_team, extractionDonnees()[1])
 Via les deux fonctions suivantes nous allons calculer les différentes distances euclidiennes, entre le point saisi par l’utilisateur et tous les points des joueurs.
 
 On rappelle la formule pour calculer une **distance euclidienne** :
-![Calcul de la distance euclidienne](https://romainmellaza.fr/img/rugby_knn/distance.png)
+![Calcul de la distance euclidienne](https://mellaza.tech/img/rugby_knn/distance.png)
 
 
 Par la suite on enregistrera toutes ces distances dans une liste avec la forme suivante :

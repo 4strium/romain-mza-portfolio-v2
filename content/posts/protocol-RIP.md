@@ -3,7 +3,7 @@ title: "Le protocole de routage RIP"
 date: 2023-01-11T21:39:07+01:00
 draft: false
 author: Romain MELLAZA
-cover: 'https://romainmellaza.fr/img/cover-images/reseaux_cables.png'
+cover: 'https://mellaza.tech/img/cover-images/reseaux_cables.png'
 tags: ["Réseaux", "Routage", "Dynamique"]
 theme: "dark"
 ---
@@ -20,7 +20,7 @@ Le protocole RIP est **aujourd'hui très rarement utilisé** dans les grandes in
 # Travail Pratique
 
 Nous débutons donc notre simulation avec ce réseau, auquel **aucun protocole de routage** n’est défini entre les routeurs.
-![](https://romainmellaza.fr/img/protocol_rip_img/rip_img1.png)
+![](https://mellaza.tech/img/protocol_rip_img/rip_img1.png)
 
 On choisit d’ouvrir l’invite de commandes du Routeur 0 et de taper les commandes suivantes :
 ```
@@ -42,10 +42,10 @@ Enfin nous pouvons définir le protocole de routage RIP en renseignement les qua
 * 10.0.0.12 (en dessous de lui)
 
 En lançant le mode simulation, on constate que les premiers paquets orange émis par le nouveau protocole du routeur apparaissent bien comme prévu :
-![|inline](https://romainmellaza.fr/img/protocol_rip_img/rip_img2.jpg)
+![|inline](https://mellaza.tech/img/protocol_rip_img/rip_img2.jpg)
 
 Après un reset de la simulation, les quatre paquets bleus nous intéressant apparaissent à leur tour :
-![|inline](https://romainmellaza.fr/img/protocol_rip_img/rip_img3.jpg)
+![|inline](https://mellaza.tech/img/protocol_rip_img/rip_img3.jpg)
 
 *Il s'agit des messages suivants :*
 | **Numéro de message** |   **Adresse source**   |   **Adresse destination**   |   **Route annoncée 1 et métrique**   |    **Route annoncée 2 et métrique**   |   **Route annoncée 3 et métrique**   |
@@ -58,7 +58,7 @@ Après un reset de la simulation, les quatre paquets bleus nous intéressant app
 A noter qu’il est tout à fait normal que l’adresse de destination soit « **224.0.0.9** » car il s’agitde l’**adresse de multicast dédiée au protocole RIP de seconde génération.**
 
 On peut vérifier cela dans le document officiel « [*IPv4 Multicast Address Space Registry*](https://www.iana.org/assignments/multicast-addresses/multicast-addresses.xml) » :
-![|inline](https://romainmellaza.fr/img/protocol_rip_img/rip_img4.jpg)
+![|inline](https://mellaza.tech/img/protocol_rip_img/rip_img4.jpg)
 
 Les paquets ne sont pas récupérés par les machines adjacentes car comme on peut le lire dans l’onglet « *OSI model* » :
 
@@ -101,7 +101,7 @@ On peut refaire un tableau pour **mieux visualiser les paquets émis par le rout
 | 3 (bas gauche)        |   ```10.0.0.9```  |        ```224.0.0.9```      | ```10.0.0.0/30 METRIC : 1```| ```192.168.1.0/24 METRIC : 1```|
 
 Et via l’outil de simulation, on constate que notre configuration de routage dynamique RIP marche à merveille, car **la communication entre le routeur 0 et le routeur 1 est maintenant établie !**
-![|inline](https://romainmellaza.fr/img/protocol_rip_img/rip_img5.jpg)
+![|inline](https://mellaza.tech/img/protocol_rip_img/rip_img5.jpg)
 
 Nous avons de plus la confirmation textuelle : «```The device receives a RIP RESPONSE.```»
 

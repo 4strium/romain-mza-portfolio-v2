@@ -3,13 +3,13 @@ title: "Distribuer le tri fusion sur des systèmes sur puce"
 date: 2024-05-10T18:39:07+01:00
 draft: false
 author: Romain MELLAZA
-cover: 'https://romainmellaza.fr/img/esp32-merge-sort/cover-esp32.jpg'
+cover: 'https://mellaza.tech/img/esp32-merge-sort/cover-esp32.jpg'
 tags: ["Electronic", "Algorithm", "esp32"]
 theme: "light"
 ---
 
 # Introduction
-Il était sans l'ombre d'un doute passionnant [d'implémenter le tri-fusion en *multi-threading*](https://romainmellaza.fr/posts/merge-multithreading/) car cela nous a donné des résultats intéressants et variables selon des propriétés données. On peut à présent s'enfouir un peu plus dans ce domaine en implémentant le tri fusion de [**manière distribué**](https://aws.amazon.com/fr/what-is/distributed-computing/) sur des [ESP32](https://fr.wikipedia.org/wiki/ESP32) qui sont de magnifiques ["System on a Chip" (SoC)](https://fr.wikipedia.org/wiki/Syst%C3%A8me_sur_une_puce) endurants et emportant une grande quantité de fonctionnalités tels que le [Bluetooth](https://fr.wikipedia.org/wiki/Bluetooth) ou le [WiFi](https://fr.wikipedia.org/wiki/Wi-Fi) mais aussi des protocoles filaires moins connus tels que [SPI](https://fr.wikipedia.org/wiki/Serial_Peripheral_Interface) ou [I2C](https://fr.wikipedia.org/wiki/I2C), qui sont tout aussi utiles.
+Il était sans l'ombre d'un doute passionnant [d'implémenter le tri-fusion en *multi-threading*](https://mellaza.tech/posts/merge-multithreading/) car cela nous a donné des résultats intéressants et variables selon des propriétés données. On peut à présent s'enfouir un peu plus dans ce domaine en implémentant le tri fusion de [**manière distribué**](https://aws.amazon.com/fr/what-is/distributed-computing/) sur des [ESP32](https://fr.wikipedia.org/wiki/ESP32) qui sont de magnifiques ["System on a Chip" (SoC)](https://fr.wikipedia.org/wiki/Syst%C3%A8me_sur_une_puce) endurants et emportant une grande quantité de fonctionnalités tels que le [Bluetooth](https://fr.wikipedia.org/wiki/Bluetooth) ou le [WiFi](https://fr.wikipedia.org/wiki/Wi-Fi) mais aussi des protocoles filaires moins connus tels que [SPI](https://fr.wikipedia.org/wiki/Serial_Peripheral_Interface) ou [I2C](https://fr.wikipedia.org/wiki/I2C), qui sont tout aussi utiles.
 
 # Mise en situation
 La situation est la suivante : on dispose de deux ESP32, on souhaite générer un tableau contenant *n-éléments* aléatoires. On divise ensuite le tableau en deux parties égales, on demande au premier microcontrôleur de trier (via tri-fusion) la première partie du tableau, et au second de traiter la deuxième partie. Puis on récupère les deux parties triées pour les fusionner. J'ai dans un premier temps réalisé les branchements nécessaires à l'utilisation de la liaison SPI mais je me suis assez rapidement confronté à un problème qui peut — au premier abord — paraître anodin mais qui est à la souche de ce type de projet : **LA SYNCHRONISATION**.

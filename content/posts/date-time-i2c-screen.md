@@ -3,12 +3,12 @@ title: "[Cristal] How to display date/time on a I2C screen ?"
 date: 2024-06-25T18:39:07+01:00
 draft: false
 author: Romain MELLAZA
-cover: 'https://romainmellaza.fr/img/cristal-home-assistant/pres3.jpg'
+cover: 'https://mellaza.tech/img/cristal-home-assistant/pres3.jpg'
 tags: ["Electronic", "C++", "esp32"]
 theme: "light"
 ---
 
-![](https://romainmellaza.fr/img/cristal-home-assistant/pres3.jpg)
+![](https://mellaza.tech/img/cristal-home-assistant/pres3.jpg)
 
 # Introduction 
 Together we will see how to display live date and time based on GPS coordinates (to get timezone) on an I2C screen. To obtain the information, we will use the [Time Zone Datatbase](https://timezonedb.com/). You will have to create an account on their site to obtain your personal API key.

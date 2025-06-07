@@ -3,13 +3,13 @@ title: "Le tri fusion en multi-threading"
 date: 2024-04-14T18:39:07+01:00
 draft: false
 author: Romain MELLAZA
-cover: 'https://romainmellaza.fr/img/multi-threading/cover_microcircuit.jpg'
+cover: 'https://mellaza.tech/img/multi-threading/cover_microcircuit.jpg'
 tags: ["Algorithm", "esp32", "Electronic"]
 theme: "light"
 ---
 
 # Problématique
-Dans le cadre d'un projet personnel, j'ai souhaité comparer les performances énergétiques de systèmes informatiques. Une des premières idées qui m'est venu à l'esprit est de mettre en concurrence le même algorithme (en [C](https://fr.wikipedia.org/wiki/C_(langage))) de tri fusion (détaillé [ici](https://romainmellaza.fr/posts/tri-fusion/)) exécuté de manière séquentielle **VERSUS** une exécution en [**multi-threading**](https://learn.microsoft.com/fr-fr/dotnet/standard/threading/threads-and-threading) soit utilisant le principe de [parallélisme](https://fr.wikipedia.org/wiki/Parall%C3%A9lisme_(informatique)).
+Dans le cadre d'un projet personnel, j'ai souhaité comparer les performances énergétiques de systèmes informatiques. Une des premières idées qui m'est venu à l'esprit est de mettre en concurrence le même algorithme (en [C](https://fr.wikipedia.org/wiki/C_(langage))) de tri fusion (détaillé [ici](https://mellaza.tech/posts/tri-fusion/)) exécuté de manière séquentielle **VERSUS** une exécution en [**multi-threading**](https://learn.microsoft.com/fr-fr/dotnet/standard/threading/threads-and-threading) soit utilisant le principe de [parallélisme](https://fr.wikipedia.org/wiki/Parall%C3%A9lisme_(informatique)).
 
 *Je ne détaillerai pas ici mon algorithme de mesure de puissance électrique, car ce dernier fera l'objet d'un futur article.*
 
@@ -223,6 +223,6 @@ On constate que sur des tableaux contenant peu de données le tri fusion séquen
 
 # Mesures de puissance
 
-![Graphique montrant les différences entre un tri fusion séquentiel et parallèle|big](https://romainmellaza.fr/img/multi-threading/graph.png)
+![Graphique montrant les différences entre un tri fusion séquentiel et parallèle|big](https://mellaza.tech/img/multi-threading/graph.png)
 
 On constate que le tri fusion séquentiel bien que plus long, ne demande pas à l'appareil une puissance supérieure à 30 watts, tandis que le tri fusion parallèle utilise l'ensemble des ressources de l'ordinateur en demandant une puissance électrique autour des 50 watts en pic, surtout dûe au refroidissement du système.

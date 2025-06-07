@@ -3,12 +3,12 @@ title: "Meeting Aérien à l'aérodrome de Bretagne Atlantique"
 date: 2022-07-24T21:39:07+01:00
 draft: false
 author: Romain MELLAZA
-cover: 'https://romainmellaza.fr/img/aircraft_photos/dauphin-marine-img2.png'
+cover: 'https://mellaza.tech/img/aircraft_photos/dauphin-marine-img2.png'
 tags: ["Aviation", "aircraft", "Bretagne"]
 theme: "dark"
 ---
 
-![Dauphin N3 de la flottille 34F (BAN Lanvéoc-Poulmic)|wide](https://romainmellaza.fr/img/aircraft_photos/dauphin-marine-img2.png)
+![Dauphin N3 de la flottille 34F (BAN Lanvéoc-Poulmic)|wide](https://mellaza.tech/img/aircraft_photos/dauphin-marine-img2.png)
 
 C'est sous une véritable *fournaise bretonne* que c'est tenu le **Meeting Aérien 2022 de l'[aérodrome de Guiscriff](https://fr.wikipedia.org/wiki/A%C3%A9rodrome_de_Guiscriff_-_Sca%C3%ABr).** 
 Tout au long de la journée, les démonstrations se sont enchaînées à un rythme effréné !

@@ -3,7 +3,7 @@ title: "[Cristal] How to display daily news on a I2C screen ?"
 date: 2024-06-30T18:39:07+01:00
 draft: false
 author: Romain MELLAZA
-cover: 'https://romainmellaza.fr/img/cristal-home-assistant/pres5.jpg'
+cover: 'https://mellaza.tech/img/cristal-home-assistant/pres5.jpg'
 tags: ["Electronic", "C++", "esp32"]
 theme: "light"
 ---
@@ -117,7 +117,7 @@ String* get_five_top_news(void) {
 }
 ```
 
-If you are wondering what the personal library "get_secret_values" is then head [here](https://romainmellaza.fr/posts/secure-credentials-esp32/).
+If you are wondering what the personal library "get_secret_values" is then head [here](https://mellaza.tech/posts/secure-credentials-esp32/).
 
 # Display on screen
 

@@ -3,15 +3,15 @@ title: "Les technologies embarquées dans les engins spatiaux"
 date: 2023-05-17T21:39:07+01:00
 draft: false
 author: Romain MELLAZA
-cover: 'https://romainmellaza.fr/img/IT_space/rover-mars.jpg'
+cover: 'https://mellaza.tech/img/IT_space/rover-mars.jpg'
 tags: ["Nouvelles technologies", "Espace", "Futur"]
 theme: "dark"
 ---
 
-![Image d’illustration d’un rover martien|wide](https://romainmellaza.fr/img/IT_space/rover-mars.jpg)
+![Image d’illustration d’un rover martien|wide](https://mellaza.tech/img/IT_space/rover-mars.jpg)
 
 # Comment peut-on concevoir des logiciels embarqués pour les engins spatiaux qui soient suffisamment fiables pour fonctionner de manière autonome ?
-![Réplique de Spoutnik 1|inline](https://romainmellaza.fr/img/IT_space/Sputnik_asm.jpg)
+![Réplique de Spoutnik 1|inline](https://mellaza.tech/img/IT_space/Sputnik_asm.jpg)
 
 C’est en **1957**, durant la Guerre Froide, qu’est envoyé le **premier satellite artificiel en orbite terrestre**, il se nomme [**Spoutnik**](https://fr.wikipedia.org/wiki/Spoutnik_1) et il comporte déjà un petit détail qui fait toute son importance ! Ce petit détail, c’est que la sphère de **l’engin renferme déjà de l’électronique embarqué.** Il s’agit donc là de la particularité des différents appareils humains envoyés dans l’espace : ils sont en écrasantes majorités équipées d’ordinateur de bord, et ceux du nanosatellite jusqu’à la plus puissante des fusées. En effet **la communication, le recueil d’informations, l’autonomie et la prise de décision** sont primordiales au bon déroulement des missions effectuées par ces engins. Par conséquent, le choix des différents composants et logiciels utilisés est longuement réfléchi et mûri pour être certain que, même à plusieurs milliards de kilomètres de la Terre, **aucun souci technique mettant en péril le fonctionnement du système n’advienne.**
 
@@ -19,7 +19,7 @@ C’est en **1957**, durant la Guerre Froide, qu’est envoyé le **premier sate
 
 Le système d’exploitation d’un engin spatial est tout à fait différent des systèmes d’exploitation conventionnels que nous utilisons, vous et moi. Je rappelle dans un premier temps ce qu’est qu’un système d’exploitation (*Operating System en Anglais*), via ce schéma qui est donc spécifique à un satellite par exemple :
 
-![Schéma théorique du fonctionnement logiciel d’un satellite|inline](https://romainmellaza.fr/img/IT_space/schema_1.png)
+![Schéma théorique du fonctionnement logiciel d’un satellite|inline](https://mellaza.tech/img/IT_space/schema_1.png)
 
 Les systèmes d’exploitation utilisés dans les engins spatiaux sont ce que l’on appelle des RTOS c’est-à-dire [**Real Time Operating System**](https://fr.wikipedia.org/wiki/Syst%C3%A8me_d%27exploitation_temps_r%C3%A9el), qui sont donc bien différents des systèmes GPOS ([**General Purpose Operating System**](https://fr.wikipedia.org/wiki/Syst%C3%A8me_d%27exploitation)) que nous utilisons quotidiennement. En effet, les RTOS sont basés essentiellement sur ce que l’on appelle des limites critiques de temps, en somme les différents processus doivent être effectués dans un temps très court sous peine d’être stoppé en cas de dépassement de limite. De plus les tâches sont ordonnées de telle sorte que **le délai du changement entre deux tâches est réduit de l’ordre de 70 % par rapport à un système d’exploitation conventionnel.**
 

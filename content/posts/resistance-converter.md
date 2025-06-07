@@ -3,7 +3,7 @@ title: "Un convertisseur simple et efficace pour l'électronique"
 date: 2022-04-23T21:39:07+01:00
 draft: false
 author: Romain MELLAZA
-cover: 'https://romainmellaza.fr/img/resistance_converter/cover_multimeter.jpg'
+cover: 'https://mellaza.tech/img/resistance_converter/cover_multimeter.jpg'
 tags: ["Electronic", "Python", "Software"]
 theme: "light"
 ---

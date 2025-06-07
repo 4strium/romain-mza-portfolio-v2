@@ -309,4 +309,4 @@ void record_mic() {
 
 As you can see, we need the standard [FS](https://github.com/espressif/arduino-esp32/tree/master/libraries/FS/src) and [SD](https://www.arduino.cc/reference/en/libraries/sd/) libraries. You can also modify some constants according to your use such as the recording duration or the name of the recorded file, do not forget the "/" at the beginning of the file name as well as the ".wav" extension.
 
-Now you just need to call the `record_mic()` function in your main code when you want to record a sound clip with the microphone, it can be activated with a button for example. Later if you want to transmit the recorded wav audio file to Linux server for any processing, do not hesitate to follow the tutorial [I wrote here](https://romainmellaza.fr/posts/cristal-setup-server/).
+Now you just need to call the `record_mic()` function in your main code when you want to record a sound clip with the microphone, it can be activated with a button for example. Later if you want to transmit the recorded wav audio file to Linux server for any processing, do not hesitate to follow the tutorial [I wrote here](https://mellaza.tech/posts/cristal-setup-server/).

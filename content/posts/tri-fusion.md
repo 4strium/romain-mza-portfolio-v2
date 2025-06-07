@@ -3,7 +3,7 @@ title: "Le principe du Tri Fusion"
 date: 2023-07-10T21:39:07+01:00
 draft: false
 author: Romain MELLAZA
-cover: 'https://romainmellaza.fr/img/tri_fusion/cover_img_lava.jpg'
+cover: 'https://mellaza.tech/img/tri_fusion/cover_img_lava.jpg'
 tags: ["Algorithm", "Python", "OCaml"]
 theme: "dark"
 ---
@@ -20,7 +20,7 @@ La fusion des sous-listes triées se fait en comparant les éléments des deux s
 
 **En résumé, le tri fusion est un algorithme de tri efficace qui utilise le paradigme "Diviser pour régner" en divisant une grande liste en deux sous-listes plus petites, en triant chaque sous-liste de manière récursive en utilisant le tri fusion, puis en fusionnant les deux souslistes triées pour obtenir la liste triée complète.**
 
-![Exemple avec la liste [2,10,0,8,7,42,5]](https://romainmellaza.fr/img/tri_fusion/steps.png)
+![Exemple avec la liste [2,10,0,8,7,42,5]](https://mellaza.tech/img/tri_fusion/steps.png)
 
 # Évaluation de la complexité :
 
@@ -36,7 +36,7 @@ A titre de comparaison, voici un tableau reprenant les différents temps d’ex�
 | **20 000** | *7.526 s* | *0.326 s* |
 | **40 000** | *28.682 s* | *0.541 s* |
 
-![|inline](https://romainmellaza.fr/img/tri_fusion/complexity.jpg)
+![|inline](https://mellaza.tech/img/tri_fusion/complexity.jpg)
 
 *Si l’on se réfère au graphique de la notation **Big-O** on constate que la complexité temporelle du tri fusion se classe dans la section « Mauvais » qui représente le minimum possible pour un algorithme de tri !*
 

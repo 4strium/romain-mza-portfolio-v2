@@ -3,19 +3,19 @@ title: "Le codage de Huffman, un algorithme de compression de données sans pert
 date: 2022-12-04T21:39:07+01:00
 draft: false
 author: Romain MELLAZA
-cover: 'https://romainmellaza.fr/img/cover-images/hdd_cover.jpg'
+cover: 'https://mellaza.tech/img/cover-images/hdd_cover.jpg'
 tags: ["Algorithm", "Python", "Data"]
 theme: "light"
 ---
 
-![Photographie d’un disque dur ouvert|inline](https://romainmellaza.fr/img/cover-images/hdd_cover.jpg)
+![Photographie d’un disque dur ouvert|inline](https://mellaza.tech/img/cover-images/hdd_cover.jpg)
 
 # Introduction
 Le codage de Huffman, proposé par [**David Huffman**](https://fr.wikipedia.org/wiki/David_Albert_Huffman) (1925 – 1999) en 1952, est une **méthode de compression de données sans perte** utilisée pour les textes, les images (fichiers JPEG) ou les sons (fichiers MP3). Dans les textes longs, les lettres n’apparaissent pas avec la même fréquence. Ces fréquences varient suivant la langue utilisée. Le codage de Huffman consiste à **attribuer un mot binaire de longueur variable aux différents symboles du document à compresser.** Les symboles les plus fréquents sont codés avec des mots courts, tandis que les symboles les plus rares sont encodés avec des mots plus longs (rappelant ainsi le principe de l’alphabet Morse). Le code construit a la particularité de ne posséder **aucun mot ayant pour préfixe un autre mot.**
 
 # Représentation
 *Un exemple d'arbre de Huffman, généré avec la phrase « **this is an example of a huffman tree** ».*
-![](https://romainmellaza.fr/img/huffman_coding/example_tree.jpg)
+![](https://mellaza.tech/img/huffman_coding/example_tree.jpg)
 
 On recherche tout d'abord le **nombre d'occurrences de chaque caractère.** Dans l'exemple ci-dessus, la phrase contient 2 fois le caractère h et 7 espaces. Chaque caractère constitue une des feuilles de l'arbre à laquelle on associe **un poids égal à son nombre d'occurrences.**
 
