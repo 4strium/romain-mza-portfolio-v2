@@ -7364,5 +7364,5 @@ h1.pagebody-header {
 }
 
 ol {
-  list-style-position: inside;
+  padding-inline-start: 1em;
 }
