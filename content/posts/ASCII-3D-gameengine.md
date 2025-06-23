@@ -1,5 +1,5 @@
 ---
-title: "Comment j'ai codé un moteur graphique 3D pour terminal Linux ?"
+title: "Coder un moteur graphique 3D, pour terminal Linux"
 date: 2025-06-23T01:39:07+01:00
 draft: false
 author: Romain MELLAZA
@@ -343,3 +343,64 @@ Ces modifications sont temporaires : une fois la touche capturée, le terminal e
 * Code ASCII : Chaque touche du clavier est associée à un code numérique unique. Par exemple : La touche "A" a le code 65. La touche "a" a le code 97. La touche "Entrée" a le code 13. Le programme peut ensuite utiliser ce code pour déterminer quelle action effectuer.
 
 4. Après avoir capturé la touche, le module restaure les paramètres d'origine du terminal. Cela garantit que le terminal revient à son comportement normal une fois l'interaction terminée.
+
+# Formalisme des données
+Les données concernant les personages non jouables (NPC) sont encapsulées dans un fichier texte respectant une certain formalisme pour que le module [**NPC**](#type-npc) interprète correctement les différents valeurs attribuées. En voici un court extrait du personnage *CHUCK* pour bien entrevoir la mise au point du système de téléversement :
+```plaintext
+__NAME__CHUCK
+__POSITIONX__17.5
+__POSITIONY__18
+__NBTEXTS__7
+__COSTUME__1
+Arrrhhhh, satanée bûche, je vais y passer la soirée à ce rythme là...
+__COSTUME__2 
+Oh salut, t'es nouveau ? On s'est jamais vu ici je crois, moi c'est CHUCK !
+__COSTUME__1
+Comme tu peux le voir je suis un peu dans la galère, le soleil va bientôt se coucher et il me reste une tonne de bûche à couper pour chauffer mon foyer...
+__COSTUME__2
+Oh mais c'est rare de voir des gens habillés comme toi dans le coin. Tu dois être doué avec les chiffres.
+__COSTUME__2
+Tu tombes bien j'ai une question pour toi, bon tu vois je suis payé par un mec pour te donner l'accès à la suite du labyrinthe si tu m'aides.
+__COSTUME__2
+Mais par contre si tu te trompes, tu vas devoir marcher beaucoup plus longtemps, mais bon cela te fera les pattes, AHAHAH !
+__COSTUME__1
+Bon assez bavardé, je sais que ton temps est précieux, le miens aussi d'ailleurs. Voici la fameuse question :
+__QUESTION__Il me faut 1min32s pour couper une bûche en deux. Combien de temps me faut-il pour couper une bûche en 16 morceaux de même taille ?
+__REPONSE__13 minutes
+__NBBLOCKS__2
+15,19
+15,27
+__REPONSE__23 minutes
+__NBBLOCKS__2
+17,19
+17,27
+__REPONSE__11,5 minutes
+__NBBLOCKS__2
+19,19
+14,29
+__VISUAL0__
+__NBCOLORS__7
+__COLORR__226
+__COLORG__150
+__COLORB__90
+__COLORR__59
+__COLORG__39
+__COLORB__24
+1111111111111111111111111111111=++=111111111111111111111111111111111
+1111111111111111111111111111+%%%%%%%%*111111111111111111111111111111
+111111111111111111111111111#%%%%%%%%%%%=1111111111111111111111111111
+1111111111111111111111111=%%%%%%%%%%%%%%*111111111111111111111111111
+1111111111111111111111111=%%%#111111111%*111111111111111111111111111
+1111111111111111111111111=%%%11%%%#1#%%%=111111111111111111111111111
+1111111111111111111111111#1*%1111111%11#=111111111111111111111111111
+1111111111111111111111111=#*%#1111##%11%=111111111111111111111111111
+11111111111111111111111111=%%%%#%%%%%%%%+111111111111111111111111111
+111111111111111111111111%*#%%%%%%%%%%%%%*111111111111111111111111111
+111111111111111111111%%111*#%%%%%%%%%%%%%%%1111111111111111111111111
+111111111111111111+#%1111111111%%%%%%%11111%+11111111111111111111111
+111111111111111=%%111111111111111111111111111%%111111111111111111111
+.
+.
+.
+__ENDVISUAL__
+```
