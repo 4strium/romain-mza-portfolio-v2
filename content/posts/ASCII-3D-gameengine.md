@@ -306,25 +306,13 @@ Reste à mettre en place un terrain d'entente pour que le formalisme du converti
 ### Système de buffering
 Ce module est conçu pour afficher des caractères dans le terminal tout en permettant de contrôler leur position et leur couleur.
 
-1. Un "buffer" est comme une feuille de papier quadrillée où chaque case peut contenir un caractère, une profondeur et une couleur associée. Cette feuille est utilisée pour préparer ce qui sera affiché à l'écran. Cela permet de modifier et organiser les éléments avant de les montrer, plutôt que de les afficher directement.
+1. Un "buffer" est comme une feuille de papier quadrillée où chaque case peut contenir un caractère, une profondeur et une couleur associée. Cette feuille est utilisée pour préparer ce qui sera affiché à l'écran. Cela permet de modifier et organiser les éléments avant de les montrer, plutôt que de les afficher directement. Chaque case du buffer contient trois informations : Le caractère à afficher (par exemple, une lettre ou un symbole), la couleur du caractère, définie par des valeurs de rouge, vert et bleu (RGB) et une valeur réelle, représentant la profondeur du pixel par rapport à la position courante du joueur.
 
-  Chaque case du buffer contient trois informations :
-   - Le caractère à afficher (par exemple, une lettre ou un symbole).
-   - La couleur du caractère, définie par des valeurs de rouge, vert et bleu (RGB).
-   - Une valeur réelle, représentant la profondeur du pixel par rapport à la position courante du joueur.
+2. Le module permet de créer un buffer de dimensions personnalisées (largeur et hauteur). Une fois créé, ce buffer est rempli par défaut avec des espaces blancs (caractères vides), une couleur blanche et une profondeur infinie. Lorsqu'un buffer est créé, il est "nettoyé" pour s'assurer qu'il est vide et prêt à être utilisé. On peut, par la suite, définir ou modifier la largeur et la hauteur du buffer à tout moment.
 
-2. Le module permet de créer un buffer de dimensions personnalisées (largeur et hauteur). Une fois créé, ce buffer est rempli par défaut avec des espaces blancs (caractères vides), une couleur blanche et une profondeur infinie.
-   - **Initialisation** : Lorsqu'un buffer est créé, il est "nettoyé" pour s'assurer qu'il est vide et prêt à être utilisé.
-   - **Dimensions** : On peut définir ou modifier la largeur et la hauteur du buffer à tout moment.
+3. Le module permet d'insérer des caractères dans le buffer à des positions spécifiques. Par exemple, on peut placer une lettre "A" en rouge à une certaine case de la feuille. Si on insère une chaîne de plusieurs caractères (comme "Bonjour"), chaque lettre est placée dans une case consécutive, en partant de la position spécifiée. Chaque caractère peut avoir une couleur différente, ce qui permet de créer des affichages colorés.
 
-3. Le module permet d'insérer des caractères dans le buffer à des positions spécifiques. Par exemple, on peut placer une lettre "A" en rouge à une certaine case de la feuille.  
-   Si on insère une chaîne de plusieurs caractères (comme "Bonjour"), chaque lettre est placée dans une case consécutive, en partant de la position spécifiée.  
-   Chaque caractère peut avoir une couleur différente, ce qui permet de créer des affichages colorés.
-
-4. Une fois le contenu du buffer prêt, il est affiché dans le terminal. Voici comment cela fonctionne :
-   - **Positionnement** : Le module utilise des commandes spéciales pour déplacer le "curseur" du terminal à la bonne position avant d'afficher chaque ligne. Cela garantit que les caractères apparaissent au bon endroit.
-   - **Couleurs** : Avant d'afficher un caractère, le module vérifie si sa couleur est différente de la précédente. Si c'est le cas, il change la couleur active dans le terminal pour correspondre à celle du caractère.
-   - **Rendu final** : Une fois tous les caractères affichés, le terminal est réinitialisé pour revenir à son état normal.
+4. Une fois le contenu du buffer prêt, il est affiché dans le terminal. Le module utilise des commandes spéciales pour déplacer le "curseur" du terminal à la bonne position avant d'afficher chaque ligne. Cela garantit que les caractères apparaissent au bon endroit. Avant d'afficher un caractère, le module vérifie si sa couleur est différente de la précédente. Si c'est le cas, il change la couleur active dans le terminal pour correspondre à celle du caractère. Une fois tous les caractères affichés, le terminal est réinitialisé pour revenir à son état normal.
 
 5. L'utilisation d'un buffer permet de contrôler précisément ce qui est affiché à l'écran, sans avoir à effacer et réécrire constamment. Cela rend l'affichage plus fluide et évite les scintillements.
 
@@ -333,15 +321,9 @@ Le module `Tools.py` est capable de capturer les touches pressées par l'utilisa
 
 1. Dans un terminal classique, lorsqu'on tape une touche, celle-ci n'est généralement pas immédiatement envoyée au programme. Il faut appuyer sur "Entrée" pour valider l'entrée. Ce comportement est pratique pour écrire des commandes, mais il n'est pas adapté pour des applications interactives comme des jeux. Ce module permet de contourner ce comportement en capturant directement les touches pressées, sans attendre "Entrée". Cela permet de réagir instantanément aux actions de l'utilisateur.
 
-2. Pour modifier le comportement du terminal, le module utilise une bibliothèque appelée termios. Cette bibliothèque permet de configurer les paramètres d'entrée et de sortie du terminal.
-* Paramètres par défaut : Par défaut, le terminal affiche chaque touche pressée (mode "ECHO") et attend "Entrée" pour valider l'entrée (mode "CANONIQUE").
-Modification temporaire : Le module désactive ces deux comportements :
-* Désactivation de l'ECHO : Les touches pressées ne sont pas affichées à l'écran.
-* Désactivation du mode canonique : Les touches sont immédiatement envoyées au programme, sans attendre "Entrée".
-Ces modifications sont temporaires : une fois la touche capturée, le terminal est restauré à son état initial.
+2. Pour modifier le comportement du terminal, le module utilise une bibliothèque appelée ``termios``. Cette bibliothèque permet de configurer les paramètres d'entrée et de sortie du terminal. Par défaut, le terminal affiche chaque touche pressée (mode "ECHO") et attend "Entrée" pour valider l'entrée (mode "CANONIQUE"). On effectue donc la modification temporaire suivante sur la configuration du terminal utilisateur: désactivation de l'ECHO (Les touches pressées ne sont pas affichées à l'écran) et désactivation du mode canonique (Les touches sont immédiatement envoyées au programme, sans attendre "Entrée").
 
-3. Une fois le terminal configuré, le module attend que l'utilisateur appuie sur une touche. Dès qu'une touche est pressée, son code ASCII (un nombre représentant le caractère) est capturé et renvoyé au programme.
-* Code ASCII : Chaque touche du clavier est associée à un code numérique unique. Par exemple : La touche "A" a le code 65. La touche "a" a le code 97. La touche "Entrée" a le code 13. Le programme peut ensuite utiliser ce code pour déterminer quelle action effectuer.
+3. Une fois le terminal configuré, le module attend que l'utilisateur appuie sur une touche. Dès qu'une touche est pressée, son code ASCII (un nombre représentant le caractère) est capturé et renvoyé au programme. En effet, chaque touche du clavier est associée à un code numérique unique. Par exemple : La touche "A" a le code 65. La touche "a" a le code 97. La touche "Entrée" a le code 13. Le programme peut ensuite utiliser ce code pour déterminer quelle action effectuer.
 
 4. Après avoir capturé la touche, le module restaure les paramètres d'origine du terminal. Cela garantit que le terminal revient à son comportement normal une fois l'interaction terminée.
 
