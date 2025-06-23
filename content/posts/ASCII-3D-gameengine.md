@@ -307,23 +307,23 @@ Reste à mettre en place un terrain d'entente pour que le formalisme du converti
 Ce module est conçu pour afficher des caractères dans le terminal tout en permettant de contrôler leur position et leur couleur.
 
 1. Un "buffer" est comme une feuille de papier quadrillée où chaque case peut contenir un caractère, une profondeur et une couleur associée. Cette feuille est utilisée pour préparer ce qui sera affiché à l'écran. Cela permet de modifier et organiser les éléments avant de les montrer, plutôt que de les afficher directement.  
-  Chaque case du buffer contient trois informations :
-  - Le caractère à afficher (par exemple, une lettre ou un symbole).
-  - La couleur du caractère, définie par des valeurs de rouge, vert et bleu (RGB).
-  - Une valeur réelle, représentant la profondeur du pixel par rapport à la position courante du joueur.
+   Chaque case du buffer contient trois informations :
+   - Le caractère à afficher (par exemple, une lettre ou un symbole).
+   - La couleur du caractère, définie par des valeurs de rouge, vert et bleu (RGB).
+   - Une valeur réelle, représentant la profondeur du pixel par rapport à la position courante du joueur.
 
 2. Le module permet de créer un buffer de dimensions personnalisées (largeur et hauteur). Une fois créé, ce buffer est rempli par défaut avec des espaces blancs (caractères vides), une couleur blanche et une profondeur infinie.
-  - **Initialisation** : Lorsqu'un buffer est créé, il est "nettoyé" pour s'assurer qu'il est vide et prêt à être utilisé.
-  - **Dimensions** : On peut définir ou modifier la largeur et la hauteur du buffer à tout moment.
+   - **Initialisation** : Lorsqu'un buffer est créé, il est "nettoyé" pour s'assurer qu'il est vide et prêt à être utilisé.
+   - **Dimensions** : On peut définir ou modifier la largeur et la hauteur du buffer à tout moment.
 
 3. Le module permet d'insérer des caractères dans le buffer à des positions spécifiques. Par exemple, on peut placer une lettre "A" en rouge à une certaine case de la feuille.  
-  Si on insère une chaîne de plusieurs caractères (comme "Bonjour"), chaque lettre est placée dans une case consécutive, en partant de la position spécifiée.  
-  Chaque caractère peut avoir une couleur différente, ce qui permet de créer des affichages colorés.
+   Si on insère une chaîne de plusieurs caractères (comme "Bonjour"), chaque lettre est placée dans une case consécutive, en partant de la position spécifiée.  
+   Chaque caractère peut avoir une couleur différente, ce qui permet de créer des affichages colorés.
 
 4. Une fois le contenu du buffer prêt, il est affiché dans le terminal. Voici comment cela fonctionne :
-  - **Positionnement** : Le module utilise des commandes spéciales pour déplacer le "curseur" du terminal à la bonne position avant d'afficher chaque ligne. Cela garantit que les caractères apparaissent au bon endroit.
-  - **Couleurs** : Avant d'afficher un caractère, le module vérifie si sa couleur est différente de la précédente. Si c'est le cas, il change la couleur active dans le terminal pour correspondre à celle du caractère.
-  - **Rendu final** : Une fois tous les caractères affichés, le terminal est réinitialisé pour revenir à son état normal.
+   - **Positionnement** : Le module utilise des commandes spéciales pour déplacer le "curseur" du terminal à la bonne position avant d'afficher chaque ligne. Cela garantit que les caractères apparaissent au bon endroit.
+   - **Couleurs** : Avant d'afficher un caractère, le module vérifie si sa couleur est différente de la précédente. Si c'est le cas, il change la couleur active dans le terminal pour correspondre à celle du caractère.
+   - **Rendu final** : Une fois tous les caractères affichés, le terminal est réinitialisé pour revenir à son état normal.
 
 5. L'utilisation d'un buffer permet de contrôler précisément ce qui est affiché à l'écran, sans avoir à effacer et réécrire constamment. Cela rend l'affichage plus fluide et évite les scintillements.
 
