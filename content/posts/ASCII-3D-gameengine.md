@@ -18,11 +18,11 @@ Le jeu s’exécute directement dans un terminal UNIX, avec pour seul langage de
 ## Expériences de jeu
 Si le jeu se limitait exclusivement à une balade dans le labyrinthe agrémentée de quelques devinettes, il deviendrait rapidement peu attractif. C'est pourquoi dans un soucis d'amélioration de l'expérience utilisateur, deux mini-jeux sont implémentés directement dans le monde principal. Le premier consiste à un jeu de memory (*à dominante fantaisie*). Ce mode est proposé par le personnage nommé *Nix*. Voici ci-dessous une capture d'écran du gameplay proposé au joueur.
 
-![|inline](https://mellaza.tech/https://mellaza.tech/img/ascii-engine/memory.png)
+![Figure 1|inline](https://mellaza.tech/img/ascii-engine/memory.png)
 
 De même un second mode de jeu est proposé : il consiste en un *shooter* de zombie. Chaque zombie à 100 points de vie, il suffit simplement de leur tirer dessus avec un fusil lorsque que l'on les croisent sur notre chemin, à partir du moment où l'on a discuté avec le personnage nommé *Rocky*. Voici ci-dessous une capture d'écran du gameplay proposé au joueur.
 
-![|inline](https://mellaza.tech/img/ascii-engine/fight.png)
+![Figure 2|inline](https://mellaza.tech/img/ascii-engine/fight.png)
 
 Un point assez intéressant à aborder est la manière dont j'ai traité la gestion des tirs touchant un ennemi, au premier abord on pourrait pensé à un système complexe de rayons, mais en réalité j'ai vite abandonné l'idée d'une telle méthode¹ pour me rabattre sur une technique **beaucoup plus aisée** : la cible rouge au centre de l'écran étant tout le temps de la même taille peu importe l'écran utilisé, il suffit de regarder les deux petits pixels au centre de la cible (*en prenant le même point de référence*), si ces derniers contiennent des pixels appartenant au murs/sols, alors le joueur ne vise pas l'ennemi et aucuns PV n'est retiré à ce dernier, sinon on retire des PV à l'ennemi le plus proche du joueur (*on évite de mettre plusieurs zombies à côté sur la map, pour éviter des potentiels conflits*).
 
@@ -50,7 +50,7 @@ Comme vous avez pu le lire dans la section précédente, plusieurs systèmes ont
 ## Gestion de la profondeur
 Si vous avez l'occasion de réaliser une partie vous constaterez que la physique inhérente à la profondeur est plutôt bien gérée par le système, en voici un exemple (sans doute anodin au premier abord mais qui relève en réalité d'une grande quantité de calcul).
 
-![|inline](https://mellaza.tech/img/ascii-engine/degrade.png)
+![Figure 3|inline](https://mellaza.tech/img/ascii-engine/degrade.png)
 
 * Lorsque j'ai proposé à certaines personnes de mon entourage de jouer à mon jeu (dans l'une de ses premières versions), j'ai été assez déçu du fait que la majorité des personnes avait besoin de certains temps (et d'explications) pour comprendre visuellement la disposition 3D des différents murs. Bien souvent la raison était toute trouvée : **la profondeur**. En effet il était difficile de comprendre quel mur était plus ou moins éloigné du joueur, la taille ne suffisant bien souvent pas. Heureusement, en réfléchissant j'en suis venu à la solution suivante : 
     - Définir une certaine distance autour du joueur où la couleur des murs/personnages reste inchangée.
@@ -76,8 +76,8 @@ Lors de le mise en oeuvre des *designs* graphiques il peut devenir vite fastidie
 On obtient par exemple les résultats suivants :
 |Image initiale|Texte en sortie du convertisseur|
 |:---:|:---:|
-| ![](https://mellaza.tech/img/ascii-engine/image.png) | ![](https://mellaza.tech/img/ascii-engine/image-1-ascii.png) |
-| ![](https://mellaza.tech/img/ascii-engine/image-2.png) | ![](https://mellaza.tech/img/ascii-engine/image-2-ascii.png) |
+|<p align="center"><img src="https://mellaza.tech/img/image.png" width="40%" height="auto"></p>| <p align="center"><img src="https://mellaza.tech/img/image-1-ascii.png" width="40%" height="auto"></p> |
+|<p align="center"><img src="https://mellaza.tech/img/image-2.png" width="40%" height="auto"></p> | <p align="center"><img src="https://mellaza.tech/img/image-2-ascii.png" width="40%" height="auto"></p> |
 
 ## Moteur graphique
 ### Raycasting
@@ -92,23 +92,25 @@ Le but de cette section n'est **absolument pas** de fournir un cours complet sur
 
 Dans les paragraphes qui suivent je parlerais avec mes propres mots pour expliquer ce que j'ai compris, avec des schémas et des exemples concrets, il se peut que je commette des erreurs dans mes explications, je vous prie de m'en excuser.
 
-![|inline](https://mellaza.tech/img/ascii-engine/raycasting-1.png)
+<p align="center">
+    <img src="https://mellaza.tech/img/raycasting-1.png" width="30%" height="auto">
+</p>
 
 Voici une carte simplifiée de 4 par 4, le point bleu représente la position du joueur (*elle peut prendre n'importe quelle valeur réelle*).
 
-![|inline](https://mellaza.tech/img/ascii-engine/raycasting-2.png)
+![Figure 5|inline](https://mellaza.tech/img/ascii-engine/raycasting-2.png)
 
 Concrètement, la carte est une liste de liste où chaque élément représente un carrée de longueur 1. *Dans le cas présent le joueur se situe par conséquent à la position (x=1.4 et y=1.4)*. Concernant la carte, on stocke donc une matrice de 0 et de 1, où 1 représente un mur et 0 un espace vide.
 
-![|inline](https://mellaza.tech/img/ascii-engine/raycasting-3.png)
+![Figure 6|inline](https://mellaza.tech/img/ascii-engine/raycasting-3.png)
 
 La carte est un peu vide, on choisit alors de rajouter quelques murs pour la suite de l'explication. Que l'on représentera comme suit pour la suite :
 
-![|inline](https://mellaza.tech/img/ascii-engine/raycasting-4.png)
+![Figure 7|inline](https://mellaza.tech/img/ascii-engine/raycasting-4.png)
 
 On peut maintenant passer au coeur de la technique. On projette un rayon avec un angle nul (*dans le sens trigonométrique*) :
 
-![|inline](https://mellaza.tech/img/ascii-engine/raycasting-5.png)
+![Figure 8|inline](https://mellaza.tech/img/ascii-engine/raycasting-5.png)
 
 En programmation, on réalise cela en prenant la position d'un point auquel on incrémente itération après itération la composante vertical (resp. horizontale) avec une certaine quantité :
 
