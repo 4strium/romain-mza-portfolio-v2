@@ -18,11 +18,11 @@ Le jeu s’exécute directement dans un terminal UNIX, avec pour seul langage de
 ## Expériences de jeu
 Si le jeu se limitait exclusivement à une balade dans le labyrinthe agrémentée de quelques devinettes, il deviendrait rapidement peu attractif. C'est pourquoi dans un soucis d'amélioration de l'expérience utilisateur, deux mini-jeux sont implémentés directement dans le monde principal. Le premier consiste à un jeu de memory (*à dominante fantaisie*). Ce mode est proposé par le personnage nommé *Nix*. Voici ci-dessous une capture d'écran du gameplay proposé au joueur.
 
-![|inline](https://mellaza.tech/img/ascii-engine/memory.png)
+![Figure 1|inline](https://mellaza.tech/img/ascii-engine/memory.png)
 
 De même un second mode de jeu est proposé : il consiste en un *shooter* de zombie. Chaque zombie à 100 points de vie, il suffit simplement de leur tirer dessus avec un fusil lorsque que l'on les croisent sur notre chemin, à partir du moment où l'on a discuté avec le personnage nommé *Rocky*. Voici ci-dessous une capture d'écran du gameplay proposé au joueur.
 
-![|inline](https://mellaza.tech/img/ascii-engine/fight.png)
+![Figure 2|inline](https://mellaza.tech/img/ascii-engine/fight.png)
 
 Un point assez intéressant à aborder est la manière dont j'ai traité la gestion des tirs touchant un ennemi, au premier abord on pourrait pensé à un système complexe de rayons, mais en réalité j'ai vite abandonné l'idée d'une telle méthode¹ pour me rabattre sur une technique **beaucoup plus aisée** : la cible rouge au centre de l'écran étant tout le temps de la même taille peu importe l'écran utilisé, il suffit de regarder les deux petits pixels au centre de la cible (*en prenant le même point de référence*), si ces derniers contiennent des pixels appartenant au murs/sols, alors le joueur ne vise pas l'ennemi et aucuns PV n'est retiré à ce dernier, sinon on retire des PV à l'ennemi le plus proche du joueur (*on évite de mettre plusieurs zombies à côté sur la map, pour éviter des potentiels conflits*).
 
@@ -50,7 +50,7 @@ Comme vous avez pu le lire dans la section précédente, plusieurs systèmes ont
 ## Gestion de la profondeur
 Si vous avez l'occasion de réaliser une partie vous constaterez que la physique inhérente à la profondeur est plutôt bien gérée par le système, en voici un exemple (sans doute anodin au premier abord mais qui relève en réalité d'une grande quantité de calcul).
 
-![|inline](https://mellaza.tech/img/ascii-engine/degrade.png)
+![Figure 3|inline](https://mellaza.tech/img/ascii-engine/degrade.png)
 
 * Lorsque j'ai proposé à certaines personnes de mon entourage de jouer à mon jeu (dans l'une de ses premières versions), j'ai été assez déçu du fait que la majorité des personnes avait besoin de certains temps (et d'explications) pour comprendre visuellement la disposition 3D des différents murs. Bien souvent la raison était toute trouvée : **la profondeur**. En effet il était difficile de comprendre quel mur était plus ou moins éloigné du joueur, la taille ne suffisant bien souvent pas. Heureusement, en réfléchissant j'en suis venu à la solution suivante : 
     - Définir une certaine distance autour du joueur où la couleur des murs/personnages reste inchangée.
@@ -175,7 +175,7 @@ Je pense que vous avez saisi le fait qu'il suffit de regarder le signe de dx pou
 Bon je ne vous ai pas tout dit... Enfaîte ce qui nous intéresse réellement c'est de **savoir si l'on franchit d'abord un axe vertical ou horizontal**. Pour cela nous allons avoir besoin d'un peu de trigonométrie. On se concentre une nouvelle fois sur `dx`, on zoome sur la case où se situe le joueur, je rappelle qu'il a une abscise de 1.4 ! Ici pour rendre le schéma un peu plus parlant (*et éviter que les droites se superposent*) nous allons temporairement considérer que le rayon a un angle de pi/4 et non 0. La valeur recherchée c'est l'hypoténuse, et justement cela tombe bien car nous avons assez d'informations pour le déterminer. En effet, il s'agit simplement de : **hypoténuse = adjacent/cos(angle)**. 
 
 <p align="center">
-    <img src="https://mellaza.tech/img/ascii-engine/raycasting-14.png" width="40%" height="auto">
+    <img src="https://mellaza.tech/img/ascii-engine/raycasting-14.png" width="30%" height="auto">
 </p>
 
 Et voilà on connaît maintenant la distance exacte entre le joueur est la première surface verticale possible. *Dans le cas où dx est nul, on considère cette distance comme infinie.* 
@@ -271,7 +271,7 @@ while distance < max_distance : # Tant que le rayon est inférieur à la distanc
 Mais un rayon ne suffit évidemment pas, en réalité il faut définir un certain angle de vision, que l'on divise par le nombre de colonnes de caractères disponibles dans le terminal de l'utilisateur. Donc pour chaque colonne, on projette un rayon avec un certain angle par rapport au centre de l'écran. Graphiquement cela donne ça (bien sûr il y a autant de rayons que de colonnes sur le terminal utilisateur, donc ci-dessous le nombre de rayons est largement inférieur au nombre réel.) :
 
 <p align="center">
-    <img src="https://mellaza.tech/img/ascii-engine/raycasting-17.png" width="40%" height="auto">
+    <img src="https://mellaza.tech/img/ascii-engine/raycasting-17.png" width="30%" height="auto">
 </p>
 
 Et enfin, il ne reste plus qu'à dessiner une colonne de pixels pour chaque rayon. Concrètement, on se positionne sur la ligne au centre de l'écran et pour chaque colonne, de l'extrême gauche à l'extrême droite, on envoie un rayon, dont la fonction étudiée plus tôt nous renvoie la distance de collision avec le prochain mur. Il suffit d'afficher une colonne de pixels dont la hauteur² est : $lineHeight = \frac{hauteur_{écran}}{distance_{rayon}}$
