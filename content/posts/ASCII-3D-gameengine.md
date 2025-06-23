@@ -308,9 +308,9 @@ Ce module est conçu pour afficher des caractères dans le terminal tout en perm
 
 1. Un "buffer" est comme une feuille de papier quadrillée où chaque case peut contenir un caractère, une profondeur et une couleur associée. Cette feuille est utilisée pour préparer ce qui sera affiché à l'écran. Cela permet de modifier et organiser les éléments avant de les montrer, plutôt que de les afficher directement.
 Chaque case du buffer contient trois informations :
-* Le caractère à afficher (par exemple, une lettre ou un symbole).
-* La couleur du caractère, définie par des valeurs de rouge, vert et bleu (RGB).
-* Une valeur réelle, représentant la profondeur du pixel par rapport à la position courante du joueur.
+  * Le caractère à afficher (par exemple, une lettre ou un symbole).
+  * La couleur du caractère, définie par des valeurs de rouge, vert et bleu (RGB).
+  * Une valeur réelle, représentant la profondeur du pixel par rapport à la position courante du joueur.
 2. Le module permet de créer un buffer de dimensions personnalisées (largeur et hauteur). Une fois créé, ce buffer est rempli par défaut avec des espaces blancs (caractères vides), une couleur blanche et une profondeur infinie.
 * Initialisation : Lorsqu'un buffer est créé, il est "nettoyé" pour s'assurer qu'il est vide et prêt à être utilisé.
 * Dimensions : On peut définir ou modifier la largeur et la hauteur du buffer à tout moment.
