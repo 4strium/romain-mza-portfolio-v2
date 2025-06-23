@@ -5382,8 +5382,8 @@ html.no-touch.no-reduced-motion .tile.tile-list[data-focus-method=key] .media--v
 }
 
 .component {
-  margin-top: 44px;
-  margin-bottom: 44px
+  margin-top: 34px;
+  margin-bottom: 34px
 }
 
 @media only screen and (max-width: 1068px) {
@@ -7353,8 +7353,13 @@ span.tag-date {
 
 ul>li {
   margin: 1em 0px;
+  padding-top: 1em;
 }
 
 code {
   margin: 0px 0.25em;
+}
+
+h1 {
+  font-size: 32px;
 }

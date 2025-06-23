@@ -76,8 +76,8 @@ Lors de le mise en oeuvre des *designs* graphiques il peut devenir vite fastidie
 On obtient par exemple les résultats suivants :
 |Image initiale|Texte en sortie du convertisseur|
 |:---:|:---:|
-|<p align="center"><img src="https://mellaza.tech/img/ascii-engine/image.png" width="40%" height="auto"></p>| <p align="center"><img src="https://mellaza.tech/img/ascii-engine/image-1-ascii.png" width="40%" height="auto"></p> |
-|<p align="center"><img src="https://mellaza.tech/img/ascii-engine/image-2.png" width="40%" height="auto"></p> | <p align="center"><img src="https://mellaza.tech/img/ascii-engine/image-2-ascii.png" width="40%" height="auto"></p> |
+|<p align="center"><img src="https://mellaza.tech/img/ascii-engine/image.png" width="60%" height="auto"></p>| <p align="center"><img src="https://mellaza.tech/img/ascii-engine/image-1-ascii.png" width="60%" height="auto"></p> |
+|<p align="center"><img src="https://mellaza.tech/img/ascii-engine/image-2.png" width="60%" height="auto"></p> | <p align="center"><img src="https://mellaza.tech/img/ascii-engine/image-2-ascii.png" width="60%" height="auto"></p> |
 
 ## Moteur graphique
 ### Raycasting
@@ -104,6 +104,7 @@ Concrètement, la carte est une liste de liste où chaque élément représente 
 <p align="center">
     <img src="https://mellaza.tech/img/ascii-engine/raycasting-3.png" width="30%" height="auto">
 </p>
+
 La carte est un peu vide, on choisit alors de rajouter quelques murs pour la suite de l'explication. Que l'on représentera comme suit pour la suite :
 <p align="center">
     <img src="https://mellaza.tech/img/ascii-engine/raycasting-4.png" width="30%" height="auto">
@@ -136,10 +137,10 @@ Sur notre représentation, on l'a marque en rose :
 Il est à présent nécessaire de distinguer 4 cas, qui dépendent de la positivité de `dx` et `dy`:
 |`dx`|`dy`| Zone parcourue lors de la boucle de recherche |
 |:---:|:---:|:---:|
-|**positif**| **positif** | <p align="center"><img src="https://mellaza.tech/img/ascii-engine/raycasting-7.png" width="20%" height="auto"></p> |
-|**positif**| **négatif** | <p align="center"><img src="https://mellaza.tech/img/ascii-engine/raycasting-8.png" width="20%" height="auto"></p> |
-|**négatif**| **positif** | <p align="center"><img src="https://mellaza.tech/img/ascii-engine/raycasting-10.png" width="20%" height="auto"></p> |
-|**négatif**| **négatif** | <p align="center"><img src="https://mellaza.tech/img/ascii-engine/raycasting-9.png" width="20%" height="auto"></p> |
+|**positif**| **positif** | <p align="center"><img src="https://mellaza.tech/img/ascii-engine/raycasting-7.png" width="40%" height="auto"></p> |
+|**positif**| **négatif** | <p align="center"><img src="https://mellaza.tech/img/ascii-engine/raycasting-8.png" width="40%" height="auto"></p> |
+|**négatif**| **positif** | <p align="center"><img src="https://mellaza.tech/img/ascii-engine/raycasting-10.png" width="40%" height="auto"></p> |
+|**négatif**| **négatif** | <p align="center"><img src="https://mellaza.tech/img/ascii-engine/raycasting-9.png" width="40%" height="auto"></p> |
 
 D'un point de vue programmation, cela se code comme ceci :
 ```python
@@ -232,10 +233,10 @@ Il ne reste plus qu'à parcourir l'ensemble des cases traversées par le rayon. 
 On fixe une longueur notée `max_distance` qui est la limite à partir de laquelle la boucle s'arrête si elle n'a pas trouvé de collision avec un mur (*La fonction retournera alors `None`*). Mais intéressons nous plus en détail avec le cas où il y a bien une collision avec un mur. Nous avons vu plus haut comment parcourir le trajet du rayon case après case, et bien pour savoir si il y a une collision avec un mur il suffit tout simplement de regarder si la prochaine case à parcourir contient un 1. Si c'est le cas, on calcule le point d'impact du rayon, en ayant le référentiel de la carte:
 
 $$
-impact_{x} = x_{player} + distance * dx
+impact_{x} = x_{player} + distance \times dx
 $$
 $$
-impact_{y} = y_{player} + distance * dy
+impact_{y} = y_{player} + distance \times dy
 $$
 
 où $distance$ représente la somme de tous les hypoténuses minimaux, calculés durant l'itération.
