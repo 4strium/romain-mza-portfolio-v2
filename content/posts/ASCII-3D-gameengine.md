@@ -306,8 +306,11 @@ Reste à mettre en place un terrain d'entente pour que le formalisme du converti
 ### Système de buffering
 Ce module est conçu pour afficher des caractères dans le terminal tout en permettant de contrôler leur position et leur couleur.
 
-1. Un "buffer" est comme une feuille de papier quadrillée où chaque case peut contenir un caractère, une profondeur et une couleur associée. Cette feuille est utilisée pour préparer ce qui sera affiché à l'écran. Cela permet de modifier et organiser les éléments avant de les montrer, plutôt que de les afficher directement.  
-   Chaque case du buffer contient trois informations :
+1. Un "buffer" est comme une feuille de papier quadrillée où chaque case peut contenir un caractère, une profondeur et une couleur associée. Cette feuille est utilisée pour préparer ce qui sera affiché à l'écran. Cela permet de modifier et organiser les éléments avant de les montrer, plutôt que de les afficher directement.
+
+
+
+Chaque case du buffer contient trois informations :
    - Le caractère à afficher (par exemple, une lettre ou un symbole).
    - La couleur du caractère, définie par des valeurs de rouge, vert et bleu (RGB).
    - Une valeur réelle, représentant la profondeur du pixel par rapport à la position courante du joueur.
