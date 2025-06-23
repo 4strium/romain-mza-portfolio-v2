@@ -18,11 +18,11 @@ Le jeu s’exécute directement dans un terminal UNIX, avec pour seul langage de
 ## Expériences de jeu
 Si le jeu se limitait exclusivement à une balade dans le labyrinthe agrémentée de quelques devinettes, il deviendrait rapidement peu attractif. C'est pourquoi dans un soucis d'amélioration de l'expérience utilisateur, deux mini-jeux sont implémentés directement dans le monde principal. Le premier consiste à un jeu de memory (*à dominante fantaisie*). Ce mode est proposé par le personnage nommé *Nix*. Voici ci-dessous une capture d'écran du gameplay proposé au joueur.
 
-![Figure 1|inline](https://mellaza.tech/img/ascii-engine/memory.png)
+![|inline](https://mellaza.tech/img/ascii-engine/memory.png)
 
 De même un second mode de jeu est proposé : il consiste en un *shooter* de zombie. Chaque zombie à 100 points de vie, il suffit simplement de leur tirer dessus avec un fusil lorsque que l'on les croisent sur notre chemin, à partir du moment où l'on a discuté avec le personnage nommé *Rocky*. Voici ci-dessous une capture d'écran du gameplay proposé au joueur.
 
-![Figure 2|inline](https://mellaza.tech/img/ascii-engine/fight.png)
+![|inline](https://mellaza.tech/img/ascii-engine/fight.png)
 
 Un point assez intéressant à aborder est la manière dont j'ai traité la gestion des tirs touchant un ennemi, au premier abord on pourrait pensé à un système complexe de rayons, mais en réalité j'ai vite abandonné l'idée d'une telle méthode¹ pour me rabattre sur une technique **beaucoup plus aisée** : la cible rouge au centre de l'écran étant tout le temps de la même taille peu importe l'écran utilisé, il suffit de regarder les deux petits pixels au centre de la cible (*en prenant le même point de référence*), si ces derniers contiennent des pixels appartenant au murs/sols, alors le joueur ne vise pas l'ennemi et aucuns PV n'est retiré à ce dernier, sinon on retire des PV à l'ennemi le plus proche du joueur (*on évite de mettre plusieurs zombies à côté sur la map, pour éviter des potentiels conflits*).
 
@@ -50,14 +50,14 @@ Comme vous avez pu le lire dans la section précédente, plusieurs systèmes ont
 ## Gestion de la profondeur
 Si vous avez l'occasion de réaliser une partie vous constaterez que la physique inhérente à la profondeur est plutôt bien gérée par le système, en voici un exemple (sans doute anodin au premier abord mais qui relève en réalité d'une grande quantité de calcul).
 
-![Figure 3|inline](https://mellaza.tech/img/ascii-engine/degrade.png)
+![|inline](https://mellaza.tech/img/ascii-engine/degrade.png)
 
 * Lorsque j'ai proposé à certaines personnes de mon entourage de jouer à mon jeu (dans l'une de ses premières versions), j'ai été assez déçu du fait que la majorité des personnes avait besoin de certains temps (et d'explications) pour comprendre visuellement la disposition 3D des différents murs. Bien souvent la raison était toute trouvée : **la profondeur**. En effet il était difficile de comprendre quel mur était plus ou moins éloigné du joueur, la taille ne suffisant bien souvent pas. Heureusement, en réfléchissant j'en suis venu à la solution suivante : 
     - Définir une certaine distance autour du joueur où la couleur des murs/personnages reste inchangée.
     - Cependant passé cette distance la teinte s'obscurcie de manière linéaire jusqu'à une limite maximale fixée, avec un facteur variable définit par la ligne de code suivante :
     ```depth_factor = (1 - (max(2, min(6, cell[2])) / 8)) * 1.1```
       - ``cell[2]`` : correspond à la profondeur du pixel courant.
-      - ``min(6, cell[2])`` : limite la profondeur maximale à 6.
+      - ```min(6, cell[2])`` : limite la profondeur maximale à 6.
       - ``max(2, ...)`` : limite la profondeur minimale à 2.
       - ``max(2, min(6, cell[2])) / 8`` : normalise la profondeur entre 2/8 et 6/8.
       - ``1 - ...`` : inverse la valeur pour que plus la profondeur est grande, plus le facteur est petit.
@@ -91,26 +91,28 @@ Le but de cette section n'est **absolument pas** de fournir un cours complet sur
 * [+ pleins de vidéos intéressantes...](https://www.youtube.com/results?search_query=raycasting)
 
 Dans les paragraphes qui suivent je parlerais avec mes propres mots pour expliquer ce que j'ai compris, avec des schémas et des exemples concrets, il se peut que je commette des erreurs dans mes explications, je vous prie de m'en excuser.
-
 <p align="center">
     <img src="https://mellaza.tech/img/ascii-engine/raycasting-1.png" width="30%" height="auto">
 </p>
 
 Voici une carte simplifiée de 4 par 4, le point bleu représente la position du joueur (*elle peut prendre n'importe quelle valeur réelle*).
-
-![Figure 5|inline](https://mellaza.tech/img/ascii-engine/raycasting-2.png)
+<p align="center">
+    <img src="https://mellaza.tech/img/ascii-engine/raycasting-2.png" width="30%" height="auto">
+</p>
 
 Concrètement, la carte est une liste de liste où chaque élément représente un carrée de longueur 1. *Dans le cas présent le joueur se situe par conséquent à la position (x=1.4 et y=1.4)*. Concernant la carte, on stocke donc une matrice de 0 et de 1, où 1 représente un mur et 0 un espace vide.
-
-![Figure 6|inline](https://mellaza.tech/img/ascii-engine/raycasting-3.png)
-
+<p align="center">
+    <img src="https://mellaza.tech/img/ascii-engine/raycasting-3.png" width="30%" height="auto">
+</p>
 La carte est un peu vide, on choisit alors de rajouter quelques murs pour la suite de l'explication. Que l'on représentera comme suit pour la suite :
-
-![Figure 7|inline](https://mellaza.tech/img/ascii-engine/raycasting-4.png)
+<p align="center">
+    <img src="https://mellaza.tech/img/ascii-engine/raycasting-4.png" width="30%" height="auto">
+</p>
 
 On peut maintenant passer au coeur de la technique. On projette un rayon avec un angle nul (*dans le sens trigonométrique*) :
-
-![Figure 8|inline](https://mellaza.tech/img/ascii-engine/raycasting-5.png)
+<p align="center">
+    <img src="https://mellaza.tech/img/ascii-engine/raycasting-5.png" width="30%" height="auto">
+</p>
 
 En programmation, on réalise cela en prenant la position d'un point auquel on incrémente itération après itération la composante vertical (resp. horizontale) avec une certaine quantité :
 
@@ -127,16 +129,17 @@ Maintenant nous allons voir étape par étape comment détecter une collision av
 ``` 
 
 Sur notre représentation, on l'a marque en rose :
-
-![|inline](https://mellaza.tech/img/ascii-engine/raycasting-6.png)
+<p align="center">
+    <img src="https://mellaza.tech/img/ascii-engine/raycasting-6.png" width="30%" height="auto">
+</p>
 
 Il est à présent nécessaire de distinguer 4 cas, qui dépendent de la positivité de `dx` et `dy`:
 |`dx`|`dy`| Zone parcourue lors de la boucle de recherche |
 |:---:|:---:|:---:|
-|**positif**| **positif** | ![](https://mellaza.tech/img/ascii-engine/raycasting-7.png) |
-|**positif**| **négatif** | ![](https://mellaza.tech/img/ascii-engine/raycasting-8.png) |
-|**négatif**| **positif** | ![](https://mellaza.tech/img/ascii-engine/raycasting-10.png) |
-|**négatif**| **négatif** | ![](https://mellaza.tech/img/ascii-engine/raycasting-9.png) |
+|**positif**| **positif** | <p align="center"><img src="https://mellaza.tech/img/ascii-engine/raycasting-7.png" width="20%" height="auto"></p> |
+|**positif**| **négatif** | <p align="center"><img src="https://mellaza.tech/img/ascii-engine/raycasting-8.png" width="20%" height="auto"></p> |
+|**négatif**| **positif** | <p align="center"><img src="https://mellaza.tech/img/ascii-engine/raycasting-10.png" width="20%" height="auto"></p> |
+|**négatif**| **négatif** | <p align="center"><img src="https://mellaza.tech/img/ascii-engine/raycasting-9.png" width="20%" height="auto"></p> |
 
 D'un point de vue programmation, cela se code comme ceci :
 ```python
@@ -160,25 +163,33 @@ Cela va devenir un tout petit plus complexe à partir d'ici. Ce qui nous intére
 
 On se focalise donc sur la composante x, car cette dernière rentrera bien en collision avec un axe vertical (*représenté en vert*). Ici il s'agira du bord droit de la case étudiée mais je vais vous mettre deux autre exemples de rayons avec des angles différents pour bien comprendre.
 
-![|inline](https://mellaza.tech/img/ascii-engine/raycasting-11.png)
-![|inline](https://mellaza.tech/img/ascii-engine/raycasting-12.png)
-![|inline](https://mellaza.tech/img/ascii-engine/raycasting-13.png)
+<p align="center">
+    <img src="https://mellaza.tech/img/ascii-engine/raycasting-11.png" width="20%" height="auto">
+    <img src="https://mellaza.tech/img/ascii-engine/raycasting-12.png" width="20%" height="auto">
+    <img src="https://mellaza.tech/img/ascii-engine/raycasting-13.png" width="20%" height="auto">
+</p>
 
 Je pense que vous avez saisi le fait qu'il suffit de regarder le signe de dx pour connaître l'axe vertical franchi (droite ou gauche) à partir de la cellule où se situe le joueur. Il suffit de suivre exactement le même raisonnement pour les axes horizontaux en fonction de dy.
 
 Bon je ne vous ai pas tout dit... Enfaîte ce qui nous intéresse réellement c'est de **savoir si l'on franchit d'abord un axe vertical ou horizontal**. Pour cela nous allons avoir besoin d'un peu de trigonométrie. On se concentre une nouvelle fois sur `dx`, on zoome sur la case où se situe le joueur, je rappelle qu'il a une abscise de 1.4 ! Ici pour rendre le schéma un peu plus parlant (*et éviter que les droites se superposent*) nous allons temporairement considérer que le rayon a un angle de pi/4 et non 0. La valeur recherchée c'est l'hypoténuse, et justement cela tombe bien car nous avons assez d'informations pour le déterminer. En effet, il s'agit simplement de : **hypoténuse = adjacent/cos(angle)**. 
 
-![|inline](https://mellaza.tech/img/ascii-engine/raycasting-14.png)
+<p align="center">
+    <img src="https://mellaza.tech/img/ascii-engine/raycasting-14.png" width="40%" height="auto">
+</p>
 
 Et voilà on connaît maintenant la distance exacte entre le joueur est la première surface verticale possible. *Dans le cas où dx est nul, on considère cette distance comme infinie.* 
 
 Pour les besoins de notre boucle de recherche de collisions, on enregistre aussi la distance à parcourir entre deux bordures verticales de la grille avec un axe dx. Cela permet de toujours se déplacer d'un carré vers la droite dans ce cas précis, en ayant pour référentiel dx, et non l'axe des abscises traditionnel. Concrètement c'est l’hypoténuse du triangle suivant :
 
-![|inline](https://mellaza.tech/img/ascii-engine/raycasting-15.png)
+<p align="center">
+    <img src="https://mellaza.tech/img/ascii-engine/raycasting-15.png" width="30%" height="auto">
+</p>
 
 **Je le redis une nouvelle fois ici, mais il faut refaire exactement la même chose pour dy**. Cela correspond au calcul suivant pour les collisions avec les axes horizontaux :
 
-![|inline](https://mellaza.tech/img/ascii-engine/raycasting-16.png)
+<p align="center">
+    <img src="https://mellaza.tech/img/ascii-engine/raycasting-16.png" width="30%" height="auto">
+</p>
 
 D'un point de vue purement algorithmique, le code est le suivant :
 ```python
@@ -258,19 +269,24 @@ while distance < max_distance : # Tant que le rayon est inférieur à la distanc
 
 Mais un rayon ne suffit évidemment pas, en réalité il faut définir un certain angle de vision, que l'on divise par le nombre de colonnes de caractères disponibles dans le terminal de l'utilisateur. Donc pour chaque colonne, on projette un rayon avec un certain angle par rapport au centre de l'écran. Graphiquement cela donne ça (bien sûr il y a autant de rayons que de colonnes sur le terminal utilisateur, donc ci-dessous le nombre de rayons est largement inférieur au nombre réel.) :
 
-![|inline](https://mellaza.tech/img/ascii-engine/raycasting-17.png)
+<p align="center">
+    <img src="https://mellaza.tech/img/ascii-engine/raycasting-17.png" width="40%" height="auto">
+</p>
 
 Et enfin, il ne reste plus qu'à dessiner une colonne de pixels pour chaque rayon. Concrètement, on se positionne sur la ligne au centre de l'écran et pour chaque colonne, de l'extrême gauche à l'extrême droite, on envoie un rayon, dont la fonction étudiée plus tôt nous renvoie la distance de collision avec le prochain mur. Il suffit d'afficher une colonne de pixels dont la hauteur² est : $lineHeight = \frac{hauteur_{écran}}{distance_{rayon}}$
 
-![|inline](https://mellaza.tech/img/ascii-engine/raycasting-18.png)
+<p align="center">
+    <img src="https://mellaza.tech/img/ascii-engine/raycasting-18.png" width="40%" height="auto">
+</p>
 
 *Ici c'est pareil, il y a autant de colonnes (avec des hauteurs différentes) que de colonnes disponibles dans le terminal donc il faut imaginer l'écran rempli.* Si vous avez bien compris, il doit être évident que la colonne à gauche représente un mur très éloigné alors que la colonne à droite représente un mur très proche du joueur.
 
 ² *Les plus matheux d'entre vous ont sûrement constaté qu'un tel système ne produit pas une image plane de l’environnement. En effet, cela donne une vision arrondie plus on s'éloigne du centre de l'écran. D'ailleurs vous le connaissez sûrement cet effet : **l'effet fisheye**, oui le même que sur les filtres marrants sur votre téléphone !*
-
-![|inline](https://mellaza.tech/img/ascii-engine/Effet_fisheye.jpg)
-![|inline](https://mellaza.tech/img/ascii-engine/raycasting-20.png)
-![|inline](https://mellaza.tech/img/ascii-engine/raycasting-19.png)
+<p align="center">
+    <img src="https://mellaza.tech/img/ascii-engine/Effet_fisheye.jpg" width="20%" height="auto">
+    <img src="https://mellaza.tech/img/ascii-engine/raycasting-20.png" width="20%" height="auto">
+    <img src="https://mellaza.tech/img/ascii-engine/raycasting-19.png" width="20%" height="auto">
+</p>
 
 *La solution est assez simple, il suffit de projeter les rayons sur une tangente pour aplanir l'image. Pour cela, on multiplie la distance du rayon par cosinus(2pi) ou  cosinus(-2pi), en fonction de la positivité de l'angle entre le joueur et le rayon.*
 
