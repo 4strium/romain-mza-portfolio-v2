@@ -7366,16 +7366,3 @@ h1.pagebody-header {
 ol {
   list-style-position: inside;
 }
-
-li::marker {
-  content: counter(list-item) ". "; /* notez l'espace après le point */
-}
-
-li {
-  list-style-type: none;
-}
-
-li p {
-  margin: 0;            /* annule marges spécifiques */
-  padding-left: 0;      /* aligne le texte à gauche */
-}
