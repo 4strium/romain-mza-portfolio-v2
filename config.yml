@@ -1,5 +1,9 @@
 baseURL: "http://mellaza.tech/"
 languageCode: fr-fr
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
 title: Romain Mellaza
 theme: hugo-theme-itheme
 params:
@@ -12,11 +16,7 @@ params:
       url: https://www.linkedin.com/in/romain-mellaza/
     - name: Twitter
       url: https://twitter.com/RomainMza
-    - name : Instagram
-      url: https://www.instagram.com/ads.bzh/
   blogroll:
-    - name: Collège Croas ar Pennoc, Guilers (29)
-      url: https://www.college-croasarpennoc-guilers.ac-rennes.fr/
     - name: BAC Général, Lycée Vauban, Brest (29)
       url: https://www.lycee-vauban-brest.ac-rennes.fr/
     - name: CPGE MP2I, Lycée Alain-René Lesage, Vannes (56)
