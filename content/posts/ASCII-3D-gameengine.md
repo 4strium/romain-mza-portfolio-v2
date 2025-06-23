@@ -57,7 +57,7 @@ Si vous avez l'occasion de réaliser une partie vous constaterez que la physique
     - Cependant passé cette distance la teinte s'obscurcie de manière linéaire jusqu'à une limite maximale fixée, avec un facteur variable définit par la ligne de code suivante :
     ```depth_factor = (1 - (max(2, min(6, cell[2])) / 8)) * 1.1```
       - ``cell[2]`` : correspond à la profondeur du pixel courant.
-      - ```min(6, cell[2])`` : limite la profondeur maximale à 6.
+      - ``min(6, cell[2])`` : limite la profondeur maximale à 6.
       - ``max(2, ...)`` : limite la profondeur minimale à 2.
       - ``max(2, min(6, cell[2])) / 8`` : normalise la profondeur entre 2/8 et 6/8.
       - ``1 - ...`` : inverse la valeur pour que plus la profondeur est grande, plus le facteur est petit.
@@ -311,20 +311,16 @@ Chaque case du buffer contient trois informations :
 * Le caractère à afficher (par exemple, une lettre ou un symbole).
 * La couleur du caractère, définie par des valeurs de rouge, vert et bleu (RGB).
 * Une valeur réelle, représentant la profondeur du pixel par rapport à la position courante du joueur.
-
 2. Le module permet de créer un buffer de dimensions personnalisées (largeur et hauteur). Une fois créé, ce buffer est rempli par défaut avec des espaces blancs (caractères vides), une couleur blanche et une profondeur infinie.
 * Initialisation : Lorsqu'un buffer est créé, il est "nettoyé" pour s'assurer qu'il est vide et prêt à être utilisé.
 * Dimensions : On peut définir ou modifier la largeur et la hauteur du buffer à tout moment.
-
 3. Le module permet d'insérer des caractères dans le buffer à des positions spécifiques. Par exemple, on peut placer une lettre "A" en rouge à une certaine case de la feuille.
 Si on insère une chaîne de plusieurs caractères (comme "Bonjour"), chaque lettre est placée dans une case consécutive, en partant de la position spécifiée.
 Chaque caractère peut avoir une couleur différente, ce qui permet de créer des affichages colorés.
-
 4. Une fois le contenu du buffer prêt, il est affiché dans le terminal. Voici comment cela fonctionne :
 * Positionnement : Le module utilise des commandes spéciales pour déplacer le "curseur" du terminal à la bonne position avant d'afficher chaque ligne. Cela garantit que les caractères apparaissent au bon endroit.
 * Couleurs : Avant d'afficher un caractère, le module vérifie si sa couleur est différente de la précédente. Si c'est le cas, il change la couleur active dans le terminal pour correspondre à celle du caractère.
 * Rendu final : Une fois tous les caractères affichés, le terminal est réinitialisé pour revenir à son état normal.
-
 5. L'utilisation d'un buffer permet de contrôler précisément ce qui est affiché à l'écran, sans avoir à effacer et réécrire constamment. Cela rend l'affichage plus fluide et évite les scintillements. 
 
 ### Gestion des entrées
