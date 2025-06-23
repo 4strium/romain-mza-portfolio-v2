@@ -76,8 +76,8 @@ Lors de le mise en oeuvre des *designs* graphiques il peut devenir vite fastidie
 On obtient par exemple les résultats suivants :
 |Image initiale|Texte en sortie du convertisseur|
 |:---:|:---:|
-|<p align="center"><img src="https://mellaza.tech/img/image.png" width="40%" height="auto"></p>| <p align="center"><img src="https://mellaza.tech/img/image-1-ascii.png" width="40%" height="auto"></p> |
-|<p align="center"><img src="https://mellaza.tech/img/image-2.png" width="40%" height="auto"></p> | <p align="center"><img src="https://mellaza.tech/img/image-2-ascii.png" width="40%" height="auto"></p> |
+|<p align="center"><img src="https://mellaza.tech/img/ascii-engine/image.png" width="40%" height="auto"></p>| <p align="center"><img src="https://mellaza.tech/img/ascii-engine/image-1-ascii.png" width="40%" height="auto"></p> |
+|<p align="center"><img src="https://mellaza.tech/img/ascii-engine/image-2.png" width="40%" height="auto"></p> | <p align="center"><img src="https://mellaza.tech/img/ascii-engine/image-2-ascii.png" width="40%" height="auto"></p> |
 
 ## Moteur graphique
 ### Raycasting
@@ -93,7 +93,7 @@ Le but de cette section n'est **absolument pas** de fournir un cours complet sur
 Dans les paragraphes qui suivent je parlerais avec mes propres mots pour expliquer ce que j'ai compris, avec des schémas et des exemples concrets, il se peut que je commette des erreurs dans mes explications, je vous prie de m'en excuser.
 
 <p align="center">
-    <img src="https://mellaza.tech/img/raycasting-1.png" width="30%" height="auto">
+    <img src="https://mellaza.tech/img/ascii-engine/raycasting-1.png" width="30%" height="auto">
 </p>
 
 Voici une carte simplifiée de 4 par 4, le point bleu représente la position du joueur (*elle peut prendre n'importe quelle valeur réelle*).
