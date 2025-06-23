@@ -3,7 +3,7 @@ title: "Comment j'ai codé un moteur graphique 3D pour terminal Linux ?"
 date: 2025-06-23T01:39:07+01:00
 draft: false
 author: Romain MELLAZA
-cover: 'https://mellaza.tech/img/fight.png'
+cover: 'https://mellaza.tech/img/ascii-engine/fight.png'
 tags: ["Python", "Linux", "Software"]
 theme: "light"
 ---
