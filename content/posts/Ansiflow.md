@@ -38,10 +38,81 @@ A l'inverse ouvrir un ancien projet permet à l’utilisateur de sélectionner l
 
 J'ai fait l'expérience avec un fichier `.odt`, en le renommant avec l'extension `.zip` on voit se révéler tous les fichiers indispensables pour importer correctement un précédent projet.
 
-<p align="center">
-    <img src="https://mellaza.tech/img/ascii-engine/odt-reveal.png" width="50%" height="auto">
-</p>
+![Un fichier odt basique disséqué|inline](https://mellaza.tech/img/ascii-engine/odt-reveal.png)
 
 Et bien nous allons utiliser ce même principe ici, lorsque l'utilisateur veut sauvegarder son projet, le programme compresse dans un premier temps le dossier de travail dans un fichier zip avant de le renommer avec l'extension `.ansiflow`.
 
-Et pour l'importation d'un ancien projet, vous avez sans doute compris que l'on décompresse la sauvegarde dans le dossier de manipulation et voilà, le logiciel travaille avec les mêmes données que la session enregistrée. (*Bon c'est un peu plus complexe que cela car il faut recharger l'ensemble des objets graphiques avec les propriétés sauvegardés et par conséquent sauvegardé la position et l'état de ces derniers*) 
+Et pour l'importation d'un ancien projet, vous avez sans doute compris que l'on décompresse la sauvegarde dans le dossier de manipulation et voilà, le logiciel travaille avec les mêmes données que la session enregistrée. (*Bon c'est un peu plus complexe que cela car il faut recharger l'ensemble des objets graphiques avec les propriétés sauvegardés, et par conséquent sauvegarder la position et l'état de ces derniers au préalable*) 
+
+## La page principale
+Voici la page principale, une fois que la configuration initiale est passée :
+
+![|inline](https://mellaza.tech/img/ascii-engine/main-layout.png)
+
+Vous constaterez dans un premier temps la barre des menus disponible en haut, c'est un membre typique des applications pour ordinateur. Ensuite, en-dessous, il s'agit d'une grille représentant la carte du jeu. Les cases peuvent prendre différentes couleurs en fonction de lors contenu :
+* Mur
+* Spawn joueur
+* Position ennemi
+* Position personnage
+* Sortie du labyrinthe
+
+Lorsque l'utilisateur veut définir l'emplacement d'un élément, il peut cliquer directement sur la carte.
+
+Enfin, sur la droite vous avez en quelque sorte *la boîte à outils* avec les différentes sections utiles à la conception du jeu. Chaque section dispose de ces propres attributs et explications. 
+
+## Les dialogues des personnages
+Je vais juste me concentrer sur la page de gestion des dialogues car elle est à mon gout très intéressante, et le résultat final correspond bien à ce que je souhaitais obtenir : un système de programmation par blocs.
+
+![|inline](https://mellaza.tech/img/ascii-engine/dialogue.png)
+
+J'ai totalement recodé un tel système pour qu'il fonctionne avec PyQt6, l’utilisateur saisi des blocs dans la zone à droite et il les déposent dans la zone à gauche pour former une suite d'actions. La partie la plus complexe reside sans aucun doute dans la capacité qu'on chaque bloc à connaître leur emplacement par rapport aux autres blocs, cela paraît logique pour nous, mais d'un point de vue informatique c'est assez compliqué de faire comprendre à un bloc que sa première entrée et reliée avec la troisième sortie de tel bloc par exemple.
+
+Enfin chaque bloc dispose de boutons et/ou d'entrées, il doit donc stocker en son sein ses propriétés, à titre informatif, voici le constructeur de mon objet `Bloc` :
+```python
+class Bloc(QWidget) :
+  def __init__(self, main_app, nb_inputs, nb_outputs, content, bloc_color, text_color, id=-1, unicity = False):
+    super().__init__()
+    self.mainApp = main_app
+    self.nb_inputs = nb_inputs
+    self.nb_outputs = nb_outputs
+
+    self.used_inputs = [None] * self.nb_inputs
+    self.used_outputs = [None] * self.nb_outputs
+      
+    self.content = content
+    self.bloc_color = QColor(bloc_color)
+    self.text_color = text_color
+    self.id = id
+    self.min_width = MIN_WIDTH
+    self.width_value = max(self.min_width*self.nb_inputs, self.min_width*self.nb_outputs)
+    self.min_height = MIN_HEIGHT
+    self.content_padding = 10
+    self.content_size = 14
+    self.visible = True
+    self.unique = unicity
+    self.parent_pos = None
+    self.new_pos = None
+    self.already_moved = False
+    self.dragging = False
+    self.dragging_position = QPoint()
+    
+    self.storage = [None, 1, None, None]
+
+    self.initializeUI()
+```
+
+Et maintenant rappelez-vous que l'on donne à l'utilisateur la possibilité de sauvegarder sa session en l'état ! Il faut donc replacer chaque bloc au bon endroit avec les bons parents/enfants et les bonnes données dans son stockage. Et pour pimenter un peu le tout, les positions peuvent différer si l'utilisateur utilise un pc avec une taille d'écran différente...
+
+# L'idée d'un émulateur de terminal
+Pour revenir sur une des réflexions menées plus haut : comment standardiser l'affichage dans différents terminaux ? Bon c'est une question complexe qui n'a malheureusement pas de réponse simple. Dites-vous que même les librairies Python différent en fonction de votre système d'exploitation, par exemple la librairie `curses` que utilisable à la place des séquences d'échappement ANSI dispose d'une version UNIX et d'une version Windows ! Un même code Python utilisant cette librairie s'exécute différemment sur Linux et Windows. On est donc très loin de la standardisation. 
+
+Mais voilà un jour une idée a germée dans ma tête : plutôt que de s'acharner à trouver une solution commune à tous les types de terminaux, pourquoi ne pas utiliser de terminal tout simplement ! Bon là vous vous demandez ce que je raconte mais enfaîte mon moteur se contente juste d'afficher des caractères à une position x et y avec une certaine couleur, rien de plus au niveau de l'affichage. Alors pourquoi s’embêter à utiliser un terminal machine ? Pourquoi ne pas ouvrir une fenêtre d'interface graphique, mettre un fond noir, définir un axe x et un axe y similaire aux terminaux classiques et voilà. 
+
+Bon pour atteindre ce résultat, j'ai beaucoup cherché et la solution la plus simple consiste à créer une fenêtre PyQt avec un fond noir, attribuer une zone texte HTML prenant tout l'espace de la fenêtre et afficher des caractères colonne par colonne, ligne par ligne, à partir de notre buffer. Tous les caractères utilisent la même police et la même taille, mais on peut faire varier leur couleur via un unique attribut `text-color`. Voilà cela fonctionne à la fin mais gros problème : **C'EST LENT, TRÈS LENT**, sans aucun temps d'attente le système à un temps de rafraîchissent proche de 1FPS, contre 10FPS pour la solution initiale. Le rechargement de l'ensemble de la page HTML en est la cause, donc j'ai assez rapidement abandonné l'idée.
+
+Mais bon avec un peu de recul, je pense qu'un rafraîchissent de 1FPS (mais surtout en ayant à modifié que quelques éléments), cette sorte *d'émulateur de terminal* peut trouver son utilité dans d'autres applications plus classiques que le jeu vidéo. D'ailleurs de telles méthodes doivent être utilisées lorsque l'on voit de petites fenêtre ayant la présentation la mise en forme d'un terminal standard. A suivre son mon github donc... 
+
+# Déploiement
+Finalement, j'ai mis en place un script qui détecte le système d'exploitation de l'utilisateur et qui adapte les instructions d'affichage en conséquence.
+
+Si vous souhaitez créer vos propres jeux avec le moteur, rendez-vous ici : [https://ansiflow.netlify.app/](https://ansiflow.netlify.app/)
