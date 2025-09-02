@@ -3,7 +3,7 @@ title: "Déployer mon moteur graphique"
 date: 2025-09-02T01:39:07+01:00
 draft: false
 author: Romain MELLAZA
-cover: 'https://mellaza.tech/img/ascii-engine/pres1.gif'
+cover: 'https://mellaza.tech/img/ascii-engine/main-layout.png'
 tags: ["Python", "Linux", "Software"]
 theme: "light"
 ---
