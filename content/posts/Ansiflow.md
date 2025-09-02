@@ -115,4 +115,6 @@ Mais bon avec un peu de recul, je pense qu'un rafraîchissent de 1FPS (mais surt
 # Déploiement
 Finalement, j'ai mis en place un script qui détecte le système d'exploitation de l'utilisateur et qui adapte les instructions d'affichage en conséquence.
 
+![|inline](https://mellaza.tech/img/ascii-engine/pres1.gif)
+
 Si vous souhaitez créer vos propres jeux avec le moteur, rendez-vous ici : [https://ansiflow.netlify.app/](https://ansiflow.netlify.app/)
