@@ -50,9 +50,7 @@ De part mon aisance avec les MCU ESP32, j'ai choisi de me tourner une nouvelle f
 # Alimentation
 Nous devons donc intégrer une alimentation 24V dans notre montage. Pour ma part, j'ai choisi de booster la sortie 5V de l'ESP32 afin d'obtenir les 24V nécessaires (mais il existe de nombreuses autres solutions pour y parvenir, je pense d'ailleurs que la mienne n'est pas la meilleure pour conserver l'intégrité du micro-contrôleur). J'utilise un module élévateur de tension DC appelé MT3608, qui fonctionne parfaitement et ne m'a posé aucun souci jusqu'à présent !
 
-<p align="center">
-    <img src="https://raw.githubusercontent.com/4strium/Fothelia/refs/heads/main/images/assembly.jpg" width="60%" height="auto">
-</p>
+[Assemblage final|inline](https://raw.githubusercontent.com/4strium/Fothelia/refs/heads/main/images/assembly.jpg)
 
 # Utiliser le logiciel de contrôle 
 Si tout est correctement câblé et que le programme est bien flashé sur votre module, il vous suffit d’alimenter votre carte (via USB, jack, etc...). Le programme devrait s’initialiser normalement sans problème, prêt à recevoir les instructions envoyées par le logiciel, que nous détaillerons dans la section suivante.
