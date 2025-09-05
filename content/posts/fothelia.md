@@ -18,7 +18,9 @@ Le but recherché est de contrôler le ruban LED en faisant totalement abstracti
 # Principe de fonctionnement 
 La première étape consiste à comprendre comment fonctionne exactement un tel ruban LED, en se penchant sur l'une de ses deux extrémités, on constate la présence de six entrées. 
 
-![Entrées du ruban|inline](https://mellaza.tech/img/Fothelia/inputs.jpg)
+<p align="center">
+    <img src="https://mellaza.tech/img/Fothelia/inputs.jpg" width="20%" height="auto">
+</p>
 
 Voici la correspondance des différentes entrées du ruban :
 
@@ -38,11 +40,13 @@ Nous utilisons la technologie PWM pour transmettre des valeurs comprises entre 0
 
 La réponse à ce cahier des charges est simple : **des transistors**. Mais pas n'importe lesquels ! En effet, il ne faut surtout pas se précipiter pour utiliser des transistors de micro-électronique, car ces derniers sont conçus pour fonctionner avec des tensions/courants faibles ce qui n'est pas notre cas ici, en effet on travaille avec des tensions comprises entre 0 et 24 volts. Notre choix se porte donc sur des modules MOSFET capables de travailler avec un tel environnement.
 
-![FR120N MOS Module Control MOSFET|inline](https://mellaza.tech/img/Fothelia/MOSFET.png)
+<p align="center">
+    <img src="https://mellaza.tech/img/Fothelia/MOSFET.png" width="30%" height="auto">
+</p>
 
 # Vidéo de démonstration
 <p align="center">
-  <iframe width="846" height="301" src="https://www.youtube.com/embed/iqZ9ig5bKA8" title="I created a complete system for reusing your LED strip leftovers" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <iframe width="846" height="601" src="https://www.youtube.com/embed/iqZ9ig5bKA8" title="I created a complete system for reusing your LED strip leftovers" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </p>
 
 
